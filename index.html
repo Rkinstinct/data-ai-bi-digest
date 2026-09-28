@@ -22,7 +22,15 @@
 <div class="hero" id="top"><div class="wrap"><div class="eyebrow">BI · DATA · AI</div><h1>מה חדש, ומה באמת <span class="grad">שווה לנסות.</span></h1><p>דיג'סט BI, פינת DATA&amp;AI ועדכוני הגרסה החודשית של Power BI. כל דבר במקום שלו, בלי כותרות ריקות.</p><div class="pills"><span class="pill">דיג'סט BI</span><span class="pill">פינת DATA&amp;AI</span><span class="pill">Power BI Monthly</span></div></div></div>
 <div class="wrap intro"><div class="notice"><strong>ארכיון ראשוני.</strong> מוצגות מהדורות שנשלחו בין 23 ל-27 בספטמבר 2026. העדכון האוטומטי עדיין לא הופעל. עדכוני Power BI החודשיים טרם אומתו ויפורסמו בנפרד.</div></div>
 <main class="wrap" id="main">
-<section aria-labelledby="digest-title" id="digest"><div class="section-head"><div><div class="section-tag">01 / סקירה יומית</div><h2 id="digest-title">דיג'סט BI</h2><p>רעיונות מעשיים ל-Power BI, BI בארגון, סביבות מאובטחות ו-Claude. רק פריטים עם הסבר ודרך להתחיל.</p></div></div><div class="feature"><div class="feature-mark">המהדורה האחרונה · 27.9.2026</div><h3>דוח אחד. כמה שפות. אותו סלייסר.</h3><p>עמודה מחושבת ב-User Context מתאימה את שם החודש לשפת הקורא, ומספר החודש שומר את הבחירה יציבה. במהדורה יש גם כלי Claude Code שבודק קובצי PBIP שהשתנו בזמן אמת.</p><a href="#latest-digest" onclick="document.getElementById('latest-digest').open=true">לקריאת הדיג'סט המלא <span aria-hidden="true">←</span></a></div><div class="archive"><details class="entry" id="latest-digest"><summary>☀️ דיג'סט BI ו-Claude, ראשון 27.9 <span class="count">מקור: מהדורה שנשלחה ב-27.9</span></summary><div class="body"><p>☀️ דיג'סט BI ו-Claude, ראשון 27.9</p>
+<section aria-labelledby="digest-title" id="digest"><div class="section-head"><div><div class="section-tag">01 / סקירה יומית</div><h2 id="digest-title">דיג'סט BI</h2><p>רעיונות מעשיים ל-Power BI, BI בארגון, סביבות מאובטחות ו-Claude. רק פריטים עם הסבר ודרך להתחיל.</p></div></div><div class="feature"><div class="feature-mark">המהדורה האחרונה · 28.9.2026</div><h3>צביעת שורה במטריצה לפי הזוכה בעמודה האחרונה.</h3><p>Visual Calculation מוצא את המותג הזוכה בשנה האחרונה המוצגת וצובע את תאי המותג בכל השנים. במהדורה גם סכימה בגרעין עסקי נכון עם SUMX ופיצול ניסויי Claude Code עם /fork.</p><a href="#latest-digest" onclick="document.getElementById('latest-digest').open=true">לקריאת הדיג'סט המלא <span aria-hidden="true">←</span></a></div><div class="archive"><details class="entry" id="latest-digest"><summary>☀️ דייג'סט BI ו-Claude, שני 28.9 <span class="count">מקור: מהדורה שנשלחה ב-28.9</span></summary><div class="body"><p>☀️ דייג'סט BI ו-Claude, שני 28.9</p>
+<p>לא מצאתי פרסום חדש מהיום ששווה להעביר כחדשה. שלושה רעיונות שלא שלחתי, עם גיל המקור גלוי:</p>
+<p>1️⃣ לצבוע תאי שורה במטריצה לפי *הערך בעמודה האחרונה המוצגת*. SQLBI בונה Visual Calculation שרואה את תוכן המטריצה כטבלת `ROWS COLUMNS`, מוצא את השנה האחרונה ואת המותג בעל המכירות המרביות בה, ומחזיר צבע לכל תא של אותו מותג גם בשנים האחרות. זו שכבת *עיצוב הוויזואל*, לא מדד עסקי במודל: כשמשכפלים ויזואל, אפשר להתאים את בחירת הציר בלי להוסיף עוד מדדי צבע למודל. להתחלה: Matrix עם Brand בשורות, Year בעמודות, Sales Amount בערכים; להוסיף פונקציית DAX קטנה שמוצאת את הזוכה בשנה האחרונה וחישוב חזותי שמחזיר `Yellow`, ואז להחיל Conditional Formatting מסוג Field value על *תאי המדד*. כותרות השורה עצמן אינן נתמכות בעיצוב מותנה. מאמר SQLBI מאפריל 2026, מתקדם ודורש תמיכת UDF/Visual Calculations בגרסת הארגון.
+<a href="https://www.sqlbi.com/articles/using-visual-calculations-to-highlight-an-entire-row/" rel="noopener noreferrer" target="_blank">https://www.sqlbi.com/articles/using-visual-calculations-to-highlight-an-entire-row/</a>
+<a href="https://learn.microsoft.com/en-us/power-bi/create-reports/desktop-conditional-table-formatting" rel="noopener noreferrer" target="_blank">https://learn.microsoft.com/en-us/power-bi/create-reports/desktop-conditional-table-formatting</a></p>
+<p>2️⃣ סכום כולל נכון דורש לקבע את גרעין הכלל העסקי, לא לסכום את השורות שמוצגות כרגע. במאמר של SQLBI ממודל ייצור, לכל מתכון יחס סוכר אחר; `AVERAGE` של היחסים בתא ה-Total נראה סביר אך אינו נותן כמות סוכר נכונה. הפתרון: `SUMMARIZE` מייצר שורה לכל מתכון, `SUMX` מכפיל בתוך כל מתכון את כמות המים שלו ביחס שלו ורק אז מחבר. זה חי *בשכבת המדד/המודל*, בניגוד לפריט העיצוב הראשון. ביום־יום דפוס כזה מונע סיכומי תקציב, שערים ותעריפים שגויים כשמחליפים ציר או עושים Drill. להתחלה: לזהות את גרעין המקור, גרעין הכלל וגרעין התצוגה ולבדוק Total בכמה מבני מטריצה. מאמר ספטמבר 2026; שווה לימוד, לא מוצר חדש.
+<a href="https://www.sqlbi.com/articles/writing-dax-at-the-correct-granularity/" rel="noopener noreferrer" target="_blank">https://www.sqlbi.com/articles/writing-dax-at-the-correct-granularity/</a></p>
+<p>3️⃣ לנסות שתי דרכי תיקון על *אותו הקשר שיחה* ב-Claude Code באמצעות `/fork`. הפקודה מעתיקה את השיחה עד אותו רגע לסשן רקע עצמאי, כולל הקשר הפרויקט, ומאפשרת לתת לענף אחד ניסוי על מבנה הדוח ובענף שני להמשיך פתרון שמרני. זה לא Worktree בפני עצמו: Worktree מבודד קבצים, בעוד `/fork` משכפל *את ההקשר השיחתי*; הסשן החדש עובר לעותק עבודה מבודד לפני עריכת קבצים לפי התיעוד. מתחילים מתוך שיחה עם תכנית ובדיקות שכבר גובשו, מקלידים `/fork נסה פתרון חלופי למדד מבלי לפרוס`, ואז פותחים `claude agents` כדי לראות מה מתקדם. עדיין צריך להשוות diff ולמזג ידנית. תיעוד רשמי; ההתנהגות הזו דורשת לפחות v2.1.212 ו-Agent View פעיל, ויש חריגים כשאי אפשר לרשת דגלי השקה מסוימים. זה כלי עבודה על *סשנים*, לא גרסת מודל ולא פריסה אוטומטית.
+<a href="https://code.claude.com/docs/en/agent-view" rel="noopener noreferrer" target="_blank">https://code.claude.com/docs/en/agent-view</a></p></div></details><details class="entry"><summary>☀️ דיג'סט BI ו-Claude, ראשון 27.9 <span class="count">מקור: מהדורה שנשלחה ב-27.9</span></summary><div class="body"><p>☀️ דיג'סט BI ו-Claude, ראשון 27.9</p>
 <p>לא מצאתי היום פרסום טרי שעובר את הסף. שני רעיונות שימושיים שלא שלחתי קודם, שניהם מתוך תיעוד קיים ולא חדשות היום:</p>
 <p>1️⃣ עמודת שם חודש שמתרגמת את עצמה לכל קורא של אותו דוח. ב-Power BI אפשר להגדיר לעמודה מחושבת `Expression Context = User Context`: היא לא נשמרת ב-Import בזמן רענון, אלא מחושבת בזמן שאילתא לפי הקשר המשתמש. שילוב `FORMAT` עם `USERCULTURE()` מחזיר למשל שם חודש בשפת הקורא. ביום־יום צוות יכול להחזיק דוח אחד לקהלים בכמה שפות בלי לשכפל טבלת תאריכים או לבנות מדד נפרד לכל תווית. חשוב לשמור זהות מספרית מאחורי תווית מתורגמת באמצעות Group By Columns על Month Number, אחרת בחירת סלייסר המבוססת על המחרוזת עלולה לא להישמר במעבר בין שפות. זו *שכבת המודל המוצגת בדוח*, לעומת מדד טקסט של אתמול שחי בתא המטריצה; עמודה כזו נגישה לצירים ולסלייסרים אבל עלולה לייקר שאילתות. להתחלה: עמודת `FORMAT ( DATE ( 2020, 'Date'[Month Number], 1 ), "mmmm", USERCULTURE() )`, שינוי המאפיין ב-Desktop, ואז בדיקה עם שני משתמשים ושפות. SQLBI מציין Preview במאי 2026; תיעוד Microsoft מאשר את המאפיין אך לא אימתתי זמינות בגרסה הארגונית שלכם.</p>
 <p><a href="https://www.sqlbi.com/articles/introducing-user-aware-calculated-columns-in-power-bi/" rel="noopener noreferrer" target="_blank">https://www.sqlbi.com/articles/introducing-user-aware-calculated-columns-in-power-bi/</a></p>
@@ -95,7 +103,51 @@
 <p>במה זה שונה: Agent Teams ו-Background Agents הם כמה Sessions נפרדים. כאן מדובר בפיצול בתוך Session אחד.</p>
 <p><a href="https://code.claude.com/docs/en/changelog" rel="noopener noreferrer" target="_blank">https://code.claude.com/docs/en/changelog</a></p>
 <p><a href="https://code.claude.com/docs/en/sub-agents" rel="noopener noreferrer" target="_blank">https://code.claude.com/docs/en/sub-agents</a></p></div></details></div></section>
-<section aria-labelledby="corner-title" id="corner"><div class="section-head"><div><div class="section-tag">02 / פינה לשיתוף</div><h2 id="corner-title">🧠 פינת DATA&amp;AI</h2><p>טיפ אחד ל-Power BI וטיפ אחד ל-AI, עם פעולה שאפשר לנסות והפניה למקור.</p></div></div><div class="archive"><details class="entry"><summary>פינת DATA&amp;AI · 27.9</summary><div class="body"><p>🧠 פינת DATA&amp;AI</p>
+<section aria-labelledby="corner-title" id="corner"><div class="section-head"><div><div class="section-tag">02 / פינה לשיתוף</div><h2 id="corner-title">🧠 פינת DATA&amp;AI</h2><p>טיפ אחד ל-Power BI וטיפ אחד ל-AI, עם פעולה שאפשר לנסות והפניה למקור.</p></div></div><div class="archive"><details class="entry"><summary>פינת DATA&amp;AI · 28.9</summary><div class="body"><p>🧠 פינת DATA&amp;AI</p>
+<p>🔹 לצבוע את ערכי כל שורת המטריצה לפי הזוכה בעמודה האחרונה</p>
+<p>נניח שמותגים בשורות, שנים בעמודות ו-`Sales Amount` בערכים. רוצים להדגיש את המותג עם המכירות הגבוהות בשנה האחרונה שמוצגת, גם בתאים של שנים קודמות. הצביעה היא על *תאי הערכים*, לא על כותרת השורה.</p>
+<p>1. הכינו Matrix עם `Product[Brand]` בשורות, `Date[Year]` בעמודות ומדד `Sales Amount` בערכים. במודל שתומך ב-DAX UDF צרו את הפונקציה הבאה:</p>
+<pre dir="ltr"><code>RowHeaderOfLastCol =
+    (
+        matrix : TABLE,
+        colHeader : COLUMNREF,
+        rowHeader : COLUMNREF,
+        valueExpr : EXPR
+    ) =&gt;
+    VAR LastColHeader = MAXX ( matrix, colHeader )
+    VAR RowsInLastCol =
+        FILTER ( matrix, colHeader = LastColHeader )
+    VAR MaxValueInLastCol = MAXX ( RowsInLastCol, valueExpr )
+    VAR WinningRows =
+        FILTER ( RowsInLastCol, valueExpr = MaxValueInLastCol )
+    RETURN
+        SELECTCOLUMNS ( WinningRows, "rowHeader", rowHeader )</code></pre>
+<p>2. הוסיפו למטריצה Visual Calculation. הוא מרחיב את הקשר התא לכל טבלת השורות והעמודות, מוצא את המותגים שזכו בעמודה האחרונה, ואז מחזיר צבע לתאי המותג הנוכחי:</p>
+<pre dir="ltr"><code>Row Color =
+VAR BestBrands =
+    CALCULATETABLE (
+        CALCULATETABLE (
+            RowHeaderOfLastCol (
+                ROWS COLUMNS, [Year], [Brand], [Sales Amount]
+            ),
+            EXPAND ( ROWS COLUMNS )
+        ),
+        COLLAPSEALL ( ROWS COLUMNS )
+    )
+VAR CurrentBrand = [Brand]
+RETURN
+    IF ( CurrentBrand IN BestBrands, "#FFF2B2" )</code></pre>
+<p>3. בעיצוב המותנה של `Sales Amount`, בחרו Background color → Field value → `Row Color`. בדקו שכשמסננים שנים, הזוכה נקבע לפי השנה האחרונה *המוצגת*. אם המהדורה שלכם לא מקבלת תוצאה טקסטואלית בחישוב חזותי, הגדירו את Data Format שלו ל-Text. התיעוד של Microsoft מגביל עיצוב מותנה לערכים, לא לכותרות השורות.</p>
+<p>למדריך המעשי:
+<a href="https://www.sqlbi.com/articles/using-visual-calculations-to-highlight-an-entire-row/" rel="noopener noreferrer" target="_blank">https://www.sqlbi.com/articles/using-visual-calculations-to-highlight-an-entire-row/</a></p>
+<p>⚡ פיצול ניסוי Claude Code אחרי שכבר בניתם הקשר משותף</p>
+<p>`/fork` אינו מפצל רק קבצים. הוא מעתיק את כל השיחה עד לנקודת הפיצול לסשן רקע עצמאי, כך שלא צריך להסביר שוב את מבנה ה-PBIP והבדיקות לשני כיווני פתרון.</p>
+<p>1. בשיחה קיימת ודאו שכבר תיארתם את שינוי הדוח ואת בדיקות הקבלה. צרו עותק לניסוי חלופי:</p>
+<pre dir="ltr"><code>/fork נסה חלופה למדד התקופה על עותק העבודה שלך; הרץ את בדיקות ה-PBIP, אל תפרוס, ודווח על ה-diff</code></pre>
+<p>2. בשיחה המקורית המשיכו בפיתוח השמרני. פתחו מסוף עם `claude agents` כדי לראות אם הסשן המפוצל עובד, מחכה לקלט או הסתיים.
+3. השוו את שני ה-diff ואת תוצאות הבדיקות ובחרו אילו שינויים להעביר ידנית. אל תניחו שהשיחות מסתנכרנות לאחר הפיצול. בגרסאות ישנות מ-v2.1.212 או כאשר Agent View כבוי, `/fork` מתנהג אחרת; בדקו `claude --version` לפני עבודה על סמך התהליך הזה.</p>
+<p>לתיעוד המעשי:
+<a href="https://code.claude.com/docs/en/agent-view" rel="noopener noreferrer" target="_blank">https://code.claude.com/docs/en/agent-view</a></p></div></details><details class="entry"><summary>פינת DATA&amp;AI · 27.9</summary><div class="body"><p>🧠 פינת DATA&amp;AI</p>
 <p>🔹 סלייסר חודשי שנהפך לעברית, אנגלית או צרפתית בלי לשבור סימניות</p>
 <p>הטריק: עמודת User Context מחזירה תווית בשפת הקורא בזמן שאילתא, אבל הזהות של הבחירה נשארת `Month Number`. זה שונה מעמודת תרגום רגילה, שנקבעת ברענון המודל.</p>
 <p>1. בטבלת `Date` ודאו שיש `Month Number` עם ערכים 1–12. צרו עמודה מחושבת, לא Measure:</p>
@@ -225,7 +277,7 @@ DIVIDE (
 <p>🤖 Claude Opus 5.5 יצא</p>
 <p>Anthropic השיקו אתמול את Claude Opus 5.5, המודל המוביל החדש שלהם: חזק משמעותית מ-Opus 5, זול בכ-40% בשימוש רגיל ומהיר ביותר מ-30%. הוא גם ברירת המחדל החדשה ב-Claude Code (דורש גרסה 2.1.280), ומכסות השימוש במנויי Pro, Max ו-Team עלו.</p>
 <p>🔗 <a href="https://www.anthropic.com/claude-opus-5-5" rel="noopener noreferrer" target="_blank">https://www.anthropic.com/claude-opus-5-5</a></p></div></details></div></section>
-<section aria-labelledby="monthly-title" id="monthly"><div class="section-head"><div><div class="section-tag">03 / גרסה חודשית</div><h2 id="monthly-title">חדש ב-Power BI</h2><p>סיכום נפרד למה שמיקרוסופט מפרסמת בגרסה החודשית, עם הבדל ברור בין הכרזה לזמינות בפועל.</p></div></div><div class="grid"><article class="card empty"><span class="category">ממתין לסקירה מאומתת</span><h3>עדכוני הגרסה החודשית</h3><p>נציג כאן רק חידושים שאומתו מול מקור Microsoft, עם תאריך, מצב הזמינות ומה כדאי לבדוק בדוח או במודל.</p></article></div></section>
-</main><footer><div class="wrap"><span>DATA&amp;AI / BI · ידע שימושי, עם מקורות</span><span>ארכיון 23-27.9.2026 · העדכון האוטומטי טרם הופעל</span></div></footer>
+<section aria-labelledby="monthly-title" id="monthly"><div class="section-head"><div><div class="section-tag">03 / גרסה חודשית</div><h2 id="monthly-title">חדש ב-Power BI</h2><p>סיכום נפרד למה שמיקרוסופט מפרסמת בגרסה החודשית, עם הבדל ברור בין הכרזה לזמינות בפועל.</p></div></div><div class="grid"><article class="card empty"><span class="category">גרסת אוגוסט 2026 · אומת מול Microsoft Learn</span><h3>מה מיקרוסופט שילחה בגרסת אוגוסט 2026</h3><p>Modern Visual Defaults וחלונית ה-Theme יצאו ל-General Availability: דוחות חדשים נפתחים עם ערכת Fluent 2, וה-Theme pane מרכז ערכת בסיס, פלטות צבע וסגנונות טקסט ב-Desktop וב-web. כדאי לבדוק איך דוחות קיימים נראים אחרי המעבר לערכת הבסיס החדשה.</p><p>עוד בגרסה: Date picker בסלייסר (GA) עם בחירת תאריך יחיד, ערך מרכזי בתרשים Donut (GA), הרחבה וכיווץ של כותרות עמודות במטריצה (GA), קיבוע כותרות שורות כברירת מחדל בחלונית העיצוב, ושימוש בקובצי תמונה מ-OneLake כמקור תמונה בוויזואלים (GA) עם אימות בשם הצופה. ברמת השירות: צרכני Fabric App יצטרכו רק הרשאת Read על המודל הסמנטי במקום Build.</p><p><a href="https://learn.microsoft.com/en-us/power-bi/fundamentals/whats-new" rel="noopener noreferrer" target="_blank">https://learn.microsoft.com/en-us/power-bi/fundamentals/whats-new</a></p></article></div></section>
+</main><footer><div class="wrap"><span>DATA&amp;AI / BI · ידע שימושי, עם מקורות</span><span>ארכיון 23-28.9.2026 · מתעדכן מדי יום</span></div></footer>
 </body>
 </html>
