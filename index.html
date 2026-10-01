@@ -90,7 +90,18 @@ main section.sc-current>.section-head h2,main section.sc-current>h2,main h2.sc-c
 <div class="hero" id="top"><canvas class="fx-aurora" aria-hidden="true"></canvas><div class="sc-visual sc-digest" aria-hidden="true"><div class="plate"></div><svg viewBox="0 0 700 460" preserveAspectRatio="xMidYMid meet" role="presentation"><g class="lines"><path d="M0 345H700 M0 260H700 M0 175H700 M0 90H700"/><path d="M40 300 C110 300 120 115 177 115 S227 360 280 340 S360 125 400 145 S430 270 470 257 S523 75 565 91 S610 300 680 255" stroke-width="4"/></g><g class="nodes"><circle cx="177" cy="115" r="10"/><circle cx="280" cy="340" r="10"/><circle cx="400" cy="145" r="10"/><circle cx="565" cy="91" r="10"/></g><text class="mass" x="635" y="394" text-anchor="end">01</text></svg><span class="sc-visual-caption">SIGNAL / 01 / אותות מתוך הרעש</span></div><div class="wrap"><div class="eyebrow">BI · DATA · AI</div><h1>מה חדש, ומה באמת <span class="grad">שווה לנסות.</span></h1><p>דיג'סט BI, פינת DATA&amp;AI ועדכוני הגרסה החודשית של Power BI. כל דבר במקום שלו, בלי כותרות ריקות.</p><div class="pills"><span class="pill">דיג'סט BI</span><span class="pill">פינת DATA&amp;AI</span><span class="pill">Power BI Monthly</span></div></div></div>
 <div class="wrap intro"><div class="notice"><strong>מתעדכן מדי יום.</strong> מוצגות המהדורות שנשלחו החל מ-23 בספטמבר 2026, וסיכום הגרסה החודשית של Power BI כפי שפורסם על ידי Microsoft.</div></div>
 <main class="wrap" id="main">
-<section aria-labelledby="digest-title" id="digest"><div class="section-head"><div><div class="section-tag">01 / סקירה יומית</div><h2 id="digest-title">דיג'סט BI</h2><p>רעיונות מעשיים ל-Power BI, BI בארגון, סביבות מאובטחות ו-Claude. רק פריטים עם הסבר ודרך להתחיל.</p></div></div><div class="feature"><div class="feature-mark">המהדורה האחרונה · 30.9.2026</div><h3>חמישה רעיונות שימושיים, בלי לרדוף אחרי כותרות.</h3><p>חמישה רעיונות מעשיים ל-Power BI ול-Claude Code, עם מקורות, גיל הפרסום ודרך להתחיל. בפינת DATA&amp;AI: פרטי עסקה במטריצה ושימוש ב-Git Worktree לשתי משימות מקבילות.</p><a href="#latest-digest" onclick="document.getElementById('latest-digest').open=true">לקריאת הדיג'סט המלא <span aria-hidden="true">←</span></a></div><div class="archive"><details class="entry" id="latest-digest"><summary>☀️ דייג'סט BI ו-Claude, רביעי 30.9 <span class="count">מקור: מהדורה שנשלחה ב-30.9</span></summary><div class="body"><p>☀️ דייג'סט שבועי BI ו-Claude | רביעי, 30.9</p>
+<section aria-labelledby="digest-title" id="digest"><div class="section-head"><div><div class="section-tag">01 / סקירה יומית</div><h2 id="digest-title">דיג'סט BI</h2><p>רעיונות מעשיים ל-Power BI, BI בארגון, סביבות מאובטחות ו-Claude. רק פריטים עם הסבר ודרך להתחיל.</p></div></div><div class="feature"><div class="feature-mark">המהדורה האחרונה · 1.10.2026</div><h3>בחירות מרובות שמפעילות חישוב אחר, ושאלת צד ל-Claude בלי לעצור את העבודה.</h3><p>שתי טכניקות מתוך תיעוד קיים, לא השקות חדשות: Calculation Groups יכולים לנתב צירוף YTD + PY ל-PYTD; ‎/btw מאפשר לברר נקודה בלי להוציא את Claude Code מהמשימה.</p><a href="#latest-digest" onclick="document.getElementById('latest-digest').open=true">לקריאת הדיג'סט המלא <span aria-hidden="true">←</span></a></div><div class="archive"><details class="entry" id="latest-digest"><summary>☀️ דייג'סט BI ו-Claude, חמישי 1.10 <span class="count">מקור: מהדורה שנשלחה ב-1.10</span></summary><div class="body"><p>☀️ דייג'סט BI ו-Claude | חמישי, 1.10</p>
+<p>שני רעיונות שימושיים שלא נשלחו קודם. אלה טכניקות מתוך תיעוד קיים, לא השקות מהיום; לא הוספתי חדשות כדי למלא רשימה.</p>
+<p>1️⃣ סלייסר זמן שבו שתי בחירות הופכות לחישוב אחד
+בדרך כלל, בחירה של כמה Calculation Items באותה קבוצה אינה מפעילה אותם ברצף. SQLBI מראה איך `multipleOrEmptySelectionExpression` מזהה את קבוצת הערכים שנבחרה, ומנתב אותה לפריט אחר: בחירת YTD ו-PY יחד מפעילה PYTD. כך אפשר לבנות בורר זמן שמבין צירופים שהגדרתם, בלי להכפיל ויזואלים או לשנות כל מדד מכירות ורווח. המנגנון הוא בדיקת `VALUES` של עמודת הקבוצה, ואז `CALCULATE` שמחליף את הבחירה בפריט המשולב. מתחילים בקבוצת זמן קיימת, מוסיפים את הביטוי דרך TMDL ובודקים בחירה יחידה, הצירוף המותר וצירוף לא נתמך.</p>
+<p>זו שכבת *לוגיקת הבחירה בקבוצה במודל*, בשונה מהגנת `noSelectionExpression` שכבר שלחתי: ההגנה ההיא פועלת כשאין סינון; כאן מטפלים בכמה פריטים ובסינון שמחזיר אפס פריטים. ניקוי סלייסר אינו בהכרח "empty selection". מדריך SQLBI מיוני 2025, שמסמן את היכולת כ-Preview במועדו; נדרשת רמת תאימות 1605 לפחות, ולא אימתתי את סטטוס ה-Preview או התמיכה בגרסה הארגונית כיום.
+<a href="https://www.sqlbi.com/articles/controlling-empty-or-multiple-selections-in-calculation-groups/" rel="noopener noreferrer" target="_blank">https://www.sqlbi.com/articles/controlling-empty-or-multiple-selections-in-calculation-groups/</a>
+<a href="https://powerbi.microsoft.com/en-us/blog/deep-dive-into-selection-expressions-for-calculation-groups/" rel="noopener noreferrer" target="_blank">https://powerbi.microsoft.com/en-us/blog/deep-dive-into-selection-expressions-for-calculation-groups/</a></p>
+<p>2️⃣ שאלת צד ל-Claude Code בלי להכניס אותה למסלול העבודה
+באמצע רפקטורינג ארוך אפשר לשאול באמצעות `/btw` שאלה על מה שכבר נדון, בלי לעצור את העבודה ובלי להוסיף את השאלה והתשובה להיסטוריית השיחה הראשית. התשובה משתמשת בהקשר הקיים, אבל היא חד־פעמית וללא קריאות לכלים. ביום־יום זה מתאים לבירור "למה כאן בחרנו SUMX?" בלי להסיט את Claude מהמשימה. מתחילים בשאלה ממוקדת, למשל על חלופה שכבר הופיעה בשיחה. אם התשובה מובילה להחלטת פיתוח, כותבים את ההחלטה מחדש בשיחה הראשית: ה-aside לא מעדכן את ההוראות של המשימה.</p>
+<p>זו שכבת *שאלת צד על הקשר הסשן*, לא `/fork` שמשכפל שיחה לעבודה עצמאית, ולא `/rewind` שמשחזר קוד או שיחה. פקודה רשמית מתועדת; אין כאן הבטחה שקובץ שלא נקרא נמצא בהקשר, והיא לא יכולה להריץ בדיקה או לבדוק את מצב המאגר. זמינות מקומית לא אומתה.
+<a href="https://code.claude.com/docs/en/commands" rel="noopener noreferrer" target="_blank">https://code.claude.com/docs/en/commands</a>
+<a href="https://support.claude.com/en/articles/14554000-claude-code-power-user-tips" rel="noopener noreferrer" target="_blank">https://support.claude.com/en/articles/14554000-claude-code-power-user-tips</a></p></div></details><details class="entry"><summary>☀️ דייג'סט BI ו-Claude, רביעי 30.9 <span class="count">מקור: מהדורה שנשלחה ב-30.9</span></summary><div class="body"><p>☀️ דייג'סט שבועי BI ו-Claude | רביעי, 30.9</p>
 <p>השבוע בחרתי חמישה רעיונות שכדאי לקחת לעבודה, לא חמישה כותרות. זו בחירה מתוך חומרי השבוע, עם בדיקה חוזרת של המקורות, ולא רשימת השקות חדשות.</p>
 <p>1️⃣ פרטי עסקה בתוך המטריצה, בלי עוד היררכיה
 מדד טקסט מאחד מטבע, שער ופרטי לקוח לעמודת Details אחת לצד המכירות. `ISINSCOPE` מוודא שמציגים פרטים ברמת העסקה ולא בסיכום; `CONCATENATEX` מחבר רק קטעים שאינם ריקים. ביום־יום זה חוסך גלילה וקליקים בין ויזואלים. התחלה: מזהה עסקה בשורות, מדד פרטים ב-Values ובדיקה של עסקה מרובת פריטים. אם הפרטים מגיעים מממד, צריך להעביר אליו את סינון העסקה, למשל באמצעות `CROSSFILTER` מקומי, ולא להפוך את כל קשרי המודל לדו־כיווניים. זו שכבת *התצוגה באמצעות מדד*, לא שינוי מבנה הנתונים. מדריך SQLBI מינואר 2026; הדוגמה בפינה אינה דורשת UDF או Visual Calculations.
@@ -194,7 +205,61 @@ main section.sc-current>.section-head h2,main section.sc-current>h2,main h2.sc-c
 <p>במה זה שונה: Agent Teams ו-Background Agents הם כמה Sessions נפרדים. כאן מדובר בפיצול בתוך Session אחד.</p>
 <p><a href="https://code.claude.com/docs/en/changelog" rel="noopener noreferrer" target="_blank">https://code.claude.com/docs/en/changelog</a></p>
 <p><a href="https://code.claude.com/docs/en/sub-agents" rel="noopener noreferrer" target="_blank">https://code.claude.com/docs/en/sub-agents</a></p></div></details></div></section>
-<section aria-labelledby="corner-title" id="corner"><div class="section-head"><div><div class="section-tag">02 / פינה לשיתוף</div><h2 id="corner-title">🧠 פינת DATA&amp;AI</h2><p>טיפ אחד ל-Power BI וטיפ אחד ל-AI, עם פעולה שאפשר לנסות והפניה למקור.</p></div></div><div class="archive"><details class="entry"><summary>פינת DATA&amp;AI · 30.9</summary><div class="body"><p>🧠 פינת DATA&amp;AI</p>
+<section aria-labelledby="corner-title" id="corner"><div class="section-head"><div><div class="section-tag">02 / פינה לשיתוף</div><h2 id="corner-title">🧠 פינת DATA&amp;AI</h2><p>טיפ אחד ל-Power BI וטיפ אחד ל-AI, עם פעולה שאפשר לנסות והפניה למקור.</p></div></div><div class="archive"><details class="entry"><summary>פינת DATA&amp;AI · 1.10</summary><div class="body"><p>🧠 פינת DATA&amp;AI</p>
+<p>🔹 סלייסר שמתרגם בחירת YTD + PY לחישוב PYTD</p>
+<p>שתי בחירות באותו Calculation Group אינן "הרכב אוטומטי" של חישובים. אפשר להגדיר במודל משמעות מפורשת לצירוף, במקום לקבל את המדד ללא הטרנספורמציה שרציתם.</p>
+<p>1. התחילו מקבוצת זמן קיימת בשם `Time Intelligence`, עם עמודת בחירה `Name` ופריטים תקינים בשם `YTD`, `PY` ו-`PYTD`. לדוגמה, במודל עם טבלת תאריכים יומית תקינה, הביטויים של שלושת הפריטים הם:</p>
+<p>לפריט YTD:
+```DAX
+CALCULATE (
+    SELECTEDMEASURE (),
+    DATESYTD ( 'Date'[Date] )
+)
+```</p>
+<p>לפריט PY:
+```DAX
+CALCULATE (
+    SELECTEDMEASURE (),
+    SAMEPERIODLASTYEAR ( 'Date'[Date] )
+)
+```</p>
+<p>לפריט PYTD:
+```DAX
+CALCULATE (
+    SELECTEDMEASURE (),
+    SAMEPERIODLASTYEAR ( DATESYTD ( 'Date'[Date] ) )
+)
+```</p>
+<p>2. פתחו את TMDL View וגררו אליו את טבלת הקבוצה כדי לקבל את הסקריפט הקיים. בתוך בלוק `calculationGroup`, הוסיפו את המאפיין הבא לצד הפריטים, לא במקומם:</p>
+<pre dir="ltr"><code>multipleOrEmptySelectionExpression =
+    VAR Chosen = VALUES ( 'Time Intelligence'[Name] )
+    VAR Expected = { "YTD", "PY" }
+    VAR IsExactPair =
+        COUNTROWS ( Chosen ) = 2
+            &amp;&amp; COUNTROWS ( INTERSECT ( Chosen, Expected ) ) = 2
+    RETURN
+        IF (
+            IsExactPair,
+            CALCULATE (
+                SELECTEDMEASURE (),
+                'Time Intelligence'[Name] = "PYTD"
+            ),
+            ERROR ( "Unsupported time selection" )
+        )</code></pre>
+<p>3. החילו את השינוי והוסיפו סלייסר של `Name` עם בחירה מרובה. בדקו ש-YTD לבדו מפעיל את פריט YTD, וש-YTD עם PY מחזירים בדיוק את התוצאה של בחירת PYTD לבדו. בדקו גם סכומים ומדד נוסף, לא רק תא אחד.</p>
+<p>4. בצירוף אחר, או בסינון שמשאיר אפס פריטים, הדוגמה מחזירה שגיאה מכוונת במקום מספר מטעה. זה מתאים להדגמה, אך משפיע על הוויזואל כולו; התאימו את התנהגות הכשל לדוח. ניקוי הסלייסר מסיר סינון ולכן אינו אותו מצב. לפני שינוי מודל משותף בדקו תאימות 1605 ומעלה וזמינות המאפיין בגרסתכם.</p>
+<p>למדריך המעשי ולצירופים נוספים:
+<a href="https://www.sqlbi.com/articles/controlling-empty-or-multiple-selections-in-calculation-groups/" rel="noopener noreferrer" target="_blank">https://www.sqlbi.com/articles/controlling-empty-or-multiple-selections-in-calculation-groups/</a></p>
+<p>⚡ לשאול "למה בחרנו כך?" בלי להסיט את Claude Code מהמשימה</p>
+<p>פקודת `/btw` פותחת שאלת צד על ההקשר שכבר קיים. אפשר להשתמש בה בזמן ש-Claude עובד, בלי לעצור אותו ובלי לצרף את הדיון הצדדי לשיחה הראשית.</p>
+<p>1. במהלך שינוי PBIP, אחרי שכבר נדונו החלופות למדד, הקלידו:</p>
+<pre dir="ltr"><code>/btw על סמך הקוד והדיון שכבר ראית, למה בחרנו SUMX לפי מתכון ולא ממוצע יחסים? הסבר מה נשבר ב-Total, בלי להציע שינוי קבצים.</code></pre>
+<p>2. השתמשו בתשובה כדי להבין את ההחלטה. זו תשובה חד־פעמית ללא כלים: אין בה קריאת קבצים חדשים, הרצת DAX או אימות מצב ה-Git. בקשו הסבר רק על חומר שכבר נמצא בשיחה.</p>
+<p>3. אם החלטתם לשנות את הכיוון בעקבות ההסבר, כתבו בשיחה הראשית הוראה מפורשת, למשל:</p>
+<pre dir="ltr"><code>למשימה הראשית: שמור את החישוב בגרעין המתכון והוסף בדיקת Total מול סכום התוצאות לכל מתכון. אל תפרוס.</code></pre>
+<p>4. אל תניחו שהשאלה הצדדית שינתה את תכנית העבודה. לניסוי שדורש עריכות ובדיקות צריך משימה רגילה או סשן נפרד; `/btw` מיועד לבירור בלי לזהם את ההיסטוריה.</p>
+<p>לתיעוד המעשי:
+<a href="https://support.claude.com/en/articles/14554000-claude-code-power-user-tips" rel="noopener noreferrer" target="_blank">https://support.claude.com/en/articles/14554000-claude-code-power-user-tips</a></p></div></details><details class="entry"><summary>פינת DATA&amp;AI · 30.9</summary><div class="body"><p>🧠 פינת DATA&amp;AI</p>
 <p>🔹 פרטי עסקה בעמודה אחת של מטריצה, בלי לנפח את ההיררכיה</p>
 <p>במקום להוסיף כל מאפיין כרמת שורה, מציגים מדד טקסט לצד הסכומים. הוא מחבר רק פרטים קיימים ונשאר ריק בסיכומי הביניים.</p>
 <p>1. הוסיפו את `Sales[Order Number]` לשורות המטריצה. בדוגמה יש בטבלת Sales גם `Currency Code` ו-`Exchange Rate`, עם ערך אחד לכל הזמנה.</p>
@@ -430,7 +495,7 @@ DIVIDE (
 <p>Anthropic השיקו אתמול את Claude Opus 5.5, המודל המוביל החדש שלהם: חזק משמעותית מ-Opus 5, זול בכ-40% בשימוש רגיל ומהיר ביותר מ-30%. הוא גם ברירת המחדל החדשה ב-Claude Code (דורש גרסה 2.1.280), ומכסות השימוש במנויי Pro, Max ו-Team עלו.</p>
 <p>🔗 <a href="https://www.anthropic.com/claude-opus-5-5" rel="noopener noreferrer" target="_blank">https://www.anthropic.com/claude-opus-5-5</a></p></div></details></div></section>
 <section aria-labelledby="monthly-title" id="monthly"><div class="section-head"><div><div class="section-tag">03 / גרסה חודשית</div><h2 id="monthly-title">חדש ב-Power BI</h2><p>סיכום נפרד למה שמיקרוסופט מפרסמת בגרסה החודשית, עם הבדל ברור בין הכרזה לזמינות בפועל.</p></div></div><div class="grid"><article class="card empty"><span class="category">גרסת אוגוסט 2026 · אומת מול Microsoft Learn</span><h3>מה מיקרוסופט שילחה בגרסת אוגוסט 2026</h3><p>Modern Visual Defaults וחלונית ה-Theme יצאו ל-General Availability: דוחות חדשים נפתחים עם ערכת Fluent 2, וה-Theme pane מרכז ערכת בסיס, פלטות צבע וסגנונות טקסט ב-Desktop וב-web. כדאי לבדוק איך דוחות קיימים נראים אחרי המעבר לערכת הבסיס החדשה.</p><p>עוד בגרסה: Date picker בסלייסר (GA) עם בחירת תאריך יחיד, ערך מרכזי בתרשים Donut (GA), הרחבה וכיווץ של כותרות עמודות במטריצה (GA), קיבוע כותרות שורות כברירת מחדל בחלונית העיצוב, ושימוש בקובצי תמונה מ-OneLake כמקור תמונה בוויזואלים (GA) עם אימות בשם הצופה. ברמת השירות: צרכני Fabric App יצטרכו רק הרשאת Read על המודל הסמנטי במקום Build.</p><p><a href="https://learn.microsoft.com/en-us/power-bi/fundamentals/whats-new" rel="noopener noreferrer" target="_blank">https://learn.microsoft.com/en-us/power-bi/fundamentals/whats-new</a></p></article></div></section>
-</main><footer><div class="wrap"><span>DATA&amp;AI / BI · ידע שימושי, עם מקורות</span><span>ארכיון 23-30.9.2026 · מתעדכן מדי יום</span></div><div class="wrap fx-credits">מקורות השראה לעיצוב: <a href="https://github.com/MengTo/ThreeUI" rel="noopener">ThreeUI</a> · <a href="https://uiverse.io" rel="noopener">Uiverse</a> · <a href="https://www.hyperui.dev" rel="noopener">HyperUI</a> · רעיון הספוט-לייט מ-<a href="https://21st.dev" rel="noopener">21st.dev</a></div></footer>
+</main><footer><div class="wrap"><span>DATA&amp;AI / BI · ידע שימושי, עם מקורות</span><span>ארכיון 23-1.10.2026 · מתעדכן מדי יום</span></div><div class="wrap fx-credits">מקורות השראה לעיצוב: <a href="https://github.com/MengTo/ThreeUI" rel="noopener">ThreeUI</a> · <a href="https://uiverse.io" rel="noopener">Uiverse</a> · <a href="https://www.hyperui.dev" rel="noopener">HyperUI</a> · רעיון הספוט-לייט מ-<a href="https://21st.dev" rel="noopener">21st.dev</a></div></footer>
 
 <script id="scroll-craft-interactions">
 /* Original, progressively-enhanced reading timeline; no content is hidden if scripts fail. */
