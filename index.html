@@ -88,7 +88,20 @@ main section.sc-current>.section-head h2,main section.sc-current>h2,main h2.sc-c
 <div class="hero" id="top"><canvas aria-hidden="true" class="fx-aurora"></canvas><div aria-hidden="true" class="sc-visual sc-digest"><div class="plate"></div><svg preserveaspectratio="xMidYMid meet" role="presentation" viewbox="0 0 700 460"><g class="lines"><path d="M0 345H700 M0 260H700 M0 175H700 M0 90H700"></path><path d="M40 300 C110 300 120 115 177 115 S227 360 280 340 S360 125 400 145 S430 270 470 257 S523 75 565 91 S610 300 680 255" stroke-width="4"></path></g><g class="nodes"><circle cx="177" cy="115" r="10"></circle><circle cx="280" cy="340" r="10"></circle><circle cx="400" cy="145" r="10"></circle><circle cx="565" cy="91" r="10"></circle></g><text class="mass" text-anchor="end" x="635" y="394">01</text></svg><span class="sc-visual-caption">SIGNAL / 01 / אותות מתוך הרעש</span></div><div class="wrap"><div class="eyebrow">BI · DATA · AI</div><h1>מה חדש, ומה באמת <span class="grad">שווה לנסות.</span></h1><p>דיג'סט BI, פינת DATA&amp;AI ועדכוני הגרסה החודשית של Power BI. כל דבר במקום שלו, בלי כותרות ריקות.</p><div class="pills"><span class="pill">דיג'סט BI</span><span class="pill">פינת DATA&amp;AI</span><span class="pill">Power BI Monthly</span></div></div></div>
 <div class="wrap intro"><div class="notice"><strong>מתעדכן מדי יום.</strong> מוצגות המהדורות שנשלחו החל מ-23 בספטמבר 2026, וסיכום הגרסה החודשית של Power BI כפי שפורסם על ידי Microsoft.</div></div>
 <main class="wrap" id="main">
-<section aria-labelledby="digest-title" id="digest"><div class="section-head"><div><div class="section-tag">01 / סקירה יומית</div><h2 id="digest-title">דיג'סט BI</h2><p>רעיונות מעשיים ל-Power BI, BI בארגון, סביבות מאובטחות ו-Claude. רק פריטים עם הסבר ודרך להתחיל.</p></div></div><div class="feature"><div class="feature-mark">המהדורה האחרונה · 3.10.2026</div><h3>Claude Code Routines: בדיקת PR אוטומטית שרצה בענן.</h3><p>Routine יכולה לפעול לפי אירוע GitHub גם כשהמחשב סגור. זהו Research Preview, והקוד פועל בזהות GitHub שלכם; בדקו התאמה למדיניות הארגון לפני שימוש בריפו פנימי.</p><a href="#latest-digest" onclick="document.getElementById('latest-digest').open=true">לקריאת הדיג'סט המלא <span aria-hidden="true">←</span></a></div><div class="archive"><details class="entry" id="latest-digest"><summary>☀️ דייג'סט BI ו-Claude, שבת 3.10 <span class="count">מקור: מהדורה שנשלחה ב-3.10</span></summary><div class="body"><p>☀️ דייג'סט BI ו-Claude | שבת, 3.10</p>
+<section aria-labelledby="digest-title" id="digest"><div class="section-head"><div><div class="section-tag">01 / סקירה יומית</div><h2 id="digest-title">דיג'סט BI</h2><p>רעיונות מעשיים ל-Power BI, BI בארגון, סביבות מאובטחות ו-Claude. רק פריטים עם הסבר ודרך להתחיל.</p></div></div><div class="feature"><div class="feature-mark">המהדורה האחרונה · 4.10.2026</div><h3>DirectoryAdded: לתעד כל תיקייה שנוספת ל-Claude Code.</h3><p>Hook חדש מאפשר לרשום ביומן הרחבת גישה לתיקיות בזמן סשן. זוהי נקודת בקרה, לא חסימת גישה; הדוגמה היומית נועדה לתיעוד בלבד.</p><a href="#latest-digest" onclick="document.getElementById('latest-digest').open=true">לקריאת הדיג'סט המלא <span aria-hidden="true">←</span></a></div><div class="archive"><details class="entry" id="latest-digest"><summary>☀️ דייג'סט BI ו-Claude, ראשון 4.10 <span class="count">מקור: מהדורה שנשלחה ב-4.10</span></summary><div class="body"><p>☀️ דייג'סט BI ו-Claude | ראשון, 4.10</p>
+<p>יום דל. בדקתי היסטוריית שליחות וחומר חדש. פריט אחד קטן שלא נשלח, ובצד Power BI לא היה כלום ברמה של הפינה.</p>
+<p>1️⃣ Claude Code: אירוע ה-hook בשם DirectoryAdded
+מה זה: hook שנורה כשמוסיפים תיקיית עבודה באמצע סשן, דרך /add-dir או דרך בקרת SDK בשם register_repo_root. ה-matcher שלו הוא דרך ההוספה: slash_command או register_repo_root.
+למה זה מעניין לצוות עם אבטחה קשוחה: זו נקודה שבה Claude מקבל גישה לתיקיות נוספות מעבר לפרויקט. אפשר לרשום ביומן כל הרחבת גישה או להריץ בדיקה בכל פעם שזה קורה. זה שונה מ-PreToolUse, שמסנן קריאות כלים, ומ-CwdChanged, שמגיב לשינוי תיקייה נוכחית.
+איך מתחילים: מוסיפים hook לאירוע הזה ב-.claude/settings.json (או ב-‎~/.claude/settings.json), שמקבל את הפרטים ב-stdin וכותב ליומן.
+בשלות: נוסף לפי ה-changelog הרשמי; התיעוד קצר. לא בדקתי את מבנה ה-JSON המדויק, ולכן הדוגמה שלי רושמת את כל ה-stdin כמו שהוא.
+מקורות:
+<a href="https://code.claude.com/docs/en/hooks" rel="noopener noreferrer" target="_blank">https://code.claude.com/docs/en/hooks</a>
+<a href="https://code.claude.com/docs/en/changelog" rel="noopener noreferrer" target="_blank">https://code.claude.com/docs/en/changelog</a></p>
+<p>מה דילגתי עליו ולמה:
+- המאמר של SQLBI על ממוצע יומי ב-DAX ו"Where we stand on AI and DAX" כבר נשלחו.
+- חומרי Power BI חדשים (PBIP GA, שרתי MCP, skills-for-fabric) הם הכרזות או תשתית, לא טכניקות בניית דוחות.
+- מאמר של mixed-news על גרסה 2.1.285 הוא מקור צד שלישי עם הגדרות מנהל (policy); לא הצלחתי לאמת אותו מול changelog רשמי, ולכן השמטתי.</p></div></details><details class="entry"><summary>☀️ דייג'סט BI ו-Claude, שבת 3.10 <span class="count">מקור: מהדורה שנשלחה ב-3.10</span></summary><div class="body"><p>☀️ דייג'סט BI ו-Claude | שבת, 3.10</p>
 <p>יום שקט. בדקתי היסטוריית שליחות וחומר חדש. רק פריט אחד עבר את הרף, ובצד Power BI לא מצאתי היום משהו ברמה של הפינה.</p>
 <p>1️⃣ Claude Code Routines - אוטומציה שרצה בענן בלי שהמחשב דלוק
 מה זה: routine היא הגדרה שמורה של פרומפט, ריפו אחד או יותר וקונקטורים. היא רצה על תשתית ענן של Anthropic לפי טריגר: לוח זמנים (שעתי, לילי, שבועי או חד-פעמי), קריאת HTTP POST ל-endpoint ייעודי עם טוקן, או אירוע ב-GitHub כמו פתיחת PR.
@@ -237,7 +250,30 @@ main section.sc-current>.section-head h2,main section.sc-current>h2,main h2.sc-c
 <p>במה זה שונה: Agent Teams ו-Background Agents הם כמה Sessions נפרדים. כאן מדובר בפיצול בתוך Session אחד.</p>
 <p><a href="https://code.claude.com/docs/en/changelog" rel="noopener noreferrer" target="_blank">https://code.claude.com/docs/en/changelog</a></p>
 <p><a href="https://code.claude.com/docs/en/sub-agents" rel="noopener noreferrer" target="_blank">https://code.claude.com/docs/en/sub-agents</a></p></div></details></div></section>
-<section aria-labelledby="corner-title" id="corner"><div class="section-head"><div><div class="section-tag">02 / פינה לשיתוף</div><h2 id="corner-title">🧠 פינת DATA&amp;AI</h2><p>טיפ אחד ל-Power BI וטיפ אחד ל-AI, עם פעולה שאפשר לנסות והפניה למקור.</p></div></div><div class="archive"><details class="entry"><summary>פינת DATA&amp;AI · 3.10</summary><div class="body"><p>🧠 פינת DATA&amp;AI (להדבקה בקבוצה, גרסה בטוחה)</p>
+<section aria-labelledby="corner-title" id="corner"><div class="section-head"><div><div class="section-tag">02 / פינה לשיתוף</div><h2 id="corner-title">🧠 פינת DATA&amp;AI</h2><p>טיפ אחד ל-Power BI וטיפ אחד ל-AI, עם פעולה שאפשר לנסות והפניה למקור.</p></div></div><div class="archive"><details class="entry"><summary>פינת DATA&amp;AI · 4.10</summary><div class="body"><p>🧠 פינת DATA&amp;AI (לשליחה רק אם תרצה; יש בה פריט אחד)</p>
+<p>💻 לוג אוטומטי כשמוסיפים תיקייה ל-Claude Code באמצע סשן
+1. פותחים את הקובץ .claude/settings.json בפרויקט.
+2. מוסיפים hook לאירוע DirectoryAdded:</p>
+<p>{
+  "hooks": {
+    "DirectoryAdded": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cat &gt;&gt; \"$HOME/claude-dir-added.log\""
+          }
+        ]
+      }
+    ]
+  }
+}</p>
+<p>3. בסשן כותבים /add-dir ואחריו נתיב של תיקייה.
+4. פותחים את הקובץ claude-dir-added.log ורואים מה Claude שלח.
+5. מכאן אפשר להוסיף סינון לפי נתיב או התראה.
+שימו לב: זה דוגמת התחלה, לא בקרת גישה. hook רושם ולא חוסם.
+לתיעוד:
+<a href="https://code.claude.com/docs/en/hooks" rel="noopener noreferrer" target="_blank">https://code.claude.com/docs/en/hooks</a></p></div></details><details class="entry"><summary>פינת DATA&amp;AI · 3.10</summary><div class="body"><p>🧠 פינת DATA&amp;AI (להדבקה בקבוצה, גרסה בטוחה)</p>
 <p>💻 Claude Code בענן: ביקורת PR אוטומטית עם Routines
 1. נכנסים ל-claude.ai/code/routines ולוחצים New routine (או מריצים /schedule ב-CLI).
 2. כותבים פרומפט עצמאי וברור, למשל:</p>
@@ -557,7 +593,7 @@ DIVIDE (
 <p>Anthropic השיקו אתמול את Claude Opus 5.5, המודל המוביל החדש שלהם: חזק משמעותית מ-Opus 5, זול בכ-40% בשימוש רגיל ומהיר ביותר מ-30%. הוא גם ברירת המחדל החדשה ב-Claude Code (דורש גרסה 2.1.280), ומכסות השימוש במנויי Pro, Max ו-Team עלו.</p>
 <p>🔗 <a href="https://www.anthropic.com/claude-opus-5-5" rel="noopener noreferrer" target="_blank">https://www.anthropic.com/claude-opus-5-5</a></p></div></details></div></section>
 <section aria-labelledby="monthly-title" id="monthly"><div class="section-head"><div><div class="section-tag">03 / גרסה חודשית</div><h2 id="monthly-title">חדש ב-Power BI</h2><p>סיכום נפרד למה שמיקרוסופט מפרסמת בגרסה החודשית, עם הבדל ברור בין הכרזה לזמינות בפועל.</p></div></div><div class="grid"><article class="card empty"><span class="category">גרסת ספטמבר 2026 · סיכום פיצ’רים רשמי של Microsoft Fabric Community</span><h3>חישובים חזותיים זמינים גם ב-Small multiples</h3><p>Visual calculations for small multiples הגיעו ל-General Availability בסיכום הרשמי של ספטמבר 2026. אפשר לחשב ממוצע נע או להשוות מגמות בין קטגוריות בלי להוסיף measures למודל הסמנטי. שדה Small multiples מיוצג במטריצת הוויזואל כציר ROWPAGES; אפשר לבחור אותו לבדו או לשלב עם ROWS ו-COLUMNS כדי לקבוע לאורך איזה כיוון החישוב נע.</p><p>פער בתיעוד: סיכום הפיצ’רים הרשמי של ספטמבר מציג את היכולת כ-GA, אבל דף Microsoft Learn הכללי של Visual Calculations עדיין מציין Small multiples כלא נתמך. לצורך סטטוס הגרסה הסתמכנו על סיכום ספטמבר; יש לבדוק את גרסת Desktop הארגונית לפני שימוש.</p><p><a href="https://community.fabric.microsoft.com/blog/fbc_pbiupdatesblog/power-bi-september-2026-feature-summary/5325831" rel="noopener noreferrer" target="_blank">סיכום Power BI ספטמבר 2026 ב-Microsoft Fabric Community</a></p><p><a href="https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-visual-calculations-overview" rel="noopener noreferrer" target="_blank">סקירת Visual Calculations ב-Microsoft Learn (עדיין מציינת Small multiples כלא נתמך)</a></p></article><article class="card monthly-archive"><span class="category">בארכיון · גרסת אוגוסט 2026 · אומת מול Microsoft Learn</span><h3>מה מיקרוסופט שילחה בגרסת אוגוסט 2026</h3><p>Modern Visual Defaults וחלונית ה-Theme יצאו ל-General Availability: דוחות חדשים נפתחים עם ערכת Fluent 2, וה-Theme pane מרכז ערכת בסיס, פלטות צבע וסגנונות טקסט ב-Desktop וב-web. כדאי לבדוק איך דוחות קיימים נראים אחרי המעבר לערכת הבסיס החדשה.</p><p>עוד בגרסה: Date picker בסלייסר (GA) עם בחירת תאריך יחיד, ערך מרכזי בתרשים Donut (GA), הרחבה וכיווץ של כותרות עמודות במטריצה (GA), קיבוע כותרות שורות כברירת מחדל בחלונית העיצוב, ושימוש בקובצי תמונה מ-OneLake כמקור תמונה בוויזואלים (GA) עם אימות בשם הצופה. ברמת השירות: צרכני Fabric App יצטרכו רק הרשאת Read על המודל הסמנטי במקום Build.</p><p><a href="https://learn.microsoft.com/en-us/power-bi/fundamentals/whats-new" rel="noopener noreferrer" target="_blank">https://learn.microsoft.com/en-us/power-bi/fundamentals/whats-new</a></p></article></div></section>
-</main><footer><div class="wrap"><span>DATA&amp;AI / BI · ידע שימושי, עם מקורות</span><span>ארכיון 23-3.10.2026 · מתעדכן מדי יום</span></div><div class="wrap fx-credits">מקורות השראה לעיצוב: <a href="https://github.com/MengTo/ThreeUI" rel="noopener">ThreeUI</a> · <a href="https://uiverse.io" rel="noopener">Uiverse</a> · <a href="https://www.hyperui.dev" rel="noopener">HyperUI</a> · רעיון הספוט-לייט מ-<a href="https://21st.dev" rel="noopener">21st.dev</a></div></footer>
+</main><footer><div class="wrap"><span>DATA&amp;AI / BI · ידע שימושי, עם מקורות</span><span>ארכיון 23-4.10.2026 · מתעדכן מדי יום</span></div><div class="wrap fx-credits">מקורות השראה לעיצוב: <a href="https://github.com/MengTo/ThreeUI" rel="noopener">ThreeUI</a> · <a href="https://uiverse.io" rel="noopener">Uiverse</a> · <a href="https://www.hyperui.dev" rel="noopener">HyperUI</a> · רעיון הספוט-לייט מ-<a href="https://21st.dev" rel="noopener">21st.dev</a></div></footer>
 <script id="scroll-craft-interactions">
 /* Original, progressively-enhanced reading timeline; no content is hidden if scripts fail. */
 (()=>{const root=document.documentElement,main=document.querySelector('main'),hero=document.querySelector('.hero');if(!main)return;
