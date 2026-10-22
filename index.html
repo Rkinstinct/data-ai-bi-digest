@@ -11,42 +11,933 @@
 <meta content="דיג'סט BI, פינת DATA&amp;AI ועדכוני Power BI חודשיים במקום אחד." name="description"/>
 <title>DATA&amp;AI | דיג'סט BI</title>
 <style>
-:root{--bg:#030304;--surface:#0F1115;--ink:#FFFFFF;--muted:#94A3B8;--line:#1E293B;--accent:#F7931A;--accent-2:#EA580C;--gold:#FFD600;--paper:#0F1115;--accent-ink:#F7931A;--navy:#c98a2e;--blue:#F7931A;font-family:'Inter','Heebo',system-ui,Arial,sans-serif;color:var(--ink)}*{box-sizing:border-box}html{scroll-behavior:smooth;overflow-x:hidden}body{margin:0;overflow-x:hidden;background:var(--bg);line-height:1.75}body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse 55% 45% at 12% -5%,rgba(247,147,26,.10),transparent 62%),radial-gradient(ellipse 45% 38% at 92% 8%,rgba(255,214,0,.06),transparent 60%),linear-gradient(to right,rgba(30,41,59,.5) 1px,transparent 1px),linear-gradient(to bottom,rgba(30,41,59,.5) 1px,transparent 1px);background-size:auto,auto,50px 50px,50px 50px;-webkit-mask-image:radial-gradient(circle at 50% 15%,black 25%,transparent 92%);mask-image:radial-gradient(circle at 50% 15%,black 25%,transparent 92%)}h1,h2,h3,.brand{font-family:'Space Grotesk','Heebo',system-ui,sans-serif}.grad{background:linear-gradient(to left,var(--accent),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}a{color:var(--accent)}a:hover{color:var(--gold)}a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px}.wrap{width:calc(100% - 32px);max-width:1120px;margin-inline:auto;min-width:0}.skip{position:absolute;top:-120px;right:10px;background:var(--surface);color:#fff;border:1px solid var(--accent);padding:10px;z-index:20}.skip:focus{top:10px;z-index:20}.top{position:sticky;top:0;z-index:5;background:rgba(3,3,4,.72);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.08)}.top .wrap{display:flex;align-items:center;justify-content:space-between;min-height:72px;gap:20px}.brand{font-weight:700;font-size:1.08rem;letter-spacing:-.01em;color:var(--ink);text-decoration:none;white-space:nowrap}.brand span{color:var(--accent)}nav{display:flex;align-items:center;gap:6px;overflow:auto;scrollbar-width:none}nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;text-decoration:none;color:var(--muted);font-size:.8rem;font-weight:500;white-space:nowrap;border-radius:40px;border:1px solid transparent;font-family:'JetBrains Mono','Heebo',monospace;letter-spacing:.03em;transition:all .2s}nav a:hover{background:rgba(255,255,255,.06);color:var(--accent);border-color:rgba(247,147,26,.35)}.hero{background:transparent;border-bottom:1px solid rgba(255,255,255,.06);padding:88px 0 78px;position:relative;overflow:hidden}.hero:before{content:"";position:absolute;width:420px;height:420px;border:1px solid rgba(247,147,26,.35);border-radius:50%;left:-140px;top:-170px;box-shadow:0 0 0 60px rgba(247,147,26,.04),0 0 0 125px rgba(255,214,0,.03),0 0 80px rgba(247,147,26,.15);pointer-events:none;animation:orbit 40s linear infinite}.hero:after{content:"";position:absolute;width:420px;height:420px;border:1px dashed rgba(255,214,0,.28);border-radius:50%;left:-140px;top:-170px;pointer-events:none;animation:orbit 26s linear infinite reverse}@keyframes orbit{to{transform:rotate(360deg)}}@media(prefers-reduced-motion:reduce){.hero:before,.hero:after{animation:none}}.hero .wrap{position:relative;z-in<!DOCTYPE html>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+:root{--bg:#030304;--surface:#0F1115;--ink:#FFFFFF;--muted:#94A3B8;--line:#1E293B;--accent:#F7931A;--accent-2:#EA580C;--gold:#FFD600;--paper:#0F1115;--accent-ink:#F7931A;--navy:#c98a2e;--blue:#F7931A;font-family:'Inter','Heebo',system-ui,Arial,sans-serif;color:var(--ink)}*{box-sizing:border-box}html{scroll-behavior:smooth;overflow-x:hidden}body{margin:0;overflow-x:hidden;background:var(--bg);line-height:1.75}body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse 55% 45% at 12% -5%,rgba(247,147,26,.10),transparent 62%),radial-gradient(ellipse 45% 38% at 92% 8%,rgba(255,214,0,.06),transparent 60%),linear-gradient(to right,rgba(30,41,59,.5) 1px,transparent 1px),linear-gradient(to bottom,rgba(30,41,59,.5) 1px,transparent 1px);background-size:auto,auto,50px 50px,50px 50px;-webkit-mask-image:radial-gradient(circle at 50% 15%,black 25%,transparent 92%);mask-image:radial-gradient(circle at 50% 15%,black 25%,transparent 92%)}h1,h2,h3,.brand{font-family:'Space Grotesk','Heebo',system-ui,sans-serif}.grad{background:linear-gradient(to left,var(--accent),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}a{color:var(--accent)}a:hover{color:var(--gold)}a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px}.wrap{width:calc(100% - 32px);max-width:1120px;margin-inline:auto;min-width:0}.skip{position:absolute;top:-120px;right:10px;background:var(--surface);color:#fff;border:1px solid var(--accent);padding:10px;z-index:20}.skip:focus{top:10px;z-index:20}.top{position:sticky;top:0;z-index:5;background:rgba(3,3,4,.72);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.08)}.top .wrap{display:flex;align-items:center;justify-content:space-between;min-height:72px;gap:20px}.brand{font-weight:700;font-size:1.08rem;letter-spacing:-.01em;color:var(--ink);text-decoration:none;white-space:nowrap}.brand span{color:var(--accent)}nav{display:flex;align-items:center;gap:6px;overflow:auto;scrollbar-width:none}nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;text-decoration:none;color:var(--muted);font-size:.8rem;font-weight:500;white-space:nowrap;border-radius:40px;border:1px solid transparent;font-family:'JetBrains Mono','Heebo',monospace;letter-spacing:.03em;transition:all .2s}nav a:hover{background:rgba(255,255,255,.06);color:var(--accent);border-color:rgba(247,147,26,.35)}.hero{background:transparent;border-bottom:1px solid rgba(255,255,255,.06);padding:88px 0 78px;position:relative;overflow:hidden}.hero:before{content:"";position:absolute;width:420px;height:420px;border:1px solid rgba(247,147,26,.35);border-radius:50%;left:-140px;top:-170px;box-shadow:0 0 0 60px rgba(247,147,26,.04),0 0 0 125px rgba(255,214,0,.03),0 0 80px rgba(247,147,26,.15);pointer-events:none;animation:orbit 40s linear infinite}.hero:after{content:"";position:absolute;width:420px;height:420px;border:1px dashed rgba(255,214,0,.28);border-radius:50%;left:-140px;top:-170px;pointer-events:none;animation:orbit 26s linear infinite reverse}@keyframes orbit{to{transform:rotate(360deg)}}@media(prefers-reduced-motion:reduce){.hero:before,.hero:after{animation:none}}.hero .wrap{position:relative;z-index:1}.eyebrow,.section-tag,.category{font-size:.75rem;font-weight:500;letter-spacing:.14em;color:var(--accent);font-family:'JetBrains Mono','Heebo',monospace}.hero h1{font-size:clamp(2.5rem,6.5vw,5.2rem);font-weight:700;line-height:1.1;letter-spacing:-.02em;margin:18px 0 22px;max-width:840px;color:#fff}.hero p{font-size:clamp(1.08rem,2vw,1.36rem);line-height:1.65;max-width:660px;color:var(--muted);margin:0 0 28px}.pills{display:flex;gap:9px;flex-wrap:wrap}.pill{border-radius:100px;padding:6px 13px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);font-size:.78rem;color:var(--gold);font-weight:500;font-family:'JetBrains Mono','Heebo',monospace;letter-spacing:.04em}.intro{padding-top:38px}.notice{background:rgba(255,214,0,.05);border:1px solid rgba(255,214,0,.22);border-radius:12px;padding:16px 20px;color:var(--muted);font-size:.91rem}.notice strong{color:var(--gold)}main section{padding:88px 0;border-bottom:1px solid rgba(255,255,255,.06);scroll-margin-top:82px}.section-head{display:block;margin-bottom:32px}.section-head h2{font-size:clamp(2rem,4vw,3.2rem);line-height:1.12;letter-spacing:-.02em;margin:9px 0 14px;color:#fff}.section-head p{max-width:680px;color:var(--muted);font-size:1.05rem;margin:0}.archive{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:start}.entry{min-width:0;background:var(--surface);border:1px solid rgba(255,255,255,.08);border-radius:16px;overflow:hidden;box-shadow:0 0 50px -10px rgba(247,147,26,.08);transition:transform .3s,border-color .3s,box-shadow .3s}.entry:hover{transform:translateY(-2px);border-color:rgba(247,147,26,.5);box-shadow:0 0 30px -5px rgba(247,147,26,.35)}.entry:first-child{grid-column:1/-1;border-top:3px solid var(--accent)}.entry summary{list-style:none;cursor:pointer;padding:25px 27px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;font-weight:600;line-height:1.4;font-size:1.22rem;min-height:100px;overflow-wrap:anywhere;color:#fff}.entry summary::-webkit-details-marker{display:none}.entry summary:after{content:"+";order:5;margin-inline-start:auto;border-radius:50%;border:1px solid rgba(247,147,26,.45);width:32px;height:32px;text-align:center;line-height:27px;font-size:1.3rem;color:var(--accent);flex:none;transition:all .2s}.entry summary:hover:after{box-shadow:0 0 14px -2px rgba(247,147,26,.6)}.entry[open] summary:after{content:"−"}.entry[open] summary{border-bottom:1px solid rgba(255,255,255,.08)}.entry .count{font-size:.72rem;color:var(--muted);font-weight:400;display:block;flex-basis:100%;order:4;font-family:'JetBrains Mono','Heebo',monospace}.entry .body{padding:24px 27px 30px;min-width:0;overflow-wrap:anywhere;max-width:100%}.entry .body p{margin:0 0 16px;font-size:.98rem;line-height:1.9;white-space:pre-wrap;color:#CBD5E1}.entry .body a{overflow-wrap:anywhere;text-decoration-thickness:1px;text-underline-offset:3px}.entry pre{display:block;max-width:100%;overflow-x:auto;background:#07080C;color:#E8EDF5;border:1px solid rgba(247,147,26,.22);padding:18px;border-radius:10px;font-size:.82rem;line-height:1.7;white-space:pre;direction:ltr;text-align:left;font-family:'JetBrains Mono',Consolas,monospace}.card{background:var(--surface);border-radius:16px;padding:30px;border:1px solid rgba(255,255,255,.08)}.empty{max-width:760px}.empty h3{font-size:1.4rem;margin:9px 0;color:#fff}.empty p{color:var(--muted);margin:0}footer{background:#060709;color:var(--muted);border-top:1px solid rgba(255,255,255,.06);padding:48px 0;font-size:.82rem}footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}@media(max-width:700px){.top .wrap{display:block;padding-top:11px}.brand{display:block;margin-bottom:4px}nav{margin-inline:-8px;gap:0}nav a{font-size:.72rem;padding:0 11px}.hero{padding:57px 0 52px}.hero:before,.hero:after{width:220px;height:220px;left:-125px;top:-75px;box-shadow:0 0 0 40px rgba(247,147,26,.05),0 0 60px rgba(247,147,26,.12)}.hero h1{font-size:clamp(2.32rem,11vw,3.6rem)}.hero p{font-size:1.04rem}.intro{padding-top:24px}main section{padding:62px 0;scroll-margin-top:120px}.archive{grid-template-columns:minmax(0,1fr);gap:12px}.entry:first-child{grid-column:auto}.entry summary{font-size:1.08rem;padding:20px;min-height:88px}.entry .body{padding:20px}.entry pre{font-size:.76rem}.section-head{margin-bottom:23px}}
+</style><style>
+.feature{position:relative;padding:36px 42px;margin-bottom:24px;border-radius:18px;background:linear-gradient(160deg,#171208 0%,#0F1115 55%);border:1px solid rgba(247,147,26,.35);color:#fff;overflow:hidden;box-shadow:0 0 50px -10px rgba(247,147,26,.22)}.feature:after{content:"27";position:absolute;left:22px;top:-80px;font:700 13rem/1 'Space Grotesk',sans-serif;color:rgba(247,147,26,.08);pointer-events:none}.feature>*{position:relative;z-index:1}.feature-mark{font-size:.72rem;font-weight:500;letter-spacing:.12em;color:var(--gold);font-family:'JetBrains Mono','Heebo',monospace}.feature h3{font-size:clamp(1.65rem,3vw,2.5rem);font-family:'Space Grotesk','Heebo',sans-serif;line-height:1.2;letter-spacing:-.01em;margin:11px 0}.feature p{font-size:1rem;max-width:640px;color:#C9D1DC;line-height:1.8;margin:0 0 22px}.feature a{display:inline-flex;align-items:center;gap:12px;background:linear-gradient(to left,var(--accent-2),var(--accent));color:#fff;text-decoration:none;font-weight:700;border-radius:999px;padding:12px 22px;min-height:48px;box-shadow:0 0 20px -5px rgba(234,88,12,.5);transition:all .3s}.feature a:hover{transform:scale(1.04);box-shadow:0 0 30px -5px rgba(247,147,26,.65);color:#fff}@media(max-width:700px){.feature{padding:28px 24px}.feature:after{font-size:9rem;top:-35px;left:-5px}}
+</style><style>
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
-<html dir="rtl" lang="he">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
-<head>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
-<meta charset="utf-8"/>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Heebo:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
-<meta content="#030304" name="theme-color"/>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
-<meta content="דיג'סט BI, פינת DATA&amp;AI ועדכוני Power BI חודשיים במקום אחד." name="description"/>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
-<title>DATA&amp;AI | דיג'סט BI</title>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
-<style>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
-:root{--bg:#030304;--surface:#0F1115;--ink:#FFFFFF;--muted:#94A3B8;--line:#1E293B;--accent:#F7931A;--accent-2:#EA580C;--gold:#FFD600;--paper:#0F1115;--accent-ink:#F7931A;--nne:2px solid var(--accent);outline-offset:3px}.wrap{width:calc(100% - 32px);max-width:1120px;margin-inline:auto;min-width:0}.skip{position:absolute;top:-120px;right:10px;background:var(--surface);color:#fff;border:1px solid var(--accent);padding:10px;z-index:20}.skip:focus{top:10px;z-index:20}.top{position:sticky;top:0;z-index:5;background:rgba(3,3,4,.72);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.08)}.top .wrap{display:flex;align-items:center;justify-content:space-between;min-height:72px;gap:20px}.brand{font-weight:700;font-size:1.08rem;letter-spacing:-.01em;color:var(--ink);text-decoration:none;white-space:nowrap}.brand span{color:var(--accent)}nav{display:flex;align-items:center;gap:6px;overflow:auto;scrollbar-width:none}nav a{display:inline-flex;align-items:cent
+/* UI craft pass informed by ibelick/ui-skills (MIT), https://github.com/ibelick/ui-skills
+   Copyright (c) 2026 Julien Thibeaut. License: https://github.com/ibelick/ui-skills/blob/main/LICENSE
+   Original CSS implementation for the DATA&AI Bitcoin DeFi design system. */
+:root{color-scheme:dark;--craft-ease:cubic-bezier(.2,.8,.2,1);--craft-ring:0 0 0 3px rgba(247,147,26,.24)}
+html{scroll-padding-top:112px}body{min-width:0}main,section,article,.wrap{min-width:0}
+:where(a,button,summary,input,select):focus-visible{outline:2px solid #FFD600!important;outline-offset:4px;box-shadow:var(--craft-ring)}
+:where(button,a,summary){-webkit-tap-highlight-color:rgba(247,147,26,.22)}
+:where(h1,h2,h3){text-wrap:balance}p,li{overflow-wrap:break-word;text-wrap:pretty}
+:where(code,pre){font-variant-ligatures:none}pre{max-width:100%;overflow-x:auto;overscroll-behavior-inline:contain;scrollbar-color:#F7931A #15171b}code{overflow-wrap:anywhere}pre code{overflow-wrap:normal}
+:where(.pill,.eyebrow,.section-tag,.tag,.badge,.count){font-variant-numeric:tabular-nums}
+:where(.top nav a,nav a,.btn,.go){transition:color .18s ease,background-color .18s ease,transform .25s var(--craft-ease),box-shadow .25s ease}
+:where(.top nav a,nav a):hover{transform:translateY(-2px)}
+:where(.card,.site,.fcard,.feature,.notice,.callout,blockquote,.verdict){background-image:linear-gradient(135deg,rgba(255,255,255,.035),transparent 45%);border-color:rgba(247,147,26,.18);box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 16px 38px -30px rgba(247,147,26,.32)}
+@media(hover:hover){:where(.card,.site,.fcard):hover{transform:translateY(-4px);border-color:rgba(247,147,26,.57);box-shadow:inset 0 1px 0 rgba(255,255,255,.11),0 20px 45px -22px rgba(247,147,26,.28)}}
+:where(.card,.site,.fcard){transition:transform .28s var(--craft-ease),border-color .25s ease,box-shadow .28s ease}
+:where(.card,.site,.fcard):focus-within{border-color:#FFD600}
+:where(.hero h1){text-shadow:0 12px 55px rgba(247,147,26,.19)}
+:where(.hero .eyebrow){display:inline-flex;align-items:center;gap:10px}
+:where(.hero .eyebrow)::before{content:'';display:inline-block;width:26px;height:1px;background:linear-gradient(90deg,#F7931A,#FFD600);box-shadow:0 0 12px #F7931A}
+:where(.section-tag){display:inline-block;padding-block:3px;border-bottom:1px solid rgba(247,147,26,.35)}
+:where(.pill){box-shadow:inset 0 1px 0 rgba(255,255,255,.12)}
+@media(max-width:700px){:where(.hero){padding-block:48px 42px}:where(.wrap){max-width:100%}:where(.top nav,nav){overscroll-behavior-inline:contain;scroll-snap-type:x proximity}:where(.top nav a,nav a){scroll-snap-align:start}:where(.card,.site,.fcard){transform:none!important}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+
+/* Keep the updater's sections, classes and entries intact. */
+.feature{background:radial-gradient(circle at 10% 0%,rgba(255,214,0,.13),transparent 43%),linear-gradient(145deg,#21190d,#0F1115 60%);border-color:rgba(247,147,26,.45)}
+.entry{border:1px solid rgba(255,255,255,.12);border-radius:16px;overflow:hidden;background:#111317;margin-block:10px;box-shadow:inset 0 1px 0 rgba(255,255,255,.06);transition:border-color .2s ease,background-color .2s ease}
+.entry:hover,.entry[open]{border-color:rgba(247,147,26,.46);background:#171511}.entry[open]{box-shadow:inset 3px 0 0 #F7931A,0 16px 30px -27px #F7931A}
+.entry summary{cursor:pointer;min-height:56px;padding:16px 18px;list-style:none;display:flex;align-items:center;gap:12px;line-height:1.5;font-weight:650}
+.entry summary::-webkit-details-marker{display:none}.entry summary::before{content:'+';flex:none;display:grid;place-items:center;width:28px;height:28px;border-radius:8px;background:rgba(247,147,26,.13);color:#FFD600;font:700 20px/1 'JetBrains Mono',monospace;transition:transform .22s ease}
+.entry[open] summary::before{content:'−';transform:rotate(180deg)}.entry .body{padding:4px 20px 22px;border-top:1px solid rgba(255,255,255,.09)}
+.entry .count{margin-inline-start:auto;font-size:.73rem;color:#d6b375;font-weight:500}.body a{overflow-wrap:anywhere;text-underline-offset:3px}
+@media(max-width:700px){.entry summary{flex-wrap:wrap;padding:14px;gap:8px}.entry .count{width:100%;margin-inline-start:36px}.entry .body{padding:2px 15px 18px}.feature{padding:24px!important}}
+</style>
+<style id="scroll-craft-layer">
+/* Scroll-driven design informed by Nate Herk's scroll-craft (MIT), https://github.com/nateherkai/scroll-craft ; original implementation for Rkinstinct. */
+:root{--sc-progress:0;--sc-hero-p:0;--sc-chapter:0}
+html{scroll-padding-top:94px}
+body{overflow-x:clip}
+.sc-track{position:fixed;z-index:1001;top:0;inset-inline:0;height:3px;background:rgba(255,255,255,.12);pointer-events:none}
+.sc-track>span{display:block;width:100%;height:100%;background:linear-gradient(90deg,#EA580C,#F7931A,#FFD600);transform:scaleX(var(--sc-progress));transform-origin:right center;box-shadow:0 0 18px rgba(247,147,26,.7)}
+.sc-waypoint{position:fixed;z-index:90;bottom:calc(16px + env(safe-area-inset-bottom));inset-inline-start:16px;max-width:min(245px,calc(100vw - 32px));display:flex;gap:10px;align-items:center;border:1px solid rgba(247,147,26,.3);border-radius:999px;padding:8px 12px;background:rgba(15,17,21,.92);backdrop-filter:blur(16px);color:#f4e7d4;box-shadow:0 12px 30px rgba(0,0,0,.4);font:500 11px/1.35 'JetBrains Mono','Inter',sans-serif;direction:rtl;pointer-events:none}
+.sc-waypoint b{flex:none;min-width:2.6em;color:#FFD600;font-variant-numeric:tabular-nums}.sc-waypoint span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.hero{position:relative;isolation:isolate;overflow:hidden}
+.hero::after{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(circle at 22% 55%,rgba(247,147,26,.14),transparent 36%);opacity:calc(.7 - var(--sc-hero-p)*.45)}
+.hero>.wrap{position:relative;z-index:2}
+.sc-visual{position:absolute;z-index:0;inset-inline-end:0;top:5%;width:min(42%,420px);height:90%;pointer-events:none;opacity:.53;filter:drop-shadow(0 0 22px rgba(247,147,26,.17));transform:translateY(calc(var(--sc-hero-p)*20px));transition:opacity .2s ease-out}
+.sc-visual svg{width:100%;height:100%;overflow:visible}.sc-visual-path{fill:none;stroke:#F7931A;stroke-width:.55;stroke-dasharray:3 2;stroke-dashoffset:calc((1 - var(--sc-hero-p))*18)}
+.sc-dot{fill:#FFD600;stroke:#F7931A;stroke-width:.8;filter:drop-shadow(0 0 4px #F7931A)}
+.sc-dot-2{fill:#fff}.sc-visual-caption{position:absolute;inset-inline-end:2%;bottom:13%;max-width:80%;color:#FFD600;background:#0F1115d9;padding:5px 9px;border:1px solid rgba(247,147,26,.35);border-radius:999px;font:500 10px 'JetBrains Mono','Inter',sans-serif}
+.sc-hub .sc-dot{r:2.6}.sc-digest .sc-visual-path{stroke-dasharray:none;stroke-width:1.2}.sc-graph .sc-visual-path{stroke:#FFD600}.sc-brain .sc-visual-path{stroke-dasharray:2 2}.sc-files .sc-visual-path{stroke-width:1.2}.sc-pbi .sc-dot{fill:#F7931A}.sc-cloud .sc-visual-path{stroke-dasharray:1 2}
+main :is(section,h2[id],h3[id]){scroll-margin-top:96px}
+.sc-current{--sc-edge:rgba(247,147,26,.85)}
+main section.sc-current>.section-head h2,main section.sc-current>h2,main h2.sc-current{border-inline-start:3px solid var(--sc-edge);padding-inline-start:12px;transition:border-color .2s ease-out,padding .2s ease-out}
+@media(hover:hover) and (pointer:fine){.sc-current .site:hover,.sc-current .card:hover{box-shadow:0 16px 45px rgba(247,147,26,.18)}}
+@media(max-width:700px){.sc-visual{width:64%;height:56%;top:3%;opacity:.28}.sc-visual-caption{display:none}.sc-waypoint{bottom:calc(12px + env(safe-area-inset-bottom));inset-inline-start:12px;padding:6px 10px;font-size:10px}.hero h1{position:relative;z-index:2}}
+@media(prefers-reduced-motion:reduce){.sc-visual{transform:none!important}.sc-visual-path{stroke-dashoffset:0!important}.hero::after{opacity:.55!important}.sc-track>span{transition:none!important}}
+</style>
+<style id="editorial-inner">
+  /* Digest as a daily signal desk, not a brochure card collection */
+  .feature{position:relative;border-radius:4px 32px 32px 4px;border-right:5px solid var(--plate-a);padding:clamp(30px,5vw,62px);background:radial-gradient(circle at 10% 0%,#c6ff5625,transparent 46%),#111b1b;box-shadow:0 25px 85px #0008}
+  .feature h3{font-size:clamp(2.2rem,5vw,4rem);letter-spacing:-.055em;line-height:1.17;max-width:19ch}
+  .feature-mark{color:var(--plate-a)}.entry{border-radius:8px 22px 22px 8px;border-right:3px solid #c6ff5660}.entry[open]{background:#17221e;border-color:var(--plate-a)}
+  .entry summary{font-size:1.1rem}.notice{border-radius:12px;border-right:4px solid var(--plate-a);background:#18241d}
+  </style>
+<style id="desktop-separation">@media(min-width:701px){.hero .sc-visual{inset-inline-end:auto!important;inset-inline-start:auto!important;left:0!important;right:auto!important;width:min(48%,730px)!important;opacity:.75!important}.hero>.wrap{margin-right:auto;margin-left:auto}.hero h1{max-width:55%!important;font-size:clamp(3.3rem,5.3vw,5.8rem)!important}.hero p,.hero p.lede{max-width:50%!important}.hero .pills{max-width:53%!important}}@media(min-width:701px) and (max-width:1050px){.hero h1{font-size:clamp(3.2rem,6vw,5rem)}}@media(max-width:700px){.hero .sc-visual{left:14%!important;right:auto!important;width:90%!important;opacity:1!important}.hero h1,.hero p,.hero p.lede,.hero .pills{max-width:100%!important}}</style></head>
+<body style="--plate-a:#c6ff56;--plate-b:#43c8b8">
+<a class="skip" href="#main">לתוכן</a>
+<header class="top"><div class="wrap"><a class="brand" href="#top">DATA<span>&amp;</span>AI / BI</a><nav aria-label="ניווט ראשי"><a href="#digest">דיג'סט BI</a><a href="#corner">פינת DATA&amp;AI</a><a href="#monthly">חדש ב-Power BI</a></nav></div></header>
+<div class="hero" id="top"><canvas aria-hidden="true" class="fx-aurora"></canvas><div aria-hidden="true" class="sc-visual sc-digest"><div class="plate"></div><svg preserveaspectratio="xMidYMid meet" role="presentation" viewbox="0 0 700 460"><g class="lines"><path d="M0 345H700 M0 260H700 M0 175H700 M0 90H700"></path><path d="M40 300 C110 300 120 115 177 115 S227 360 280 340 S360 125 400 145 S430 270 470 257 S523 75 565 91 S610 300 680 255" stroke-width="4"></path></g><g class="nodes"><circle cx="177" cy="115" r="10"></circle><circle cx="280" cy="340" r="10"></circle><circle cx="400" cy="145" r="10"></circle><circle cx="565" cy="91" r="10"></circle></g><text class="mass" text-anchor="end" x="635" y="394">01</text></svg><span class="sc-visual-caption">SIGNAL / 01 / אותות מתוך הרעש</span></div><div class="wrap"><div class="eyebrow">BI · DATA · AI</div><h1>מה חדש, ומה באמת <span class="grad">שווה לנסות.</span></h1><p>דיג'סט BI, פינת DATA&amp;AI ועדכוני הגרסה החודשית של Power BI. כל דבר במקום שלו, בלי כותרות ריקות.</p><div class="pills"><span class="pill">דיג'סט BI</span><span class="pill">פינת DATA&amp;AI</span><span class="pill">Power BI Monthly</span></div></div></div>
+<div class="wrap intro"><div class="notice"><strong>מתעדכן מדי יום.</strong> מוצגות המהדורות שנשלחו החל מ-23 בספטמבר 2026, וסיכום הגרסה החודשית של Power BI כפי שפורסם על ידי Microsoft.</div></div>
+<main class="wrap" id="main">
+<section aria-labelledby="digest-title" id="digest"><div class="section-head"><div><div class="section-tag">01 / סקירה יומית</div><h2 id="digest-title">דיג'סט BI</h2><p>רעיונות מעשיים ל-Power BI, BI בארגון, סביבות מאובטחות ו-Claude. רק פריטים עם הסבר ודרך להתחיל.</p></div></div><div class="feature"><div class="feature-mark">המהדורה האחרונה · 22.10.2026</div><h3>Claude Code מוסיפה אירוע OTel על התערבות מנגנוני בטיחות.</h3><p>בגרסה 2.1.307, אירוע claude_code.safety_event מתעד מקרים שבהם הרשאות, hooks, sandbox או בדיקות בטיחות עצרו פעולה או דרשו אישור.</p><a href="#latest-digest" onclick="document.getElementById('latest-digest').open=true">לקריאת הדיג'סט המלא <span aria-hidden="true">←</span></a></div><div class="archive"><details class="entry" id="latest-digest"><summary>☀️ דייג'סט BI ו-Claude, חמישי 22.10 <span class="count">עדכון יומי · 22.10.2026</span></summary><div class="body"><p>☀️ BI ו-Claude | חמישי, 22.10</p>
+<p>1. Claude Code 2.1.307: אירוע OTel חדש למקרי התערבות של מנגנוני בטיחות</p>
+<p>נוסף אירוע OpenTelemetry בשם <code>claude_code.safety_event</code> לכל קריאת כלי שבה כלל הרשאה, מצב auto, בדיקת בטיחות, hook או sandbox עצרו פעולה, הציגו בקשת אישור או החזירו אותה למודל. זה יכול לעזור לצוותי אבטחה לחקור מתי מנגנוני ההגנה נכנסו לפעולה.</p>
+<p>הערך הארגוני תלוי בהגדרת OpenTelemetry ובאיסוף האירועים אצלכם; האירוע כשלעצמו אינו מערכת התרעות או דו"ח ביקורת מלא. המקור מפרט את הוספת האירוע ביומן השינויים, ואינו מציג ניתוח מעשי כאן.</p>
+<p><a href="https://code.claude.com/docs/en/changelog" rel="noopener noreferrer" target="_blank">יומן השינויים הרשמי של Claude Code</a></p>
+<p>גם 2.1.308 (22.10) פורסמה היום עם תיקוני באגים ושיפורי אמינות בלבד, ולכן לא נכללת כפריט נפרד.</p></div></details><details class="entry" id="digest-20261021"><summary>☀️ דייג'סט BI ו-Claude, רביעי 21.10 <span class="count">עדכון יומי · 21.10.2026</span></summary><div class="body"><p>☀️ BI ו-Claude | רביעי, 21.10</p>
+<p>1. כתיבת Skills לסוכני AI: ידע עסקי ארוז לשימוש חוזר</p>
+<p>פוסט חדש של Tabular Editor מסביר Skill כתיקייה עם קובץ SKILL.md, ואפשרות לקובצי עזר או סקריפטים. ה-frontmatter הקצר נטען כדי לזהות מתי הסוכן צריך להשתמש ב-Skill; ההוראות המלאות נקראות כשמפעילים אותו. כך אפשר לארוז הגדרות מדדים, מוסכמות שמות ותהליכים שאי אפשר להסיק רק מהקוד.</p>
+<p>איך מתחילים: בוחרים משימה חוזרת, נותנים לסוכן לבצע אותה, מתעדים טעויות או הנחות שגויות ומוסיפים את ההדרכה ל-SKILL.md. אחר כך בודקים שוב ומעדכנים. הכתבה ממליצה לכלול ידע ייחודי לארגון ומלכודות שנלמדו בפועל, ולא להוסיף כללים טכניים שכבר ברורים לסוכן. אם ההנחיה שייכת רק לריפו אחד, היא מתאימה יותר לקובץ ההוראות של אותו פרויקט מאשר ל-Skill לשימוש חוזר.</p>
+<p><a href="https://tabulareditor.com/blog/how-to-write-ai-agent-skills" rel="noopener noreferrer" target="_blank">המדריך של Tabular Editor</a></p>
+<p>2. Claude Code 2.1.305 ותיקונים מ-21.10: שינוי אחד שעשוי למנוע סקירה שמאשרת קוד מוקדם מדי. לפי יומן השינויים, סקירות Code Review חוזרות לא יחזירו LGTM כל עוד נותרו ממצאים חוסמים פתוחים; רוב העדכון הוא תשתיתי.</p>
+<p><a href="https://code.claude.com/docs/en/changelog" rel="noopener noreferrer" target="_blank">יומן השינויים של Claude Code</a></p>
+<p>3. עדכון קטן למאמר SQLBI מאתמול: נוספה גרסת וידאו על ציר רציף בטבלת תאריכים מותאמת. תוכן המאמר נשאר כפי שסוכם ב-20.10.</p>
+<p><a href="https://www.sqlbi.com/tv/continuous-axis-for-any-date-table-in-power-bi/" rel="noopener noreferrer" target="_blank">סרטון SQLBI על ציר רציף</a></p></div></details><details class="entry" id="digest-20261020"><summary>☀️ דייג'סט BI ו-Claude, שלישי 20.10 <span class="count">עדכון יומי · 20.10.2026</span></summary><div class="body"><p>☀️ BI ו-Claude | שלישי, 20.10</p>
+<p>1. SQLBI: ציר זמן רציף גם בטבלת תאריכים משלכם</p>
+<p>בגרף קווים אפשר לקבל ציר X רציף על היררכיית תאריכים מותאמת, ולא רק על ההיררכיה האוטומטית. לפי SQLBI, צריך לעבוד עם רמות של היררכיית משתמש: בראש ההיררכיה עמודה שמסומנת Years, ובתחתית עמודת תאריך מסומנת PaddedDateTableDates. הוויזואל צריך להשתמש ברמות מהעליונה ואילך.</p>
+<p>הדוגמה ב-TMDL כוללת גם <code>isKey</code> בעמודת Date ומציינת לסמן את הטבלה כטבלת תאריכים. בממשק Desktop, סימון הטבלה כ-Date table מגדיר ברמת הטבלה <code>dataCategory: Time</code> ואת <code>isKey</code> בעמודת התאריך. לפי SQLBI, התכונה הנדרשת להפעלת הציר הרציף היא <code>isKey</code> בעמודת התאריך; <code>dataCategory: Time</code> ברמת הטבלה לבדו אינו מפעיל את הציר.</p>
+<p>המאמר פותח גם בחלופה קיימת: היררכיית תאריכים עם עמודות שמכילות ערכי תאריך ופורמטים מותאמים, כגון חודש ושנה, יכולה להציג ציר רציף. הפתרון עם המטא-דאטה מאפשר להשתמש בהיררכיית תאריך רגילה וביומנים מותאמים, כולל 4-4-5. זה מאפיין לא מתועד רשמית בממשק Power BI; צריך להגדיר אותו ב-TMDL, ב-Tabular Editor או בכלי מודל תואם. לא הרצתי את הדוגמה.</p>
+<p><a href="https://www.sqlbi.com/articles/continuous-axis-for-any-date-table-in-power-bi/" rel="noopener noreferrer" target="_blank">המאמר המקורי של SQLBI עם דוגמת TMDL</a></p></div></details><details class="entry" id="digest-20261019"><summary>☀️ דייג'סט BI ו-Claude, שני 19.10 <span class="count">עדכון יומי · 19.10.2026</span></summary><div class="body"><p>☀️ BI ו-Claude | שני, 19.10</p>
+<p>1. עדכון Power BI לאוקטובר 2026</p>
+<p>ציר היררכיה אוטומטי תומך כעת בפרמטרי שדות בגרפי עמודות וקווים (GA). אפשר להניח פרמטר שדות על הציר, לבחור שדה אחד או כמה, וההיררכיה מתרחבת בהתאם; אפשר גם לקדוח בין הרמות או לשנות את שדות הציר דרך Personalize this visual.</p>
+<p>נוסף גם ויז'ואל Gantt מובנה ב-Preview, לתצוגת משימות לאורך ציר זמן עם התקדמות ואבני דרך. כדי לנסות, מפעילים אותו דרך File &gt; Options and settings &gt; Options &gt; Preview features ומאתחלים את Desktop. סלייסר הרשימה מקבל גם מצב dropdown ב-Preview.</p>
+<p>תיקון זמינות: אף שסיכום הפיצ'רים מסמן את צבע הרקע של אזור הגרף ואת שמירת רוחב העמודות בסימניות אישיות כ-GA, בתגובה לפוסט עובדת Microsoft כתבה ששניהם מתעכבים. לפי התגובה, צבע אזור הגרף צפוי כנראה בעדכון הבא, ורוחב עמודות בסימניות בשבועות הקרובים. לכן איני מציג אותם כזמינים כעת.</p>
+<p><a href="https://community.fabric.microsoft.com/blog/fbc_pbiupdatesblog/power-bi-october-2026-feature-summary/5374650" rel="noopener noreferrer" target="_blank">סיכום Power BI אוקטובר 2026 והבהרת הזמינות בתגובות Microsoft</a></p>
+<p>2. פונקציות DAX שהוגדרו בידי המשתמש</p>
+<p>תיעוד Tabular Editor מסביר איך ליצור User-Defined Function כדי להגדיר פעם אחת לוגיקה לשימוש חוזר, במקום להעתיק אותה בין מדדים. ב-Tabular Editor 3 אפשר ליצור פונקציה דרך Functions &gt; Create &gt; User-Defined Function; אפשר גם להגדיר אותה בשאילתה עם DEFINE ולפתוח את עורך הפונקציה. הזמינות והדרישות תלויות בגרסה ובתאימות המודל; הפריט מבוסס על התיעוד ולא הורץ.</p>
+<p><a href="https://docs.tabulareditor.com/en/tutorials/udfs.html" rel="noopener noreferrer" target="_blank">מדריך User-Defined Functions בתיעוד Tabular Editor</a></p>
+<p>הערה לגרסה 2.1.303 של Claude Code: תועדו תיקוני באגים בלבד, ולכן לא הוספתי זאת כפריט נפרד.</p></div></details><details class="entry" id="digest-20261017"><summary>☀️ דייג'סט BI ו-Claude, שבת 17.10 <span class="count">עדכון יומי · 17.10.2026</span></summary><div class="body"><p>☀️ BI ו-Claude | שבת, 17.10</p>
+<p>1️⃣ טיפים רשמיים של צוות Claude Code: עבודה במקביל עם worktrees</p>
+<p>במדריך שפורסם במרכז העזרה של Anthropic, צוות Claude Code מציע להריץ כמה סשנים מקבילים, כל אחד ב-git worktree נפרד. כך כל סשן עובד בענף מבודד. מהטרמינל אפשר לפתוח אחד עם <code>claude --worktree my_worktree</code>, ולהוסיף <code>--tmux</code> כדי לפתוח בחלון tmux משלו.</p>
+<p>לסוכן קבוע אפשר להוסיף <code>isolation: worktree</code> ב-frontmatter, כדי לבודד את עבודתו. לפעולת מיגרציה גדולה, הפקודה <code>/batch</code> מבררת את ההיקף ומפזרת עבודה לסוכנים; לפי המדריך, כל אחד עובד בנפרד, בודק את השינוי ויוצר PR. המדריך מציין גם את <code>/btw</code> לשאלת צד בזמן עבודה ואת <code>/simplify</code> לסקירת שינויי קוד.</p>
+<p>זה מתאים כשיש כמה משימות קוד שאפשר להפריד, למשל שינוי בכמה רכיבים. התחילו עם משימה קטנה ובדקו את ה-PR-ים לפני מיזוג. הדוגמה למטה היא מהתיעוד; לא הרצתי אותה.</p>
+<p><a href="https://support.claude.com/en/articles/14554000-claude-code-power-user-tips" rel="noopener noreferrer" target="_blank">טיפים למשתמשים מתקדמים - מרכז העזרה של Anthropic</a></p>
+<p>הגרסה 2.1.302 מוסיפה גם שורת Idle compaction למסך <code>/config</code>; פירוט הגרסה ביומן השינויים הרשמי.</p>
+<p><a href="https://code.claude.com/docs/en/changelog" rel="noopener noreferrer" target="_blank">יומן השינויים של Claude Code</a></p></div></details><details class="entry" id="digest-20261014"><summary>☀️ דייג'סט BI ו-Claude, רביעי 14.10 <span class="count">עדכון יומי · 14.10.2026</span></summary><div class="body"><p>☀️ BI ו-Claude | רביעי, 14.10</p>
+<p>1️⃣ Claude Code: כשל ב-hook יכול לעצור את הפעולה</p>
+<p>ב-Claude Code 2.1.295 נוספה האפשרות onFailure: "block" ל-hooks מסוג command ו-HTTP. ברירת המחדל היא "continue". כשמגדירים "block", hook שלא מצליח להתחיל, נכשל, מחזיר HTTP שאינו 2xx, פג תוקפו או מפיק JSON לא תקין יכול לעצור את הפעולה במקום לאפשר לה להמשיך. ב-PreToolUse, למשל, קריאה לסקריפט policy שנכשל עשויה לחסום את הכלי.</p>
+<p>זה חשוב כאשר hook משמש שער מדיניות: בלי ההגדרה, hook כושל אינו בהכרח מונע מהפעולה להמשיך. התיעוד הרשמי מפרט את התנאים ואת ההבדלים לפי סוג hook ואירוע. בדקו את התנהגות הכשל בסביבת ניסוי לפני הסתמכות עליו כגדר אבטחה.</p>
+<p><a href="https://code.claude.com/docs/en/hooks" rel="noopener noreferrer" target="_blank">תיעוד Hooks: חסימת פעולה כאשר hook נכשל</a></p><p><a href="https://code.claude.com/docs/en/changelog" rel="noopener noreferrer" target="_blank">יומן השינויים של Claude Code</a></p>
+<p>עוד בעדכון 2.1.296: שיחה של 200 אלף טוקנים ומעלה שנשארת ללא פעילות בערך 54 דקות יכולה לעבור דחיסה לפני שפג תוקף מטמון ה-prompt. אפשר לכבות זאת בהגדרה idleCompaction או לשנות את רף הטוקנים. מתאים בעיקר למי שמנהל שיחות ארוכות; לא הרצתי בעצמי.</p>
+<p><a href="https://code.claude.com/docs/en/changelog" rel="noopener noreferrer" target="_blank">פרטי idle compaction ביומן השינויים</a></p></div></details><details class="entry" id="digest-20261009"><summary>☀️ דייג'סט BI ו-Claude, שישי 9.10 <span class="count">עדכון יומי · 9.10.2026</span></summary><div class="body"><p>☀️ BI ו-Claude | שישי, 9.10</p>
+<p>1️⃣ Claude Code 2.1.295: כשל ב-hook יכול לחסום את הפעולה</p>
+<p>בהערות הגרסה ל-8.10 נוספה האפשרות onFailure: "block" ל-hooks מסוג command ו-HTTP. לפי ההכרזה, כאשר hook לא מצליח להתחיל, פג תוקפו או נכשל בדרך אחרת, אפשר להגדיר שהפעולה תיחסם במקום להמשיך.</p>
+<p>למה זה רלוונטי: בארגון שמשתמש ב-PreToolUse לבדיקות או למדיניות, התנהגות fail-closed יכולה למנוע מכלי להמשיך כשהבדיקה לא הצליחה. עם זאת, דף ה-hooks הרשמי עדיין לא מתעד את onFailure הזה, ולכן אין כאן הוראות הגדרה, ברירות מחדל או תיאור מלא של ההתנהגות. כדאי לאמת את הפרטים בתיעוד העדכני לפני שמשתמשים בזה במדיניות ייצור.</p>
+<p><a href="https://code.claude.com/docs/en/changelog" rel="noopener noreferrer" target="_blank">יומן השינויים הרשמי של Claude Code</a></p>
+<p><a href="https://code.claude.com/docs/en/hooks" rel="noopener noreferrer" target="_blank">תיעוד Hooks הרשמי</a></p></div></details><details class="entry" id="digest-20261008"><summary>☀️ דייג'סט BI ו-Claude, חמישי 8.10 <span class="count">עדכון יומי · 8.10.2026</span></summary><div class="body"><p>☀️ BI ו-Claude | חמישי, 8.10</p>
+<p>1️⃣ Claude for Google Workspace: Claude בסרגל הצד של Docs, Sheets ו-Slides</p>
+<p>Anthropic פתחה את התוסף לבטא ציבורית בכל התוכניות בתשלום. מתוך הקובץ הפתוח אפשר לבקש מ-Claude לערוך את התוכן; במצב ברירת המחדל, Ask before edits, כל שינוי מוצג לאישור. אפשר גם לבחור Accept all edits, שבו השינויים מתבצעים בלי עצירה לאישור.</p>
+<p>במקביל יצאו לבטא קונקטורים נפרדים: מתחילים בצ'אט של Claude ומבקשים ליצור או לערוך קובצי Google. הגישה לקבצים נשענת על הרשאות השיתוף הקיימות ב-Google. בתוכניות Team ו-Enterprise, בעלים צריך להפעיל את הקונקטורים לפני השימוש.</p>
+<p>כדי לנסות את התוסף: מתקינים מ-Google Workspace Marketplace, פותחים קובץ ובוחרים Extensions &gt; Claude &gt; Open Claude. מנהלים יכולים לפרוס אותו לדומיין או לקבוצות דרך Google Admin console.</p>
+<p>ההבדל בקצרה: התוסף מציב את Claude בתוך מסמך פתוח; הקונקטורים מאפשרים להתחיל מ-Claude וליצור או לערוך קובץ דרך השיחה. שניהם בבטא.</p>
+<p><a href="https://claude.com/resources/articles/claude-now-works-in-google-docs-sheets-and-slides" rel="noopener noreferrer" target="_blank">ההכרזה הרשמית של Anthropic</a></p></div></details><details class="entry" id="digest-20261007"><summary>☀️ דייג'סט BI ו-Claude, רביעי 7.10 <span class="count">מהדורה שבועית · 7.10.2026</span></summary><div class="body"><p>☀️ BI ו-Claude | מהדורה שבועית | רביעי, 7.10</p>
+<p>חמישה פריטים שנבחרו מהשבוע, עם מאמר SQLBI חדש שאומת הבוקר. זו מהדורת סיכום: הטכניקות שכבר הופיעו השבוע מסומנות כחזרה, לא כחדשות.</p>
+<p>1️⃣ חדש: לפני דירוג לקוחות, מגדירים את החוזה של המדד
+מאמר SQLBI מ-5.10 מדגים למה "כתוב לי דירוג לקוחות" אינו מפרט מספיק. צריך להגדיר מי מתחרה בדירוג, אילו מסננים נשמרים, האם המכירות מצטברות, איך שוברים שוויון ומה עושים כששם אחד מייצג שני מפתחות לקוח. בדוגמה, הקבוצה כוללת קונים היסטוריים עד סוף התקופה; הדירוג מבוסס על מכירות מצטברות, ושוויון נשבר לפי מפתח לקוח עולה. הקוד נכתב רק אחרי שהכללים נשמרו בקובץ ונקראו חזרה.
+ביום-יום: שינוי עסקי מתחיל בעדכון הכללים, ולא בניחוש מה התכוון מדד ישן. לניסוי, קחו מדד דירוג קיים ובקשו מהעוזר לזהות שאלות פתוחות, לשמור חוזה ולבנות מקרי בדיקה לפני שינוי DAX. בדקו במיוחד שמות כפולים, לקוח היסטורי בלי מכירות בתקופה ו-Total.
+שכבה: משמעות עסקית ובדיקות במודל, לא כלי פריסה. זו שיטת עבודה של SQLBI, לא פיצ'ר Power BI; גם מחברי המאמר אומרים שהמדד לדוגמה דורש אימות לפני ייצור.
+<a href="https://www.sqlbi.com/articles/understanding-dax-contracts-when-using-ai/" rel="noopener noreferrer" target="_blank">https://www.sqlbi.com/articles/understanding-dax-contracts-when-using-ai/</a></p>
+<p>2️⃣ בחירת YTD ו-PY יחד יכולה לקבל משמעות מפורשת
+חזרה נבחרת מ-1.10. בחירה מרובה בקבוצת חישוב אינה שרשור אוטומטי של הפריטים. הביטוי multipleOrEmptySelectionExpression בודק את קבוצת הבחירה ומנתב את הצירוף המדויק YTD+PY אל פריט PYTD. כך סלייסר אחד יכול להציע צירופים מוגדרים בלי לשכפל מדדים או ויזואלים.
+לניסוי: בקבוצת זמן קיימת מגדירים את הביטוי דרך TMDL ומשווים את שתי הבחירות לתוצאה של PYTD לבדו. בודקים גם צירוף לא נתמך וסינון שמחזיר אפס פריטים. הסרת הסינון אינה "empty selection"; היא שייכת להתנהגות noSelectionExpression.
+שכבה: לוגיקת הסלייסר במודל. משלים את חוזה המדד, לא מחליף אותו. מדריך SQLBI מסמן Preview בזמן פרסומו ביוני 2025 ודורש תאימות 1605 לפחות; אין כאן קביעה לגבי סטטוס היכולת בגרסה הארגונית שלכם.
+<a href="https://www.sqlbi.com/articles/controlling-empty-or-multiple-selections-in-calculation-groups/" rel="noopener noreferrer" target="_blank">https://www.sqlbi.com/articles/controlling-empty-or-multiple-selections-in-calculation-groups/</a>
+<a href="https://powerbi.microsoft.com/en-us/blog/deep-dive-into-selection-expressions-for-calculation-groups/" rel="noopener noreferrer" target="_blank">https://powerbi.microsoft.com/en-us/blog/deep-dive-into-selection-expressions-for-calculation-groups/</a></p>
+<p>3️⃣ ממוצע נע בתוך Small multiples, בלי להוסיף מדד למודל
+חזרה נבחרת מ-2.10, עם אימות נוסף מהמקור הרשמי. חישוב חזותי פועל על הנתונים שכבר הוכנסו לוויזואל. אפשר למשל להוסיף MOVINGAVERAGE למדד המכירות בגרף קו שמפוצל למדינות. זה שימושי כשיש הרשאת עריכת דוח אבל לא רוצים לשנות מודל משותף.
+לניסוי: ציר זמן ממויין, מדד מכירות ו-Small multiples של מדינה; מוסיפים חישוב חזותי ומשווים חלון של שלוש נקודות בפאנל אחד ידנית. שלוש נקודות אינן בהכרח שלושה ימים כשחסרים תאריכים. בתיעוד, ROWPAGES הוא הציר של הפאנלים: חישוב לאורך הזמן וחישוב בין מדינות אינם אותה תנועה.
+שכבה: הוויזואל, בשונה מקבוצת החישוב שפועלת במודל. סיכום ספטמבר הרשמי מציין GA לתמיכה בחישובים חזותיים ב-Small multiples; צריך גרסת Desktop מתאימה.
+<a href="https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-visual-calculations-overview" rel="noopener noreferrer" target="_blank">https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-visual-calculations-overview</a>
+<a href="https://community.fabric.microsoft.com/blog/fbc_pbiupdatesblog/power-bi-september-2026-feature-summary/5325831" rel="noopener noreferrer" target="_blank">https://community.fabric.microsoft.com/blog/fbc_pbiupdatesblog/power-bi-september-2026-feature-summary/5325831</a></p>
+<p>4️⃣ מעקב בסשן פתוח או עבודה מתוזמנת בענן: לא אותו כלי
+חזרה משולבת מ-2–3.10. פקודת /loop מריצה פרומפט שוב ושוב בסשן המקומי, עם הקבצים והרשאות הסשן. היא מתאימה למעקב קצר אחרי בדיקה או build; המחשב והסשן צריכים להיות פעילים, והמשימה פגה לאחר שבעה ימים. משימות שלא פגו ניתנות לשחזור באמצעות --resume.
+לעומתה, Routines מריצות סשן בענן על clone טרי של הריפו, בלי מחשב פתוח ובלי הקבצים המקומיים. הן מתאימות לעבודה מתמשכת, אבל מחייבות התאמה של סביבת הענן והחיבורים לארגון. הן פועלות באופן אוטונומי, ולכן לא כדאי להתחיל מפרומפט שנותן הרשאה פתוחה לשינויים.
+לניסוי מקומי: התחילו בלולאה לקריאה ודיווח בלבד, עם מרווח מפורש, ועצרו ב-Esc. אל תשתמשו בפרומפט התחזוקה המובנה בלי להבין מה הוא עשוי לעשות.
+שכבה: תזמור העבודה, לא DAX ולא שכבת הדוח. שני המנגנונים מתועדים רשמית; ל-API של Routines יש מגבלות research preview המפורטות בתיעוד.
+<a href="https://code.claude.com/docs/en/scheduled-tasks" rel="noopener noreferrer" target="_blank">https://code.claude.com/docs/en/scheduled-tasks</a>
+<a href="https://code.claude.com/docs/en/routines" rel="noopener noreferrer" target="_blank">https://code.claude.com/docs/en/routines</a></p>
+<p>5️⃣ ביקורת על דיף TMDL באמצעות Claude Code לא-אינטראקטיבי
+חזרה נבחרת מ-5.10. אפשר להזרים git diff של קובצי TMDL אל claude -p ולבקש לזהות שמות לא עקביים, מסננים קשיחים או תיאורים חסרים. הדגל --bare מונע טעינה אוטומטית של CLAUDE.md, hooks, plugins, skills ושרתי MCP מהסביבה. זו שליטה בהקשר שמוטען, לא הבטחה לתשובה זהה בכל ריצה.
+לניסוי: דיף קטן ולא רגיש, פרומפט בדיקה מפורש ושמירת הפלט לקובץ. מצב bare אינו משתמש בהתחברות המנוי הרגילה; נדרשים פרטי גישה מתאימים ל-API או לספק הענן. בדקו תחילה שהמסלול מאושר בארגון. קוד יציאה מוצלח מעיד שהפקודה הצליחה, לא שה-DAX נכון ולא שהביקורת נקייה.
+שכבה: ביקורת על קבצים. משלים את חוזה המדד, אך אינו יכול להוכיח תוצאות בלי נתוני בדיקה והרצה במודל. יכולת רשמית מתועדת; דוגמת PBIP לא הורצה במודל חי.
+<a href="https://code.claude.com/docs/en/headless" rel="noopener noreferrer" target="_blank">https://code.claude.com/docs/en/headless</a></p></div></details><details class="entry"><summary>☀️ דייג'סט BI ו-Claude, שלישי 6.10 <span class="count">מקור: מהדורה שנשלחה ב-6.10</span></summary><div class="body"><p>☀️ דייג'סט BI ו-Claude | שלישי, 6.10</p>
+<p>אין היום פריט שעומד ברף. בדקתי חיפושים חדשים ל-Power BI ול-Claude Code והשוויתי להיסטוריית השליחות.</p>
+<p>- Power BI: מה שנמצא (מאמרי calculation groups כלליים, מדריכי "best practices", מדריכי TMDL View) הוא חומר בסיסי או כללי, ולא טכניקת בניית דוחות חדשה.
+- Claude Code: מופיעות גרסאות חדשות (2.1.288 עד 2.1.290), אבל רק באתרי צד שלישי. לא פתחתי את ה-changelog הרשמי, ולכן לא אציג אותן כעובדה ולא אבנה עליהן פריט.</p>
+<p>🧠 פינת DATA&amp;AI: מומלץ לדלג היום ולא לשלוח פינה. לא מצאתי פריט שאפשר לעמוד מאחוריו, ואני מעדיף לא למלא.</p></div></details><details class="entry"><summary>☀️ דייג'סט BI ו-Claude, שני 5.10 <span class="count">מקור: מהדורה שנשלחה ב-5.10</span></summary><div class="body"><p>☀️ דייג'סט BI ו-Claude | שני, 5.10</p>
+<p>בדקתי היסטוריית שליחות וחומר חדש. פריט אחד עבר את הרף. בצד Power BI לא היה היום משהו ברמה של הפינה: מה שנמצא היה מדריכי מתחילים, מאמרים כלליים על calculation groups וקורסים.</p>
+<p>1️⃣ Claude Code במצב לא-אינטראקטיבי: claude --bare -p על הדיף של מודל ה-TMDL
+מה זה: הדגל -p מריץ את Claude Code כפקודת שורה רגילה. הוא קורא stdin, מדפיס תשובה, ומחזיר קוד יציאה 0 בהצלחה ולא-אפס בכישלון, כך שסקריפט או pipeline יכולים להגיב לתוצאה.
+מה ההבדל מסשן רגיל: הדגל --bare מדלג על טעינה אוטומטית של hooks, skills, plugins, שרתי MCP, זיכרון אוטומטי ו-CLAUDE.md. התוצאה זהה בכל מכונה, והתחלה מהירה יותר. התיעוד מציין ש---bare ימליץ להיות ברירת המחדל ב-p בעתיד. הוא לא קורא את ההתחברות הרגילה ולכן דורש ANTHROPIC_API_KEY (או ספק ענן כמו Bedrock).
+נקודה חשובה לארגון: בלי --bare, ריצה עם -p מפעילה hooks מ-.claude/settings.json ומתחברת לשרתי .mcp.json של הריפו גם בתיקייה שלא אישרת, כי אין דיאלוג אמון. לכן בריפו שאתה לא שולט בו עדיף --bare.
+מה זה נותן ל-BI: ריפו PBIP עם מודל TMDL הוא טקסט. אפשר להזרים אליו את ההפרש מול main ולבקש ביקורת: שמות מידות, תיאורים חסרים, פורמט.
+איך מתחילים: ראה בפינה למטה.
+מגבלות: stdin מוגבל ל-10MB. הפלט כולל עלות משוערת (total_cost_usd) עם --output-format json, כהערכה בלבד.
+בשלות: תיעוד רשמי של Claude Code.
+מקור:
+<a href="https://code.claude.com/docs/en/headless" rel="noopener noreferrer" target="_blank">https://code.claude.com/docs/en/headless</a></p></div></details><details class="entry"><summary>☀️ דייג'סט BI ו-Claude, ראשון 4.10 <span class="count">מקור: מהדורה שנשלחה ב-4.10</span></summary><div class="body"><p>☀️ דייג'סט BI ו-Claude | ראשון, 4.10</p>
+<p>יום דל. בדקתי היסטוריית שליחות וחומר חדש. פריט אחד קטן שלא נשלח, ובצד Power BI לא היה כלום ברמה של הפינה.</p>
+<p>1️⃣ Claude Code: אירוע ה-hook בשם DirectoryAdded
+מה זה: hook שנורה כשמוסיפים תיקיית עבודה באמצע סשן, דרך /add-dir או דרך בקרת SDK בשם register_repo_root. ה-matcher שלו הוא דרך ההוספה: slash_command או register_repo_root.
+למה זה מעניין לצוות עם אבטחה קשוחה: זו נקודה שבה Claude מקבל גישה לתיקיות נוספות מעבר לפרויקט. אפשר לרשום ביומן כל הרחבת גישה או להריץ בדיקה בכל פעם שזה קורה. זה שונה מ-PreToolUse, שמסנן קריאות כלים, ומ-CwdChanged, שמגיב לשינוי תיקייה נוכחית.
+איך מתחילים: מוסיפים hook לאירוע הזה ב-.claude/settings.json (או ב-‎~/.claude/settings.json), שמקבל את הפרטים ב-stdin וכותב ליומן.
+בשלות: נוסף לפי ה-changelog הרשמי; התיעוד קצר. לא בדקתי את מבנה ה-JSON המדויק, ולכן הדוגמה שלי רושמת את כל ה-stdin כמו שהוא.
+מקורות:
+<a href="https://code.claude.com/docs/en/hooks" rel="noopener noreferrer" target="_blank">https://code.claude.com/docs/en/hooks</a>
+<a href="https://code.claude.com/docs/en/changelog" rel="noopener noreferrer" target="_blank">https://code.claude.com/docs/en/changelog</a></p>
+<p>מה דילגתי עליו ולמה:
+- המאמר של SQLBI על ממוצע יומי ב-DAX ו"Where we stand on AI and DAX" כבר נשלחו.
+- חומרי Power BI חדשים (PBIP GA, שרתי MCP, skills-for-fabric) הם הכרזות או תשתית, לא טכניקות בניית דוחות.
+- מאמר של mixed-news על גרסה 2.1.285 הוא מקור צד שלישי עם הגדרות מנהל (policy); לא הצלחתי לאמת אותו מול changelog רשמי, ולכן השמטתי.</p></div></details><details class="entry"><summary>☀️ דייג'סט BI ו-Claude, שבת 3.10 <span class="count">מקור: מהדורה שנשלחה ב-3.10</span></summary><div class="body"><p>☀️ דייג'סט BI ו-Claude | שבת, 3.10</p>
+<p>יום שקט. בדקתי היסטוריית שליחות וחומר חדש. רק פריט אחד עבר את הרף, ובצד Power BI לא מצאתי היום משהו ברמה של הפינה.</p>
+<p>1️⃣ Claude Code Routines - אוטומציה שרצה בענן בלי שהמחשב דלוק
+מה זה: routine היא הגדרה שמורה של פרומפט, ריפו אחד או יותר וקונקטורים. היא רצה על תשתית ענן של Anthropic לפי טריגר: לוח זמנים (שעתי, לילי, שבועי או חד-פעמי), קריאת HTTP POST ל-endpoint ייעודי עם טוקן, או אירוע ב-GitHub כמו פתיחת PR.
+איך זה שונה מ-/loop שנשלח אתמול: /loop חי רק בסשן הפתוח, על המחשב שלך, ופג אחרי 7 ימים. Routine ממשיך לרוץ כשהמחשב סגור, מינימום מרווח שעה, ורץ בלי בקשות אישור. שניהם משלימים: /loop לניטור קצר בזמן עבודה, routine לדברים קבועים.
+יצירה: claude.ai/code/routines או מה-CLI עם /schedule.
+דוגמה לצוות BI: ריפו PBIP, טריגר GitHub על pull_request.opened, והפרומפט מפעיל צ'קליסט ביקורת של הצוות (שמות מידות, תיעוד, פורמט) ומוסיף תגובה סיכום ל-PR.
+בשלות: research preview, התנהגות ומגבלות עלולות להשתנות. זמין בתוכניות Pro, Max, Team ו-Enterprise.
+קריטי לארגון עם infosec: הקוד משוכפל לענן, הפעולות מתבצעות בזהות GitHub וקונקטורים שלך, ואדמין ב-Team/Enterprise יכול לכבות routines לכולם. כדאי לבדוק מול אבטחת מידע לפני שמשתמשים בריפו פנימי.
+מקורות:
+<a href="https://code.claude.com/docs/en/routines" rel="noopener noreferrer" target="_blank">https://code.claude.com/docs/en/routines</a>
+<a href="https://code.claude.com/docs/en/scheduled-tasks" rel="noopener noreferrer" target="_blank">https://code.claude.com/docs/en/scheduled-tasks</a></p>
+<p>2️⃣ Power BI: חיפוש טקסט מלא במודל (Full-Text Indexing) - לשים לב
+בסיכום ספטמבר מוזכרות שתי פונקציות DAX חדשות, TEXTCONTAINS ו-TEXTSIMILARITY, שמבוססות על אינדקס ברמת עמודה ומחפשות לפי משמעות ולא התאמת תווים. מופיע כ-Preview ו"coming soon", ולכן עדיין אי אפשר לנסות. לא מצאתי תחביר או דוגמה לפונקציות, אז לא כתבתי קוד.
+מקור:
+<a href="https://mwpro.co.uk/blog/2026/09/29/power-bi-september-2026-feature-summary/" rel="noopener noreferrer" target="_blank">https://mwpro.co.uk/blog/2026/09/29/power-bi-september-2026-feature-summary/</a></p></div></details><details class="entry"><summary>☀️ דייג'סט BI ו-Claude, שישי 2.10 <span class="count">מקור: מהדורה שנשלחה ב-2.10</span></summary><div class="body"><p>☀️ דייג'סט BI ו-Claude | שישי, 2.10</p>
+<p>שני רעיונות שלא נשלחו קודם (בדקתי את היסטוריית השליחות). לא מילאתי רשימה בחומר חלש.</p>
+<p>1️⃣ חישובים חזותיים (Visual Calculations) בתוך Small Multiples - עכשיו GA
+מה זה: אפשר ליצור חישוב ישירות על הוויזואל, כמו ממוצע נע או הפרש מהנקודה הקודמת, גם כשהגרף מפוצל ל-small multiples (למשל קו לכל מדינה). עד עכשיו זה לא עבד.
+איך זה עובד: בטבלת הוויזואל, השדה שבחרת ב-Small multiples יושב על ציר בשם ROWPAGES. אפשר לבחור ROWPAGES לבד, או לשלב עם ROWS ו-COLUMNS, וכך קובעים אם החישוב "זז" לאורך הזמן בתוך כל פאנל או בין הפאנלים. ציר שלא קיים בוויזואל מתעלמים ממנו.
+מה משתנה ביום-יום: ממוצע נע ו-vs Previous לכל קטגוריה בלי להוסיף מידה למודל הסמנטי. מתאים כשאין לך הרשאה לשנות את המודל המשותף.
+איך מתחילים: בוויזואל קו עם Small multiples, New calculation, ולנסות את המידה בהמשך.
+בדיקה: להשוות לאחד הפאנלים ידנית לפני שמסתמכים.
+בשלות: first-party, GA לפי סיכום הפיצ'רים של ספטמבר 2026. לא הרצתי אותו בפועל.
+מקורות:
+<a href="https://mwpro.co.uk/blog/2026/09/29/power-bi-september-2026-feature-summary/" rel="noopener noreferrer" target="_blank">https://mwpro.co.uk/blog/2026/09/29/power-bi-september-2026-feature-summary/</a>
+<a href="https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-visual-calculations-overview" rel="noopener noreferrer" target="_blank">https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-visual-calculations-overview</a></p>
+<p>2️⃣ Claude Code: /loop ו-loop.md - שמירה על PR או build בלי לשבת מול זה
+מה זה: פקודה שמריצה פרומפט שוב ושוב בתוך הסשן. בלי מרווח, Claude בוחר לבד בין דקה לשעה לפי מה שראה. בלי פרומפט, רץ פרומפט תחזוקה מובנה: ממשיך עבודה לא גמורה, מטפל ב-PR (הערות, CI אדום, קונפליקטים), ואז ניקיונות.
+מה מייחד: זה לא Routines בענן ולא Desktop scheduled tasks. זה חי בסשן שלך, על המחשב שלך, עם הרשאות הסשן. הטבלה בתיעוד: מינימום דקה, שורד --resume רק אם לא פג, פג אחרי 7 ימים.
+התאמה אישית: קובץ .claude/loop.md בפרויקט (או ‎~/.claude/loop.md) מחליף את פרומפט התחזוקה. עריכות נכנסות לתוקף באיטרציה הבאה. עד 25,000 בתים.
+עצירה: Esc.
+מקור:
+<a href="https://code.claude.com/docs/en/scheduled-tasks" rel="noopener noreferrer" target="_blank">https://code.claude.com/docs/en/scheduled-tasks</a>
+סייג: פעולות בלתי הפיכות כמו push או מחיקה מתבצעות רק אם ההמשך מאושר בשיחה, לפי התיעוד.</p></div></details><details class="entry"><summary>☀️ דייג'סט BI ו-Claude, חמישי 1.10 <span class="count">מקור: מהדורה שנשלחה ב-1.10</span></summary><div class="body"><p>☀️ דייג'סט BI ו-Claude | חמישי, 1.10</p>
+<p>שני רעיונות שימושיים שלא נשלחו קודם. אלה טכניקות מתוך תיעוד קיים, לא השקות מהיום; לא הוספתי חדשות כדי למלא רשימה.</p>
+<p>1️⃣ סלייסר זמן שבו שתי בחירות הופכות לחישוב אחד
+בדרך כלל, בחירה של כמה Calculation Items באותה קבוצה אינה מפעילה אותם ברצף. SQLBI מראה איך `multipleOrEmptySelectionExpression` מזהה את קבוצת הערכים שנבחרה, ומנתב אותה לפריט אחר: בחירת YTD ו-PY יחד מפעילה PYTD. כך אפשר לבנות בורר זמן שמבין צירופים שהגדרתם, בלי להכפיל ויזואלים או לשנות כל מדד מכירות ורווח. המנגנון הוא בדיקת `VALUES` של עמודת הקבוצה, ואז `CALCULATE` שמחליף את הבחירה בפריט המשולב. מתחילים בקבוצת זמן קיימת, מוסיפים את הביטוי דרך TMDL ובודקים בחירה יחידה, הצירוף המותר וצירוף לא נתמך.</p>
+<p>זו שכבת *לוגיקת הבחירה בקבוצה במודל*, בשונה מהגנת `noSelectionExpression` שכבר שלחתי: ההגנה ההיא פועלת כשאין סינון; כאן מטפלים בכמה פריטים ובסינון שמחזיר אפס פריטים. ניקוי סלייסר אינו בהכרח "empty selection". מדריך SQLBI מיוני 2025, שמסמן את היכולת כ-Preview במועדו; נדרשת רמת תאימות 1605 לפחות, ולא אימתתי את סטטוס ה-Preview או התמיכה בגרסה הארגונית כיום.
+<a href="https://www.sqlbi.com/articles/controlling-empty-or-multiple-selections-in-calculation-groups/" rel="noopener noreferrer" target="_blank">https://www.sqlbi.com/articles/controlling-empty-or-multiple-selections-in-calculation-groups/</a>
+<a href="https://powerbi.microsoft.com/en-us/blog/deep-dive-into-selection-expressions-for-calculation-groups/" rel="noopener noreferrer" target="_blank">https://powerbi.microsoft.com/en-us/blog/deep-dive-into-selection-expressions-for-calculation-groups/</a></p>
+<p>2️⃣ שאלת צד ל-Claude Code בלי להכניס אותה למסלול העבודה
+באמצע רפקטורינג ארוך אפשר לשאול באמצעות `/btw` שאלה על מה שכבר נדון, בלי לעצור את העבודה ובלי להוסיף את השאלה והתשובה להיסטוריית השיחה הראשית. התשובה משתמשת בהקשר הקיים, אבל היא חד־פעמית וללא קריאות לכלים. ביום־יום זה מתאים לבירור "למה כאן בחרנו SUMX?" בלי להסיט את Claude מהמשימה. מתחילים בשאלה ממוקדת, למשל על חלופה שכבר הופיעה בשיחה. אם התשובה מובילה להחלטת פיתוח, כותבים את ההחלטה מחדש בשיחה הראשית: ה-aside לא מעדכן את ההוראות של המשימה.</p>
+<p>זו שכבת *שאלת צד על הקשר הסשן*, לא `/fork` שמשכפל שיחה לעבודה עצמאית, ולא `/rewind` שמשחזר קוד או שיחה. פקודה רשמית מתועדת; אין כאן הבטחה שקובץ שלא נקרא נמצא בהקשר, והיא לא יכולה להריץ בדיקה או לבדוק את מצב המאגר. זמינות מקומית לא אומתה.
+<a href="https://code.claude.com/docs/en/commands" rel="noopener noreferrer" target="_blank">https://code.claude.com/docs/en/commands</a>
+<a href="https://support.claude.com/en/articles/14554000-claude-code-power-user-tips" rel="noopener noreferrer" target="_blank">https://support.claude.com/en/articles/14554000-claude-code-power-user-tips</a></p></div></details><details class="entry"><summary>☀️ דייג'סט BI ו-Claude, רביעי 30.9 <span class="count">מקור: מהדורה שנשלחה ב-30.9</span></summary><div class="body"><p>☀️ דייג'סט שבועי BI ו-Claude | רביעי, 30.9</p>
+<p>השבוע בחרתי חמישה רעיונות שכדאי לקחת לעבודה, לא חמישה כותרות. זו בחירה מתוך חומרי השבוע, עם בדיקה חוזרת של המקורות, ולא רשימת השקות חדשות.</p>
+<p>1️⃣ פרטי עסקה בתוך המטריצה, בלי עוד היררכיה
+מדד טקסט מאחד מטבע, שער ופרטי לקוח לעמודת Details אחת לצד המכירות. `ISINSCOPE` מוודא שמציגים פרטים ברמת העסקה ולא בסיכום; `CONCATENATEX` מחבר רק קטעים שאינם ריקים. ביום־יום זה חוסך גלילה וקליקים בין ויזואלים. התחלה: מזהה עסקה בשורות, מדד פרטים ב-Values ובדיקה של עסקה מרובת פריטים. אם הפרטים מגיעים מממד, צריך להעביר אליו את סינון העסקה, למשל באמצעות `CROSSFILTER` מקומי, ולא להפוך את כל קשרי המודל לדו־כיווניים. זו שכבת *התצוגה באמצעות מדד*, לא שינוי מבנה הנתונים. מדריך SQLBI מינואר 2026; הדוגמה בפינה אינה דורשת UDF או Visual Calculations.
+<a href="https://www.sqlbi.com/articles/show-transaction-details-on-the-matrix-visual-in-power-bi/" rel="noopener noreferrer" target="_blank">https://www.sqlbi.com/articles/show-transaction-details-on-the-matrix-visual-in-power-bi/</a></p>
+<p>2️⃣ סיכום נכון גם אחרי שמשנים את צירי הדוח
+במודל ייצור, לכל מתכון יחס סוכר אחר. הכפלת כלל המים בממוצע היחסים נותנת Total שגוי. הפתרון של SQLBI הוא ליצור באמצעות `SUMMARIZE` שורה לכל מתכון, להכפיל את המים ביחס שלו בתוך `SUMX`, ורק אז לחבר. מתחילים בזיהוי הגרעין שבו הכלל העסקי תקף, ומוודאים שהתוצאה נשארת נכונה במטריצה לפי מתכון, לפי אצווה וגם בלי מתכון בציר. זו שכבת *המדד העסקי במודל*, לעומת פריט 1 שמציג מידע לידו. מדריך מספטמבר 2026, ללא תלות בפיצ'ר Preview; אותו עיקרון מתאים גם לתעריפים ולתקציבים, אבל צריך לקבוע את הגרעין לפי הכלל שלכם.
+<a href="https://www.sqlbi.com/articles/writing-dax-at-the-correct-granularity/" rel="noopener noreferrer" target="_blank">https://www.sqlbi.com/articles/writing-dax-at-the-correct-granularity/</a></p>
+<p>3️⃣ חוק הצביעה ב-DAX, הפלטה ב-Theme
+במקום להחזיר קוד hex ממדד צבע, אפשר להחזיר `"good"`, `"neutral"` או `"bad"`. בעיצוב מותנה מסוג Field value, Power BI פותר אותם לצבעים שב-Theme. כך משנים מיתוג בלי לערוך כל מדד סטטוס. מתחילים ב-Theme JSON שמגדיר את שלושת הצבעים, מדד שמחזיר את השם המתאים, ובדיקת שני ויזואלים אחרי החלפת הפלטה. זו שכבת *עיצוב הדוח*, לא שינוי חישוב ה-KPI. המדריך מ-2024, לא חדש; אין להסיק שאפשר להפנות כך לאיבר במערך `dataColors`. עיצוב ידני בוויזואל יכול לגבור על הגדרות Theme.
+<a href="https://www.sqlbi.com/articles/re-using-visual-formatting-in-and-across-power-bi-reports/" rel="noopener noreferrer" target="_blank">https://www.sqlbi.com/articles/re-using-visual-formatting-in-and-across-power-bi-reports/</a>
+<a href="https://learn.microsoft.com/en-us/power-bi/create-reports/report-themes-create-custom" rel="noopener noreferrer" target="_blank">https://learn.microsoft.com/en-us/power-bi/create-reports/report-themes-create-custom</a></p>
+<p>4️⃣ שתי עבודות Claude Code בלי להתנגש בקבצים
+עותקי Git Worktree נותנים לכל שיחה קבצים וענף נפרדים, עם היסטוריית מאגר משותפת. שימוש מתאים: שיחה אחת משנה את הגדרת הדוח ושנייה עובדת על מדדים. מתחילים בשתי הפעלות `claude --worktree` עם שמות שונים, בונים את הסביבה בכל עותק, ובוחרים שינויים רק אחרי diff ובדיקות. זו שכבת *בידוד קבצים*, לא הבטחה לבידוד נתונים או הרשאות. פרט חשוב מהתיעוד הנוכחי: ברירת המחדל מסתעפת מענף ברירת המחדל המרוחק; כדי להתחיל מה-HEAD המקומי צריך להגדיר `worktree.baseRef` ל-`"head"`. גם אז עריכות שלא נשמרו ב-commit אינן עוברות לעותק. יכולת רשמית, דורשת Git וגרסה ארגונית תומכת.
+<a href="https://code.claude.com/docs/en/worktrees" rel="noopener noreferrer" target="_blank">https://code.claude.com/docs/en/worktrees</a></p>
+<p>5️⃣ להחזיר את הקוד, בלי למחוק את שיחת האבחון
+בתפריט `/rewind` אפשר לבחור `Restore code` ולהשאיר את השיחה על הבאג. אפשר גם לבחור `Summarize up to here` כדי לדחוס את הדיון הישן ולהשאיר את האחרון מפורט. מתחילים בנקודה שלפני ניסוי שנכשל, בוחרים שחזור קוד ובודקים diff. זו שכבת *היסטוריית השיחה ועריכות הקבצים*, ולכן היא משלימה Worktree ולא מחליפה אותו. תיעוד רשמי; שחזור הקוד מכסה עריכות ישירות שנעקבו, לא שינויי Bash, רוב עריכות subagents או קבצים מקושרים. Git עדיין נחוץ.
+<a href="https://code.claude.com/docs/en/checkpointing" rel="noopener noreferrer" target="_blank">https://code.claude.com/docs/en/checkpointing</a></p></div></details><details class="entry"><summary>☀️ דייג'סט BI ו-Claude, שלישי 29.9 <span class="count">מקור: מהדורה שנשלחה ב-29.9</span></summary><div class="body"><p>☀️ דייג'סט BI ו-Claude, שלישי 29.9</p>
+<p>גם היום לא מצאתי חידוש טרי ומאומת שעובר את הסף. שני טריקים שימושיים שלא שלחתי קודם, ולא הוצגו כחדשות מהיום:</p>
+<p>1️⃣ צבע DAX שמקשיב ל-Theme בלי לקבע קוד hex בכל מדד. SQLBI מציג שילוב של Theme JSON עם מדד צבע שמחזיר את שם מאפיין הצבע, למשל `"good"` או `"bad"`, במקום `"#1AAB40"` ו-`"#D64554"`. Power BI פותר את השם לצבע שנבחר ב-Theme בעיצוב מותנה מסוג Field value. כך שומרים את *החוק העסקי* במדד ואת *הפלטה* ב-Theme; שינוי צבעי סטטוס ב-Theme מעדכן מדדים המפנים אליהם, בלי לערוך כל נוסחת DAX. זה משלים את חישובי הצבע לוויזואל מהימים הקודמים, ולא מחליף אותם: הם קובעים *איזו שורה* מודגשת, וה-Theme קובע *באיזה צבע*. מתחילים ב-Theme עם `good`, `neutral`, `bad`, ובמדד שמחזיר אחד מהשמות, ובודקים במספר ויזואלים. מאמר SQLBI מדצמבר 2024, לא יכולת חדשה; שינויי עיצוב ידניים בוויזואל גוברים על Theme, ולא ידוע איך לקשר בדרך הזאת אל איבר שרירותי במערך `dataColors`.
+<a href="https://www.sqlbi.com/articles/re-using-visual-formatting-in-and-across-power-bi-reports/" rel="noopener noreferrer" target="_blank">https://www.sqlbi.com/articles/re-using-visual-formatting-in-and-across-power-bi-reports/</a>
+<a href="https://learn.microsoft.com/en-us/power-bi/create-reports/report-themes-create-custom" rel="noopener noreferrer" target="_blank">https://learn.microsoft.com/en-us/power-bi/create-reports/report-themes-create-custom</a></p>
+<p>2️⃣ ב-Claude Code, `/rewind` מאפשר להפריד בין חזרה בקוד לבין חזרה בשיחה. בוחרים checkpoint קודם, ואז מחליטים אם לשחזר את הקבצים, את השיחה או את שניהם; אפשר גם לסכם דווקא את ההיסטוריה *שלפני* נקודה נבחרת כדי לפנות חלון הקשר ולשמור את הדיון האחרון מפורט. ביום־יום זה מועיל כש-Claude ניסה רפקטורינג למדד שלא עבד, אבל הדיון על הבאג עדיין מועיל, או להפך. מתחילים בהפעלת `/rewind`, בוחרים את ההודעה שלפני הניסוי ואת אפשרות השחזור המתאימה, ואז בודקים `git diff` לפני שממשיכים. השכבה היא *מצב סשן וקבצים*, לא Worktree מבודד או `/fork` מקביל. התיעוד הרשמי מזהיר ששינויים שבוצעו באמצעות Bash, עריכות מרוב subagents ושינויים חיצוניים אינם משוחזרים ב-checkpoint; Git עדיין נדרש. לא ווידאתי איזו גרסת Claude Code מותקנת בארגון.
+<a href="https://code.claude.com/docs/en/checkpointing" rel="noopener noreferrer" target="_blank">https://code.claude.com/docs/en/checkpointing</a></p></div></details><details class="entry"><summary>☀️ דייג'סט BI ו-Claude, שני 28.9 <span class="count">מקור: מהדורה שנשלחה ב-28.9</span></summary><div class="body"><p>☀️ דייג'סט BI ו-Claude, שני 28.9</p>
+<p>לא מצאתי פרסום חדש מהיום ששווה להעביר כחדשה. שלושה רעיונות שלא שלחתי, עם גיל המקור גלוי:</p>
+<p>1️⃣ לצבוע תאי שורה במטריצה לפי *הערך בעמודה האחרונה המוצגת*. SQLBI בונה Visual Calculation שרואה את תוכן המטריצה כטבלת `ROWS COLUMNS`, מוצא את השנה האחרונה ואת המותג בעל המכירות המרביות בה, ומחזיר צבע לכל תא של אותו מותג גם בשנים האחרות. זו שכבת *עיצוב הוויזואל*, לא מדד עסקי במודל: כשמשכפלים ויזואל, אפשר להתאים את בחירת הציר בלי להוסיף עוד מדדי צבע למודל. להתחלה: Matrix עם Brand בשורות, Year בעמודות, Sales Amount בערכים; להוסיף פונקציית DAX קטנה שמוצאת את הזוכה בשנה האחרונה וחישוב חזותי שמחזיר `Yellow`, ואז להחיל Conditional Formatting מסוג Field value על *תאי המדד*. כותרות השורה עצמן אינן נתמכות בעיצוב מותנה. מאמר SQLBI מאפריל 2026, מתקדם ודורש תמיכת UDF/Visual Calculations בגרסת הארגון.
+<a href="https://www.sqlbi.com/articles/using-visual-calculations-to-highlight-an-entire-row/" rel="noopener noreferrer" target="_blank">https://www.sqlbi.com/articles/using-visual-calculations-to-highlight-an-entire-row/</a>
+<a href="https://learn.microsoft.com/en-us/power-bi/create-reports/desktop-conditional-table-formatting" rel="noopener noreferrer" target="_blank">https://learn.microsoft.com/en-us/power-bi/create-reports/desktop-conditional-table-formatting</a></p>
+<p>2️⃣ סכום כולל נכון דורש לקבע את גרעין הכלל העסקי, לא לסכום את השורות שמוצגות כרגע. במאמר של SQLBI ממודל ייצור, לכל מתכון יחס סוכר אחר; `AVERAGE` של היחסים בתא ה-Total נראה סביר אך אינו נותן כמות סוכר נכונה. הפתרון: `SUMMARIZE` מייצר שורה לכל מתכון, `SUMX` מכפיל בתוך כל מתכון את כמות המים שלו ביחס שלו ורק אז מחבר. זה חי *בשכבת המדד/המודל*, בניגוד לפריט העיצוב הראשון. ביום־יום דפוס כזה מונע סיכומי תקציב, שערים ותעריפים שגויים כשמחליפים ציר או עושים Drill. להתחלה: לזהות את גרעין המקור, גרעין הכלל וגרעין התצוגה ולבדוק Total בכמה מבני מטריצה. מאמר ספטמבר 2026; שווה לימוד, לא מוצר חדש.
+<a href="https://www.sqlbi.com/articles/writing-dax-at-the-correct-granularity/" rel="noopener noreferrer" target="_blank">https://www.sqlbi.com/articles/writing-dax-at-the-correct-granularity/</a></p>
+<p>3️⃣ לנסות שתי דרכי תיקון על *אותו הקשר שיחה* ב-Claude Code באמצעות `/fork`. הפקודה מעתיקה את השיחה עד אותו רגע לסשן רקע עצמאי, כולל הקשר הפרויקט, ומאפשרת לתת לענף אחד ניסוי על מבנה הדוח ובענף שני להמשיך פתרון שמרני. זה לא Worktree בפני עצמו: Worktree מבודד קבצים, בעוד `/fork` משכפל *את ההקשר השיחתי*; הסשן החדש עובר לעותק עבודה מבודד לפני עריכת קבצים לפי התיעוד. מתחילים מתוך שיחה עם תכנית ובדיקות שכבר גובשו, מקלידים `/fork נסה פתרון חלופי למדד מבלי לפרוס`, ואז פותחים `claude agents` כדי לראות מה מתקדם. עדיין צריך להשוות diff ולמזג ידנית. תיעוד רשמי; ההתנהגות הזו דורשת לפחות v2.1.212 ו-Agent View פעיל, ויש חריגים כשאי אפשר לרשת דגלי השקה מסוימים. זה כלי עבודה על *סשנים*, לא גרסת מודל ולא פריסה אוטומטית.
+<a href="https://code.claude.com/docs/en/agent-view" rel="noopener noreferrer" target="_blank">https://code.claude.com/docs/en/agent-view</a></p></div></details><details class="entry"><summary>☀️ דיג'סט BI ו-Claude, ראשון 27.9 <span class="count">מקור: מהדורה שנשלחה ב-27.9</span></summary><div class="body"><p>☀️ דיג'סט BI ו-Claude, ראשון 27.9</p>
+<p>לא מצאתי היום פרסום טרי שעובר את הסף. שני רעיונות שימושיים שלא שלחתי קודם, שניהם מתוך תיעוד קיים ולא חדשות היום:</p>
+<p>1️⃣ עמודת שם חודש שמתרגמת את עצמה לכל קורא של אותו דוח. ב-Power BI אפשר להגדיר לעמודה מחושבת `Expression Context = User Context`: היא לא נשמרת ב-Import בזמן רענון, אלא מחושבת בזמן שאילתא לפי הקשר המשתמש. שילוב `FORMAT` עם `USERCULTURE()` מחזיר למשל שם חודש בשפת הקורא. ביום־יום צוות יכול להחזיק דוח אחד לקהלים בכמה שפות בלי לשכפל טבלת תאריכים או לבנות מדד נפרד לכל תווית. חשוב לשמור זהות מספרית מאחורי תווית מתורגמת באמצעות Group By Columns על Month Number, אחרת בחירת סלייסר המבוססת על המחרוזת עלולה לא להישמר במעבר בין שפות. זו *שכבת המודל המוצגת בדוח*, לעומת מדד טקסט של אתמול שחי בתא המטריצה; עמודה כזו נגישה לצירים ולסלייסרים אבל עלולה לייקר שאילתות. להתחלה: עמודת `FORMAT ( DATE ( 2020, 'Date'[Month Number], 1 ), "mmmm", USERCULTURE() )`, שינוי המאפיין ב-Desktop, ואז בדיקה עם שני משתמשים ושפות. SQLBI מציין Preview במאי 2026; תיעוד Microsoft מאשר את המאפיין אך לא אימתתי זמינות בגרסה הארגונית שלכם.</p>
+<p><a href="https://www.sqlbi.com/articles/introducing-user-aware-calculated-columns-in-power-bi/" rel="noopener noreferrer" target="_blank">https://www.sqlbi.com/articles/introducing-user-aware-calculated-columns-in-power-bi/</a></p>
+<p>https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-calculated-columns</p>
+<p>2️⃣ Skill של Claude Code שמקבל את מצב ה-Git *ברגע ההפעלה*, לא רק הוראה סטטית. בשורת `!`command`` בתוך `SKILL.md`, Claude Code מריץ את הפקודה עוד לפני שהוא מעביר את תוכן ה-skill למודל, ומחליף אותה בפלט. למשל `git diff --name-only` נותן רשימת קובצי PBIP שהשתנו, ואז הוראות הסקירה פועלות על המצב הנוכחי. ביום־יום זה מפחית טעויות שבהן Claude מבקר גרסה ישנה או מתעלם מקובץ שעבר שינוי. השכבה היא *הכנת הקשר ל-skill*, לעומת `/goal` מאתמול שבודק תנאי סיום בסוף כל סבב; הן משלימות. להתחלה: ליצור `.claude/skills/review-pbip/SKILL.md`, להכניס פקודת Git מקומית וקצרה ולהריץ `/review-pbip`. זה תיעוד רשמי, לא פיצ'ר שהושק היום. פקודת ה-shell באמת רצה בעת הפעלת ה-skill, לכן לא לשלב פקודות שמשנות קבצים, מדפיסות סודות או מוציאות נתונים החוצה; מדיניות ארגונית עשויה לכבות אותה באמצעות `disableSkillShellExecution`.</p>
+<p><a href="https://code.claude.com/docs/en/skills" rel="noopener noreferrer" target="_blank">https://code.claude.com/docs/en/skills</a></p></div></details><details class="entry"><summary>☀️ דייג'סט BI ו-Claude, שבת 26.9 <span class="count">מקור: מהדורה שנשלחה ב-26.9</span></summary><div class="body"><p>☀️ דייג'סט BI ו-Claude, שבת 26.9</p>
+<p>לא מצאתי היום חידוש טרי שעובר את רף הערך. שני מדריכים שלא שלחתי קודם, עם תאריך המקור מפורש:</p>
+<p>1️⃣ יתרת הזמנות פתוחות כ-Visual Calculation עם יתרת פתיחה מהמודל. SQLBI מראה ש-`RUNNINGSUM` על המטריצה מחבר את מספר ההזמנות שהתקבלו ומנכה את אלה שסופקו, כשהחישוב רץ על הטבלה הווירטואלית שכבר אוגדה לפי חודש במקום לסרוק שוב כל עסקה בכל תא. המלכודת: אם חותכים בסלייסר את החודשים הראשונים, החישוב החזותי לא רואה את ההיסטוריה שלפניהם ומציג יתרה שגויה; מוסיפים מדד DAX במודל שמחזיר את יתרת הפתיחה שלפני התאריך הראשון שנבחר. ביום־יום זה בונה מטריצת backlog שקלה לקריאה ולתחזוקה. להתחלה: שני מדדי בסיס Received ו-Delivered, אחריהם שתי צבירות `RUNNINGSUM`, ואז הפרש בתוספת יתרת פתיחה. השכבה היא *הוויזואל*, בעוד מדד יתרת הפתיחה חי *במודל*. חשוב: SQLBI מציג בהמשך גם פתרון DAX טהור שהיה מהיר יותר במדגם שלו. זה מדריך מנובמבר 2024, לא פיצ'ר חדש ולא הבטחת ביצועים לכל מודל.</p>
+<p><a href="https://www.sqlbi.com/articles/computing-open-orders-with-visual-calculations-in-dax/" rel="noopener noreferrer" target="_blank">https://www.sqlbi.com/articles/computing-open-orders-with-visual-calculations-in-dax/</a></p>
+<p>2️⃣ פקודת `/goal` ב-Claude Code: להגדיר מצב סיום מדיד במקום לבקש שוב ושוב "תמשיך". בסוף כל סבב מודל בקרה קטן בודק את תנאי הסיום מול מה שהשיחה כבר הראתה; אם אינו מתקיים, Claude ממשיך לסבב הבא. הוא לא מריץ בדיקות בעצמו ולא קורא קבצים בנפרד, לכן צריך לדרוש ש-Claude יריץ את הבדיקות ויביא את הפלט לשיחה. דוגמה לצוות BI: "קובצי PBIP נשמרים, בדיקות אימות המבנה מסתיימות בקוד 0, לא השתנו קובצי נתוני אמת, או עצור אחרי 12 סבבים". ביום־יום זה מועיל לרפקטורינג שחוזר על תיקון-בדיקה, לא להחלטות מוצר פתוחות. מתחילים ב-`/goal ...`, בודקים מצב עם `/goal`, ועוצרים ידנית ב-`/goal clear`. זו יכולת מתועדת של Claude Code ממאי 2026, *שכבת בקרת סשן*, לא בידוד הקבצים של Worktree ששלחתי אתמול ולא TASKS.md בלבד. היא אינה משנה הרשאות, עלולה להיחסם כש-hooks מנוטרלים בארגון, ועולה שימוש מודלים לכל סבב.</p>
+<p><a href="https://code.claude.com/docs/en/goal" rel="noopener noreferrer" target="_blank">https://code.claude.com/docs/en/goal</a></p></div></details><details class="entry"><summary>☀️ דייג'סט BI ו-Claude, שישי 25.9 <span class="count">מקור: מהדורה שנשלחה ב-25.9</span></summary><div class="body"><p>☀️ דייג'סט BI ו-Claude, שישי 25.9</p>
+<p>יום שקט מבחינת חידושים חדשים ומאומתים. שני מדריכים מעשיים שלא שלחתי קודם, לא חדשות מהיום:</p>
+<p>1️⃣ פרטי עסקה בתוך שורה אחת במטריצה, בלי לפתוח היררכיה ובלי ויזואל נוסף. SQLBI מראה איך מדד טקסט מאחד כמה מאפיינים לעמודת Details אחת. המנגנון: ISINSCOPE מגביל את המדד לשורת מזהה העסקה, ו-CONCATENATEX עובר על רשימת קטעי טקסט אחרי סינון הריקים. אם הפרטים מגיעים מטבלת ממד בכיוון סינון הפוך, הדוגמה המלאה משתמשת ב-CROSSFILTER מקומי בתוך CALCULATE, ולא משנה את כל קשרי המודל. ביום־יום זה חוסך עמודות צרות, גלילה אופקית וקליקים על שורות לצורך פרטי הקשר. להתחלה: להוסיף Order Number לשורות מטריצה, ליצור מדד שמציג למשל מטבע ושער, ולבדוק סיכומי ביניים ועסקאות עם כמה שורות פריטים. זה טריק ברמת *הדוח/המדד*, לא SVG או ויזואל מותאם, ולא עוד Calculated Column קבועה. מדריך מומחה של SQLBI מינואר 2026, לא פיצ'ר חדש.</p>
+<p><a href="https://www.sqlbi.com/articles/show-transaction-details-on-the-matrix-visual-in-power-bi/" rel="noopener noreferrer" target="_blank">https://www.sqlbi.com/articles/show-transaction-details-on-the-matrix-visual-in-power-bi/</a></p>
+<p>2️⃣ שתי עבודות Claude Code על אותו פרויקט בלי שיכתבו זו על זו. Worktree הוא עותק עבודה נפרד עם ענף Git משלו והיסטוריית repo משותפת. מפעילים `claude --worktree report-a` ו-`claude --worktree report-b` בחלונות שונים, נותנים לכל אחד משימה נפרדת, בודקים diff ומכניסים את השינויים הרצויים לענף הראשי בבקרת אדם. ב-PBIP זה שימושי כשאחד משנה הגדרת דוח והשני בוחן מדדים, בתנאי שהקבצים ב-Git והסביבה נבנית מחדש בעותק. לעומת subagents, המחלקים משימות בתוך שיחה, Worktrees מבודדים *קבצים וענפים* בין שיחות. התיעוד גם מציע `isolation: worktree` ל-subagent שעורך קבצים. יכולת מתועדת רשמית של Claude Code, דורשת Git ותמיכה בגרסה המקומית; לא להניח שהיא מחוברת למאגר הארגוני או להעתיק סודות לעותקים.</p>
+<p><a href="https://code.claude.com/docs/en/worktrees" rel="noopener noreferrer" target="_blank">https://code.claude.com/docs/en/worktrees</a></p></div></details><details class="entry"><summary>☀️ דיג'סט BI ו-Claude, חמישי 24.9 <span class="count">מקור: מהדורה שנשלחה ב-24.9</span></summary><div class="body"><p>☀️ דיג'סט BI ו-Claude, חמישי 24.9</p>
+<p>יום שקט יחסית. שלושה פריטים ששווים קריאה, ושניים מהם לא חדשים מהשבוע אבל לא נשלחו עד היום. השאר היה מדריכי מתחילים, חזרות על Opus 5.5 ושיווק לקורסים.</p>
+<p>1️⃣ מדריך עבודה עם Opus 5.5 ב-Claude Code: איך מנהלים ריצה ארוכה</p>
+<p>מה זה: מדריך מעשי מ-22.9 (בלוג claude.dev, כותב: Addy Osmani) שמסביר מה משתנה בעבודה עם Opus 5.5. הטענה המרכזית: המודל עובד זמן רב יותר לבד, תמיד חושב לפני תשובה, ולכן ההרגלים הישנים של "תחשוב טוב" ועצירה כל שני צעדים כבר לא מתאימים.</p>
+<p>איך זה עובד, בחמש טכניקות:</p>
+<p>- נותנים משימה שלמה בהודעה אחת, עם הגדרת "גמור" ברורה ומתי לעצור ולשאול.</p>
+<p>- מוחקים מה-Prompts ומה-CLAUDE.md שורות כמו "think carefully". לפי המדריך זה רק מאט, ועומק מכוונים עם ‎/effort.</p>
+<p>- כותבים ב-CLAUDE.md מתי להמשיך ומתי לעצור. בלי זה המודל נוטה לעצור באמצע ולשאול "להמשיך?".</p>
+<p>- בריצה ארוכה מבקשים לנהל את רשימת המשימות בקובץ (TASKS.md). הקובץ שורד compact, ואפשר לקרוא אותו במקום לגלול.</p>
+<p>- במשימה רחבה מבקשים לפצל ל-Subagents, ולבדוק את הראיות של כל אחד לפני שמקבלים.</p>
+<p>מה משתנה ביום-יום: עבודה על PBIP שלם (שינוי שמות, תיעוד Measures, בדיקת עקביות) הופכת לריצה אחת עם קו סיום, במקום עשרות הודעות קצרות.</p>
+<p>איך מתחילים: ראו את ה-פינה למטה. יש שם תבנית מוכנה.</p>
+<p>בשלות: מדריך, לא פיצ'ר. לא הצלחתי לאמת ש-claude.dev הוא אתר רשמי של Anthropic, אז התייחסו אליו כהמלצות עבודה ולא כתיעוד.</p>
+<p>במה זה שונה: ה-Verification Skill מ-21.9 בודק את התוצאה. המדריך הזה עוסק באופן שבו נותנים את המשימה ומנהלים את הריצה. הם משלימים זה את זה.</p>
+<p><a href="https://claude.dev/blog/getting-the-most-out-of-opus-5-5/" rel="noopener noreferrer" target="_blank">https://claude.dev/blog/getting-the-most-out-of-opus-5-5/</a></p>
+<p>2️⃣ השוואה בין שתי תקופות שהמשתמש בוחר בעצמו, כולל נרמול</p>
+<p>מה זה: טכניקה קלאסית של SQLBI (Alberto Ferrari, עודכנה ב-2020, קפצה בחיפוש השבוע). המשתמש בוחר בסלייסר אחד תקופה נוכחית ובסלייסר שני תקופת השוואה, בכל אורך. למשל אוגוסט מול כל השנה הקודמת.</p>
+<p>איך זה עובד: יוצרים העתק של טבלת התאריכים (Previous Date), מחברים אותו לטבלת Date בקשר 1:1 לא פעיל, וב-Measure מבטלים את הסינון על Date ומפעילים את הקשר. כך הסינון "עובר" מ-Previous Date אל Date, ומשם לכל טבלאות העובדה, בלי קשר לא פעיל לכל טבלה. בסוף מכפילים במקדם נרמול לפי מספר הימים, כדי ששנה מול חודש לא תיראה כמו קריסה.</p>
+<p>מה משתנה ביום-יום: דוח "השוואה חופשית" בלי ליצור Measure לכל צמד תקופות, ועם מודל נקי גם כשיש כמה טבלאות עובדה.</p>
+<p>איך מתחילים: ה-פינה למטה כוללת את הקוד המלא.</p>
+<p>בשלות: טכניקה ותיקה ויציבה. SQLBI מפנים לגרסה מלאה ומאופטמת ב-DAX Patterns.</p>
+<p>במה זה שונה: ה-Calculation Groups המוערמים מ-17.9 עובדים בחלון נע (N ימים אחורה). כאן המשתמש בוחר שתי תקופות שרירותיות.</p>
+<p><a href="https://www.sqlbi.com/articles/filtering-and-comparing-different-time-periods-with-power-bi/" rel="noopener noreferrer" target="_blank">https://www.sqlbi.com/articles/filtering-and-comparing-different-time-periods-with-power-bi/</a></p>
+<p>3️⃣ SQLBI: לתת ל-AI לכתוב DAX, ואז לתת לו לרפקטר ל-UDF</p>
+<p>מה זה: מאמר מ-10.8 שממחיש את מה ש-Marco כתב אתמול. הם ביקשו מ-AI שני Measures של "לקוחות חדשים", וקיבלו קוד תקין אבל כפול כמעט לגמרי.</p>
+<p>איך זה עובד: בשלב השני ביקשו מה-AI להוציא את הלוגיקה המשותפת לפונקציה (DAX User-Defined Function). ה-AI בנה פונקציה גנרית שמקבלת את העמודות כפרמטרים (COLUMNREF). זה רעיון טוב, אבל ה-Measures עדיין נשארו מסורבלים. המסקנה שלהם: ה-AI מגיע ל"עובד" מהר, והמפתח צריך לכוון אותו לעיצוב הנכון.</p>
+<p>מה משתנה ביום-יום: תהליך בשני שלבים. קודם קוד שעובד, ואחר כך בקשה מפורשת לרפקטור, עם בדיקה שלכם של חתימת הפונקציה.</p>
+<p>בשלות: UDF ב-DAX הן עדיין Preview. בדקו שהן מותרות אצלכם לפני שמכניסים לדוח בייצור.</p>
+<p>במה זה שונה: פריט 2 הוא טכניקת מודל ודוח. כאן מדובר בתהליך עבודה עם AI על קוד DAX.</p>
+<p><a href="https://www.sqlbi.com/articles/creating-dax-functions-with-ai-to-remove-duplicated-code/" rel="noopener noreferrer" target="_blank">https://www.sqlbi.com/articles/creating-dax-functions-with-ai-to-remove-duplicated-code/</a></p></div></details><details class="entry"><summary>☀️ דיג'סט BI ו-Claude, רביעי 23.9 (כולל מהדורה שבועית) <span class="count">מקור: מהדורה שנשלחה ב-23.9</span></summary><div class="body"><p>☀️ דיג'סט BI ו-Claude, רביעי 23.9 (כולל מהדורה שבועית)</p>
+<p>היום יש שלושה דברים ששווים קריאה. השאר היה חדשות כלליות, מדריכי מתחילים או חזרות.</p>
+<p>1️⃣ Claude Opus 5.5 יצא - זול יותר, מהיר יותר, ומבחינתכם בעיקר מודל ברירת מחדל חדש לעבודת Agents</p>
+<p>מה זה: Anthropic שחררה אתמול (22.9) את Opus 5.5, המודל הראשון במשפחת 5.5. לטענתה הוא ברמה של Fable 5.1 ברוב המשימות.</p>
+<p>איך זה עובד בפועל: המחיר ירד ל-$4 לקלט ו-$20 לפלט למיליון Tokens (20% פחות מ-Opus 5). קריאות מה-Cache, שהן רוב העלות בעבודת קוד ו-Agents, ירדו ל-$0.20 (60% פחות). לפי Anthropic, בעומס עבודה טיפוסי זה יוצא כ-40% זול יותר, והפלט מהיר ביותר מ-30%. הם גם מדווחים על עמידות גבוהה יותר ל-Prompt Injection ועל פחות פעולות שקשה לבטל. במבחן זיהוי גרפים (Chartography) הוא הגיע ל-89%, מול 83.4% ב-Opus 5.</p>
+<p>מה משתנה ביום-יום: ב-Claude Code, לפי כתבה ב-Mixed News, גרסה 2.1.280 הופכת את Opus לברירת המחדל גם במנויי Pro ו-Team Standard, ו-Opus 5.5 הוא ה-Opus של ברירת המחדל. במודל הזה אי אפשר לכבות Thinking, ושולטים בעומק רק עם ‎/effort. רמת Effort ששמרת בעבר לא עוברת אוטומטית למודל חדש.</p>
+<p>איך מתחילים: ב-Claude Code הריצו ‎/model ובדקו מה נבחר. ב-API מזהה המודל הוא claude-opus-5-5. בארגון מוגן כדאי לבדוק קודם אם הוא כבר זמין בערוץ המאושר אצלכם (API ישיר, Bedrock, Vertex או Foundry) לפני שמשנים ברירת מחדל ב-Pipelines. Sonnet 5.5 ו-Haiku 5.5 אמורים לצאת "בשבועות הקרובים".</p>
+<p>בשלות: GA, רשמי. הבנצ'מרקים הם של Anthropic, והם עצמם כותבים שהפערים בבנצ'מרקים פחות מנבאים עבודה אמיתית.</p>
+<p>במה זה שונה: זה שינוי בשכבת המודל. זה לא מחליף אף Skill או Workflow שנשלח השבוע, רק הופך אותם לזולים ומהירים יותר.</p>
+<p><a href="https://www.anthropic.com/claude-opus-5-5" rel="noopener noreferrer" target="_blank">https://www.anthropic.com/claude-opus-5-5</a></p>
+<p><a href="https://platform.claude.com/docs/en/models/opus-5-5/overview" rel="noopener noreferrer" target="_blank">https://platform.claude.com/docs/en/models/opus-5-5/overview</a></p>
+<p><a href="https://mixed-news.com/en/claude-code-default-model-opus-pro-team-standard-plans/" rel="noopener noreferrer" target="_blank">https://mixed-news.com/en/claude-code-default-model-opus-pro-team-standard-plans/</a></p>
+<p>2️⃣ SQLBI משנים עמדה: לכתוב DAX עם AI "התחיל להיות הגיוני" ב-2026</p>
+<p>מה זה: פוסט של Marco Russo מ-22.9. SQLBI היו הקול הכי זהיר בקהילה לגבי AI ו-DAX. עכשיו הם כותבים שהם משתמשים ב-AI כל יום כדי לשנות מודלים סמנטיים ולנסח DAX ארוך ומורכב.</p>
+<p>איך זה עובד אצלם: ההבחנה שלהם היא בין עבודה עם Agents שמחוברים למודל (Claude Code, Skills, Plugins ו-MCP מול Power BI) לבין Copy-Paste של DAX מחלון צ'אט. הם ממליצים על הראשון. הם מציינים שביצועים (Performance) הם עדיין נקודת חולשה. בהשוואה שהם מביאים, מה שנשאר בעל ערך גבוה הוא הבנת Filter Context, Context Transition, הקשר בין המודל ל-DAX, ובעיקר הבדיקה של DAX שנוצר ב-AI.</p>
+<p>מה משתנה ביום-יום: זה אות לצוות. תפקיד המפתח הבכיר זז מכתיבה לניסוח הדרישה, לבדיקת תוצאה ולשליטה בכיוון של המודל. זה מתחבר ישירות ל-Verification Skill ול-Mini-migration שנשלחו השבוע.</p>
+<p>איך מתחילים: קחו Measure מורכב אחד שכתבתם השבוע, בקשו מ-Claude Code לנסח אותו מחדש מול ה-PBIP, ובדקו בעצמכם Totals, בחירות לא רציפות וערכי BLANK. זה מבחן טוב למה ה-AI עושה טוב ואיפה הוא טועה.</p>
+<p>בשלות: פוסט דעה, וגם קידום לשלושה קורסים חדשים בתשלום. הערך כאן הוא שינוי העמדה של SQLBI, לא הקורסים.</p>
+<p><a href="https://www.sqlbi.com/blog/marco/2026/09/22/where-we-stand-on-ai-and-dax-in-2026/" rel="noopener noreferrer" target="_blank">https://www.sqlbi.com/blog/marco/2026/09/22/where-we-stand-on-ai-and-dax-in-2026/</a></p>
+<p>3️⃣ Claude Code: Subagents מקוננים ו-‎/code-review ברקע</p>
+<p>מה זה: בדף ה-Changelog הרשמי מופיעים שני שינויים שמשפיעים על עבודה מקבילית. הראשון: Subagent יכול עכשיו להפעיל Subagents משלו עד עומק 3 כברירת מחדל (במקום 1). השני: ‎/code-review רץ כ-Subagent ברקע, כך שעבודת הסקירה לא ממלאת את השיחה הראשית.</p>
+<p>איך זה עובד: Subagent שבהגדרה שלו יש את הכלי Agent יכול לפצל עבודה ל-Subagents נוספים עד שמגיעים למגבלת העומק. במגבלה הכלי Agent פשוט מוסר ממנו. מבטלים עם CLAUDE_CODE_MAX_SUBAGENT_SPAWN_DEPTH=1.</p>
+<p>מה משתנה ביום-יום: דפוס כמו "סוקר ראשי" שמפעיל סוקר DAX וסוקר TMDL נפרדים עובד עכשיו בלי תזמור ידני. מצד שני, זה גם יכול להכפיל צריכת Tokens בלי שתרגישו. אם יש מגבלות עלות או מגבלות Audit, כדאי להגדיר את המשתנה ל-1 עד שבודקים.</p>
+<p>איך מתחילים: בהגדרת Subagent הוסיפו Agent לרשימת tools רק לסוכן שאמור לפצל. לשאר השאירו בלי Agent.</p>
+<p>בשלות: רשמי, אבל לא הצלחתי לאמת באיזו גרסה בדיוק זה נכנס. ה-CHANGELOG.md ב-GitHub שקראתי מגיע רק עד 2.1.278 ולא כולל את זה, אז זה כנראה בגרסה חדשה מזה. כדאי להריץ claude --version ולבדוק.</p>
+<p>במה זה שונה: Agent Teams ו-Background Agents הם כמה Sessions נפרדים. כאן מדובר בפיצול בתוך Session אחד.</p>
+<p><a href="https://code.claude.com/docs/en/changelog" rel="noopener noreferrer" target="_blank">https://code.claude.com/docs/en/changelog</a></p>
+<p><a href="https://code.claude.com/docs/en/sub-agents" rel="noopener noreferrer" target="_blank">https://code.claude.com/docs/en/sub-agents</a></p></div></details></div></section>
+<section aria-labelledby="corner-title" id="corner"><div class="section-head"><div><div class="section-tag">02 / פינה לשיתוף</div><h2 id="corner-title">🧠 פינת DATA&amp;AI</h2><p>טיפ אחד ל-Power BI וטיפ אחד ל-AI, עם פעולה שאפשר לנסות והפניה למקור.</p></div></div><div class="archive"><details class="entry"><summary>פינת DATA&amp;AI · 21.10</summary><div class="body"><p>🧠 פינת DATA&amp;AI - מהדורה שבועית</p>
+<p>📊 ציר רציף על טבלת תאריכים משלכם</p><p>בגרף קווים אפשר לקבל ציר זמן רציף על היררכיית תאריכים מותאמת. התנאים המתוארים ב-SQLBI:</p>
+<p>1. צור היררכיית משתמש שמתחילה ב-Year ומסתיימת ב-Date.</p><p>2. בעמודת Year הגדר <code>dataCategory: Years</code>.</p><p>3. בעמודת Date הגדר <code>dataCategory: PaddedDateTableDates</code> וגם סמן <code>isKey</code>. סימון הטבלה כ-Date table מוסיף <code>dataCategory: Time</code> ברמת הטבלה, אבל Time לבדו אינו מפעיל את הציר.</p><p>4. שים את רמות ההיררכיה על ציר ה-X, לא עמודות בודדות.</p><p>המאמר מציין גם חלופה: היררכיה עם עמודות DateTime ופורמטים מותאמים לתצוגת חודש/שנה. הגדרת המטא-דאטה אינה נחשפת בממשק; צריך TMDL או כלי מודל כמו Tabular Editor. לא הרצתי את הדוגמה.</p><p><a href="https://www.sqlbi.com/articles/continuous-axis-for-any-date-table-in-power-bi/" rel="noopener noreferrer" target="_blank">המאמר המקורי של SQLBI</a></p><p>⚡ סשנים מקבילים ב-Claude Code עם worktrees</p><p>אפשר לפתוח סשן מבודד עם <code>claude --worktree my_worktree</code>, או להשתמש ב-<code>/batch</code> כדי לפצל מיגרציה לסוכנים שעובדים בנפרד. לסוכן קבוע אפשר להגדיר <code>isolation: worktree</code> ב-frontmatter שלו.</p><p>התחל במשימה קטנה, בדוק את השינויים ואת ה-PR לפני מיזוג. המדריך גם מציין <code>/btw</code> לשאלת צד בזמן שסשן עובד ו-<code>/simplify</code> לסקירת שינוי קוד. לא הרצתי את הדוגמאות.</p><p><a href="https://support.claude.com/en/articles/14554000-claude-code-power-user-tips" rel="noopener noreferrer" target="_blank">טיפים רשמיים של צוות Claude Code</a></p></div></details><details class="entry"><summary>פינת DATA&amp;AI · 20.10</summary><div class="body"><p>🧠 פינת DATA&amp;AI</p><p>📈 ציר רציף להיררכיית תאריכים מותאמת</p><p>כדי להפעיל ציר X רציף בגרף קווים עם היררכיית משתמש, SQLBI מתארת את התנאים הבאים:</p>
+<p>1. היררכיה מפורשת שבה הרמה העליונה היא Year והנמוכה היא Date.</p>
+<p>2. בעמודת השנה: <code>dataCategory: Years</code>.</p>
+<p>3. בעמודת התאריך: <code>dataCategory: PaddedDateTableDates</code> וגם <code>isKey</code>. סמן את הטבלה כ-Date table; הסימון מגדיר גם <code>dataCategory: Time</code> בטבלה, אבל Time לבדו אינו התנאי שמפעיל את הציר.</p>
+<p>4. שים על ציר הגרף רמות מתוך ההיררכיה, לא עמודות בודדות; השתמש ברמות שמתחילות ב-Year.</p>
+<p>המאמר מציג גם חלופה: היררכיה מותאמת המבוססת על עמודות עם ערכי תאריך ופורמטים מיוחדים, כגון Year-Month. המטא-דאטה של SQLBI לא חשוף בממשק הרגיל, לכן הגדרה שלו נעשית ב-TMDL או בכלי מודל. לא הורץ בפועל.</p>
+<p><a href="https://www.sqlbi.com/articles/continuous-axis-for-any-date-table-in-power-bi/" rel="noopener noreferrer" target="_blank">המאמר והדוגמה המלאה ב-SQLBI</a></p></div></details><details class="entry"><summary>פינת DATA&amp;AI · 19.10</summary><div class="body"><p>🧠 פינת DATA&amp;AI</p><p>📊 סלייסר אחד, רמות פירוט שונות בגרף</p><p>ב-Power BI אפשר להשתמש בפרמטר שדות כדי לתת לצופה לבחור איזה שדה יופיע בציר ההיררכיה:</p><p>1. יוצרים פרמטר שדות דרך Modeling &gt; New parameter &gt; Fields, למשל Country, Segment ו-Product.</p><p>2. שמים אותו על ציר ה-X של גרף עמודות או קווים.</p><p>3. בחלונית העיצוב מדליקים Auto expand בציר.</p><p>4. מוסיפים סלייסר שמבוסס על אותו פרמטר. בחירה אחת מציגה שדה יחיד; בחירה של כמה שדות מרחיבה את ההיררכיה. אפשר לקדוח בין הרמות או לשנות את שדות הציר ב-Personalize this visual.</p><p>כך סלייסר אחד יכול לשלוט גם בגרף וגם במטריצה שמשתמשת באותו פרמטר. התכונה ב-GA לפי סיכום אוקטובר של Microsoft.</p><p><a href="https://community.fabric.microsoft.com/blog/fbc_pbiupdatesblog/power-bi-october-2026-feature-summary/5374650" rel="noopener noreferrer" target="_blank">סיכום Power BI אוקטובר 2026</a></p></div></details><details class="entry"><summary>פינת DATA&amp;AI · 17.10</summary><div class="body"><p>🧠 פינת DATA&amp;AI</p><p>⚡ הרצת סשנים מקבילים של Claude Code עם worktrees</p>
+<p>רוצים להריץ כמה סשנים בלי שידרסו זה את זה? ל-Claude Code יש תמיכה מובנית ב-git worktrees, ופקודת <code>/batch</code> שיכולה לפצל מיגרציה רחבה לסוכנים מבודדים:</p>
+<p>1. פותחים סשן בענף עבודה מבודד: <code>claude --worktree my_worktree</code>. אפשר להוסיף <code>--tmux</code> לחלון נפרד.</p>
+<p>2. לסוכן קבוע מוסיפים ל-frontmatter שלו את <code>isolation: worktree</code>.</p>
+<p>3. למיגרציה רחבה מתארים את המשימה עם <code>/batch</code>. המדריך אומר שהפקודה מבררת את ההיקף, מפזרת את העבודה לסוכנים, וכל אחד בודק את השינוי ופותח PR.</p>
+<p>אפשר להשתמש ב-<code>/btw</code> לשאלת צד בלי לעצור סשן פעיל, או ב-<code>/simplify</code> לסקירה מקבילה אחרי שינוי. התחילו במשימה קטנה, ובדקו כל PR לפני מיזוג. דוגמת ה-frontmatter היא מהמקור ולא הורצה.</p>
+<p><a href="https://support.claude.com/en/articles/14554000-claude-code-power-user-tips" rel="noopener noreferrer" target="_blank">המדריך המלא במרכז העזרה של Anthropic</a></p></div></details><details class="entry"><summary>פינת DATA&amp;AI · 7.10</summary><div class="body"><p>🧠 פינת DATA&amp;AI
+מהדורה שבועית: שני ניסויים מעשיים מהפריטים החזקים של השבוע.</p>
+<p>📊 סלייסר זמן שמבין את הצירוף YTD + PY</p>
+<p>בחירה בשני פריטים באותה קבוצת חישוב אינה מפעילה אותם ברצף. אפשר להגדיר שהצירוף המדויק מפעיל PYTD, וכל צירוף אחר מטופל במפורש.</p>
+<p>1. במודל ניסוי עם טבלת תאריכים יומית תקינה, התחילו מקבוצת חישוב בשם Time Intelligence ועמודת בחירה Name. הגדירו שלושה פריטים:</p>
+<p>לפריט YTD:
+```DAX
+CALCULATE (
+    SELECTEDMEASURE (),
+    DATESYTD ( 'Date'[Date] )
+)
+```</p>
+<p>לפריט PY:
+```DAX
+CALCULATE (
+    SELECTEDMEASURE (),
+    SAMEPERIODLASTYEAR ( 'Date'[Date] )
+)
+```</p>
+<p>לפריט PYTD:
+```DAX
+CALCULATE (
+    SELECTEDMEASURE (),
+    SAMEPERIODLASTYEAR (
+        DATESYTD ( 'Date'[Date] )
+    )
+)
+```</p>
+<p>2. ב-TMDL View גררו את טבלת הקבוצה לסקריפט. בתוך calculationGroup הוסיפו את המאפיין multipleOrEmptySelectionExpression, עם הביטוי הבא. שמרו את הפריטים הקיימים והשתמשו במבנה הרב-שורי של TMDL כפי שמודגם במדריך:</p>
+<pre dir="ltr"><code>VAR Chosen = VALUES ( 'Time Intelligence'[Name] )
+VAR Expected = { "YTD", "PY" }
+VAR IsExactPair =
+    COUNTROWS ( Chosen ) = 2
+        &amp;&amp; COUNTROWS ( INTERSECT ( Chosen, Expected ) ) = 2
+RETURN
+    IF (
+        IsExactPair,
+        CALCULATE (
+            SELECTEDMEASURE (),
+            'Time Intelligence'[Name] = "PYTD"
+        ),
+        ERROR ( "Unsupported time selection" )
+    )</code></pre>
+<p>3. החילו את השינוי והוסיפו סלייסר של Name שמאפשר בחירה מרובה. השוו YTD+PY ל-PYTD לבדו, גם במדד מכירות וגם במדד נוסף, כולל Total.</p>
+<p>4. בדקו צירוף אחר: בדוגמה הוא מחזיר שגיאה מכוונת, שמשפיעה על הוויזואל. התאימו את התנהגות הכשל לפני שימוש בדוח. ניקוי הסלייסר מסיר סינון ואינו אותו מצב כמו סינון שמחזיר אפס פריטים.</p>
+<p>נדרשת תאימות מודל 1605 לפחות. המדריך תיאר Preview בעת פרסומו; בדקו תמיכה בגרסתכם ועבדו על עותק לפני שינוי מודל משותף.</p>
+<p>למדריך המעשי, כולל מבנה TMDL מלא:
+<a href="https://www.sqlbi.com/articles/controlling-empty-or-multiple-selections-in-calculation-groups/" rel="noopener noreferrer" target="_blank">https://www.sqlbi.com/articles/controlling-empty-or-multiple-selections-in-calculation-groups/</a></p>
+<p>💻 מעקב חוזר ב-Claude Code, בלי לתת לו לשנות את הריפו</p>
+<p>אפשר להפוך בדיקה נקודתית ללולאת מעקב בתוך הסשן. היתרון הוא ההקשר המקומי שכבר קיים; זה אינו תהליך ענן שעובד כשהמחשב כבוי.</p>
+<p>1. פתחו סשן בריפו ניסוי או בריפו שמותר לעבד בסביבת Claude המאושרת שלכם. בדקו שהפקודה החד-פעמית לבדיקת מצב ה-CI כבר עובדת ושיש גישה לקריאה.</p>
+<p>2. הריצו פרומפט עם מרווח מפורש וגבול פעולה ברור:</p>
+<pre dir="ltr"><code>/loop 20m בדוק בקריאה בלבד את מצב ה-CI והערות הביקורת של ה-PR בענף הנוכחי. דווח על שינויים מאז הבדיקה הקודמת. אל תערוך קבצים, אל תעשה commit או push ואל תפרסם תגובות. אם אין גישה, דווח ועצור.</code></pre>
+<p>3. קראו את הדיווח הראשון. אם הוא אינו מזהה את ה-PR הנכון, עצרו והגדירו את ה-PR במפורש לפני המשך. הגבלה בפרומפט אינה תחליף להרשאות גישה מצומצמות.</p>
+<p>4. לעצירה בזמן שהלולאה ממתינה, לחצו Esc. היא דורשת סשן ומחשב פעילים ופגה אחרי שבעה ימים; זו אינה מערכת ניטור עם הבטחת התרעה.</p>
+<p>5. אם רוצים ברירת מחדל לפרויקט, אפשר לשמור את ההוראות בקובץ .claude/loop.md ולהפעיל /loop ללא פרומפט. זה זמין רק במסלולים שתומכים בפרומפט התחזוקה המובנה: ב-Bedrock וב-Foundry, למשל, הפעלה ללא פרומפט אינה קוראת את הקובץ. הפרומפט המפורש שבשלב 2 נמנע מהתלות הזאת.</p>
+<p>לתיעוד ולהבדל מול תזמון בענן:
+<a href="https://code.claude.com/docs/en/scheduled-tasks" rel="noopener noreferrer" target="_blank">https://code.claude.com/docs/en/scheduled-tasks</a></p></div></details><details class="entry"><summary>פינת DATA&amp;AI · 5.10</summary><div class="body"><p>🧠 פינת DATA&amp;AI (פריט אחד בלבד היום)</p>
+<p>💻 ביקורת אוטומטית על שינויי מודל TMDL מהטרמינל
+1. עובדים בריפו PBIP, ומגדירים מפתח API במשתנה סביבה ANTHROPIC_API_KEY.
+2. מריצים את הפקודה:</p>
+<p>git diff main -- '*.tmdl' | claude --bare -p "Review this TMDL diff: flag measures without descriptions, inconsistent naming, and hard-coded filters. Reply as a short bullet list." &gt; review.txt</p>
+<p>3. פותחים את review.txt וקוראים את ההערות.
+4. אם רוצים לשלב ב-pipeline, בודקים את קוד היציאה של הפקודה. לא מחליטים לפיו על חסימה של מיזוג בלי בדיקה אנושית.
+שימו לב: --bare לא קורא את ההתחברות הרגילה, לכן צריך מפתח API. ההפרש נשלח לשירות של Anthropic, ולכן מתאמים קודם עם אבטחת מידע לפי מדיניות הארגון.
+לתיעוד:
+<a href="https://code.claude.com/docs/en/headless" rel="noopener noreferrer" target="_blank">https://code.claude.com/docs/en/headless</a></p></div></details><details class="entry"><summary>פינת DATA&amp;AI · 4.10</summary><div class="body"><p>🧠 פינת DATA&amp;AI (לשליחה רק אם תרצה; יש בה פריט אחד)</p>
+<p>💻 לוג אוטומטי כשמוסיפים תיקייה ל-Claude Code באמצע סשן
+1. פותחים את הקובץ .claude/settings.json בפרויקט.
+2. מוסיפים hook לאירוע DirectoryAdded:</p>
+<p>{
+  "hooks": {
+    "DirectoryAdded": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cat &gt;&gt; \"$HOME/claude-dir-added.log\""
+          }
+        ]
+      }
+    ]
+  }
+}</p>
+<p>3. בסשן כותבים /add-dir ואחריו נתיב של תיקייה.
+4. פותחים את הקובץ claude-dir-added.log ורואים מה Claude שלח.
+5. מכאן אפשר להוסיף סינון לפי נתיב או התראה.
+שימו לב: זה דוגמת התחלה, לא בקרת גישה. hook רושם ולא חוסם.
+לתיעוד:
+<a href="https://code.claude.com/docs/en/hooks" rel="noopener noreferrer" target="_blank">https://code.claude.com/docs/en/hooks</a></p></div></details><details class="entry"><summary>פינת DATA&amp;AI · 3.10</summary><div class="body"><p>🧠 פינת DATA&amp;AI (להדבקה בקבוצה, גרסה בטוחה)</p>
+<p>💻 Claude Code בענן: ביקורת PR אוטומטית עם Routines
+1. נכנסים ל-claude.ai/code/routines ולוחצים New routine (או מריצים /schedule ב-CLI).
+2. כותבים פרומפט עצמאי וברור, למשל:</p>
+<p>Review this PR against our team checklist: measure naming, descriptions on every measure, no hard-coded filters. Leave inline comments and one summary comment.</p>
+<p>3. מוסיפים את הריפו ובוחרים טריגר GitHub על pull_request.opened.
+4. מגדירים סביבה עם גישת רשת מצומצמת, ורק קונקטורים שנחוצים.
+5. פותחים PR בדיקה ובודקים שהתגובות הגיעו.
+שימו לב: זה research preview, ה-routine פועל בזהות GitHub שלכם, ולכן מתאמים קודם עם אבטחת מידע.
+לתיעוד:
+<a href="https://code.claude.com/docs/en/routines" rel="noopener noreferrer" target="_blank">https://code.claude.com/docs/en/routines</a></p></div></details><details class="entry"><summary>פינת DATA&amp;AI · 2.10</summary><div class="body"><p>🧠 פינת DATA&amp;AI (להדבקה בקבוצה)</p>
+<p>📊 ממוצע נע לכל קטגוריה, בלי מידה במודל
+ב-Power BI Desktop, חישובים חזותיים כבר עובדים גם בגרף עם Small multiples (GA).
+1. בונים גרף קו, ובשדה Small multiples שמים מדינה.
+2. לוחצים על הוויזואל ואז New calculation.
+3. כותבים את החישוב:</p>
+<p>MA3 = MOVINGAVERAGE([Sales Amount], 3)</p>
+<p>4. השדה של ה-Small multiples יושב על ציר ROWPAGES. אם צריך לשלוט בכיוון החישוב, בוחרים ציר מפורש (ROWS, COLUMNS או ROWPAGES).
+5. בודקים פאנל אחד מול חישוב ידני.
+למה זה שווה: ניתוח מגמה לכל קטגוריה בלי לגעת במודל המשותף.
+לקריאה:
+<a href="https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-visual-calculations-overview" rel="noopener noreferrer" target="_blank">https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-visual-calculations-overview</a></p>
+<p>💻 Claude Code שומר על ה-PR בשבילך עם /loop
+1. פותחים Claude Code בריפו, על ענף עם PR פתוח.
+2. מריצים:</p>
+<p>/loop 20m check CI and review comments on this PR, fix what is clear, and report in one line</p>
+<p>3. לפרומפט קבוע לפרויקט, יוצרים קובץ .claude/loop.md עם ההוראות, ואז מריצים /loop בלי פרומפט.
+4. עוצרים עם Esc.
+שימו לב: זה חי רק בסשן הפתוח, על המחשב שלכם, ופג אחרי 7 ימים. לריצה בלי מחשב פתוח משתמשים ב-Routines.
+לתיעוד:
+<a href="https://code.claude.com/docs/en/scheduled-tasks" rel="noopener noreferrer" target="_blank">https://code.claude.com/docs/en/scheduled-tasks</a></p></div></details><details class="entry"><summary>פינת DATA&amp;AI · 1.10</summary><div class="body"><p>🧠 פינת DATA&amp;AI</p>
+<p>🔹 סלייסר שמתרגם בחירת YTD + PY לחישוב PYTD</p>
+<p>שתי בחירות באותו Calculation Group אינן "הרכב אוטומטי" של חישובים. אפשר להגדיר במודל משמעות מפורשת לצירוף, במקום לקבל את המדד ללא הטרנספורמציה שרציתם.</p>
+<p>1. התחילו מקבוצת זמן קיימת בשם `Time Intelligence`, עם עמודת בחירה `Name` ופריטים תקינים בשם `YTD`, `PY` ו-`PYTD`. לדוגמה, במודל עם טבלת תאריכים יומית תקינה, הביטויים של שלושת הפריטים הם:</p>
+<p>לפריט YTD:
+```DAX
+CALCULATE (
+    SELECTEDMEASURE (),
+    DATESYTD ( 'Date'[Date] )
+)
+```</p>
+<p>לפריט PY:
+```DAX
+CALCULATE (
+    SELECTEDMEASURE (),
+    SAMEPERIODLASTYEAR ( 'Date'[Date] )
+)
+```</p>
+<p>לפריט PYTD:
+```DAX
+CALCULATE (
+    SELECTEDMEASURE (),
+    SAMEPERIODLASTYEAR ( DATESYTD ( 'Date'[Date] ) )
+)
+```</p>
+<p>2. פתחו את TMDL View וגררו אליו את טבלת הקבוצה כדי לקבל את הסקריפט הקיים. בתוך בלוק `calculationGroup`, הוסיפו את המאפיין הבא לצד הפריטים, לא במקומם:</p>
+<pre dir="ltr"><code>multipleOrEmptySelectionExpression =
+    VAR Chosen = VALUES ( 'Time Intelligence'[Name] )
+    VAR Expected = { "YTD", "PY" }
+    VAR IsExactPair =
+        COUNTROWS ( Chosen ) = 2
+            &amp;&amp; COUNTROWS ( INTERSECT ( Chosen, Expected ) ) = 2
+    RETURN
+        IF (
+            IsExactPair,
+            CALCULATE (
+                SELECTEDMEASURE (),
+                'Time Intelligence'[Name] = "PYTD"
+            ),
+            ERROR ( "Unsupported time selection" )
+        )</code></pre>
+<p>3. החילו את השינוי והוסיפו סלייסר של `Name` עם בחירה מרובה. בדקו ש-YTD לבדו מפעיל את פריט YTD, וש-YTD עם PY מחזירים בדיוק את התוצאה של בחירת PYTD לבדו. בדקו גם סכומים ומדד נוסף, לא רק תא אחד.</p>
+<p>4. בצירוף אחר, או בסינון שמשאיר אפס פריטים, הדוגמה מחזירה שגיאה מכוונת במקום מספר מטעה. זה מתאים להדגמה, אך משפיע על הוויזואל כולו; התאימו את התנהגות הכשל לדוח. ניקוי הסלייסר מסיר סינון ולכן אינו אותו מצב. לפני שינוי מודל משותף בדקו תאימות 1605 ומעלה וזמינות המאפיין בגרסתכם.</p>
+<p>למדריך המעשי ולצירופים נוספים:
+<a href="https://www.sqlbi.com/articles/controlling-empty-or-multiple-selections-in-calculation-groups/" rel="noopener noreferrer" target="_blank">https://www.sqlbi.com/articles/controlling-empty-or-multiple-selections-in-calculation-groups/</a></p>
+<p>⚡ לשאול "למה בחרנו כך?" בלי להסיט את Claude Code מהמשימה</p>
+<p>פקודת `/btw` פותחת שאלת צד על ההקשר שכבר קיים. אפשר להשתמש בה בזמן ש-Claude עובד, בלי לעצור אותו ובלי לצרף את הדיון הצדדי לשיחה הראשית.</p>
+<p>1. במהלך שינוי PBIP, אחרי שכבר נדונו החלופות למדד, הקלידו:</p>
+<pre dir="ltr"><code>/btw על סמך הקוד והדיון שכבר ראית, למה בחרנו SUMX לפי מתכון ולא ממוצע יחסים? הסבר מה נשבר ב-Total, בלי להציע שינוי קבצים.</code></pre>
+<p>2. השתמשו בתשובה כדי להבין את ההחלטה. זו תשובה חד־פעמית ללא כלים: אין בה קריאת קבצים חדשים, הרצת DAX או אימות מצב ה-Git. בקשו הסבר רק על חומר שכבר נמצא בשיחה.</p>
+<p>3. אם החלטתם לשנות את הכיוון בעקבות ההסבר, כתבו בשיחה הראשית הוראה מפורשת, למשל:</p>
+<pre dir="ltr"><code>למשימה הראשית: שמור את החישוב בגרעין המתכון והוסף בדיקת Total מול סכום התוצאות לכל מתכון. אל תפרוס.</code></pre>
+<p>4. אל תניחו שהשאלה הצדדית שינתה את תכנית העבודה. לניסוי שדורש עריכות ובדיקות צריך משימה רגילה או סשן נפרד; `/btw` מיועד לבירור בלי לזהם את ההיסטוריה.</p>
+<p>לתיעוד המעשי:
+<a href="https://support.claude.com/en/articles/14554000-claude-code-power-user-tips" rel="noopener noreferrer" target="_blank">https://support.claude.com/en/articles/14554000-claude-code-power-user-tips</a></p></div></details><details class="entry"><summary>פינת DATA&amp;AI · 30.9</summary><div class="body"><p>🧠 פינת DATA&amp;AI</p>
+<p>🔹 פרטי עסקה בעמודה אחת של מטריצה, בלי לנפח את ההיררכיה</p>
+<p>במקום להוסיף כל מאפיין כרמת שורה, מציגים מדד טקסט לצד הסכומים. הוא מחבר רק פרטים קיימים ונשאר ריק בסיכומי הביניים.</p>
+<p>1. הוסיפו את `Sales[Order Number]` לשורות המטריצה. בדוגמה יש בטבלת Sales גם `Currency Code` ו-`Exchange Rate`, עם ערך אחד לכל הזמנה.</p>
+<p>2. צרו את המדד הבא. התאימו את שמות העמודות למודל:</p>
+<pre dir="ltr"><code>Transaction Details =
+IF (
+    ISINSCOPE ( Sales[Order Number] )
+        &amp;&amp; HASONEVALUE ( Sales[Order Number] ),
+    VAR Code = SELECTEDVALUE ( Sales[Currency Code] )
+    VAR Rate = SELECTEDVALUE ( Sales[Exchange Rate] )
+    RETURN
+        CONCATENATEX (
+            FILTER (
+                {
+                    IF ( NOT ISBLANK ( Code ), "מטבע: " &amp; Code ),
+                    IF ( NOT ISBLANK ( Rate ), "שער: " &amp; FORMAT ( Rate, "0.000" ) )
+                },
+                NOT ISBLANK ( [Value] )
+            ),
+            [Value],
+            " | "
+        )
+)</code></pre>
+<p>3. גררו את המדד ל-Values לצד מדד המכירות. בשורת עסקה יוצגו מטבע ושער; בסיכום המדד ריק, גם כשסלייסר השאיר הזמנה אחת בלבד. זו הסיבה לשילוב `ISINSCOPE`, ולא רק בדיקת מספר הערכים.</p>
+<p>4. בדקו הזמנה עם כמה שורות פריטים וערך חסר. אם יש כמה מטבעות או שערים, `SELECTEDVALUE` יחזיר ריק עבור הפרט העמום במקום להציג אחד שרירותי. לפרטי לקוח מטבלת ממד צריך לטפל גם בכיוון הסינון; המאמר מדגים כמה פתרונות בלי שינוי גורף של הקשרים.</p>
+<p>למדריך עם דוגמאות:
+<a href="https://www.sqlbi.com/articles/show-transaction-details-on-the-matrix-visual-in-power-bi/" rel="noopener noreferrer" target="_blank">https://www.sqlbi.com/articles/show-transaction-details-on-the-matrix-visual-in-power-bi/</a></p>
+<p>🎥 להדגמה של SQLBI:
+<a href="https://www.sqlbi.com/tv/show-transaction-details-on-matrix-visual-in-power-bi/" rel="noopener noreferrer" target="_blank">https://www.sqlbi.com/tv/show-transaction-details-on-matrix-visual-in-power-bi/</a></p>
+<p>⚡ שתי משימות Claude Code על אותו PBIP, בלי לדרוס זו את זו</p>
+<p>כל שיחה מקבלת עותק קבצים וענף Git משלה. זה מאפשר לפתח ש</p></div></details><details class="entry"><summary>פינת DATA&amp;AI · 29.9</summary><div class="body"><p>🧠 פינת DATA&amp;AI</p>
+<p>🔹 צבעי סטטוס בדוח שמשתנים עם ה-Theme בלי לערוך DAX</p>
+<p>הטריק הוא שהמדד מחזיר את *שם* צבע ה-Theme ולא קוד צבע. זה מאפשר לצבוע KPI, טבלה וכותרת לפי אותו כלל עסקי, בעוד צבעי הארגון נשארים בקובץ Theme אחד.</p>
+<p>1. צרו קובץ Theme לדוגמה ושמרו אותו כ-JSON:</p>
+<pre dir="ltr"><code>{
+  "name": "BI Status Palette",
+  "good": "#1AAB40",
+  "neutral": "#F2C94C",
+  "bad": "#D64554"
+}</code></pre>
+<p>2. ב-Power BI Desktop טענו אותו דרך View → Themes → Browse for themes. במודל שיש בו `[Actual]` ו-`[Target]`, צרו מדד צבע:</p>
+<pre dir="ltr"><code>KPI Status Color =
+VAR Delta = [Actual] - [Target]
+RETURN
+    SWITCH (
+        TRUE (),
+        ISBLANK ( [Actual] ) || ISBLANK ( [Target] ), "neutral",
+        Delta &gt;= 0, "good",
+        "bad"
+    )</code></pre>
+<p>3. בחרו ויזואל של KPI או תא Values בטבלה, הפעילו Conditional formatting → Field value ובחרו `KPI Status Color`. שכפלו גם לוויזואל נוסף. החליפו בקובץ ה-Theme רק את ערך `good`, טענו מחדש ובדקו ששניהם משתנים. אם צבע לא משתנה, בדקו האם בוויזואל הוגדר צבע ידני שמקבל קדימות על Theme. `dataColors` הוא מערך ולא מאפיין צבע פשוט, ולכן אל תניחו שניתן להפנות אליו כך.</p>
+<p>למדריך המעשי:
+<a href="https://www.sqlbi.com/articles/re-using-visual-formatting-in-and-across-power-bi-reports/" rel="noopener noreferrer" target="_blank">https://www.sqlbi.com/articles/re-using-visual-formatting-in-and-across-power-bi-reports/</a></p>
+<p>⚡ לשחזר ניסיון שנכשל בלי לזרוק את שיחת האבחון</p>
+<p>ב-Claude Code, checkpoint מתעד את עריכות הקבצים הישירות של Claude לפני כל בקשה. בתפריט `/rewind` אפשר לשחזר רק את הקוד, להשאיר את השיחה ולנסות פתרון אחר, או לבחור סיכום ממוקד של חלק מהשיחה הארוכה.</p>
+<p>1. לפני ניסוי בעריכת PBIP, בדקו מה מצב ה-Git. אם הוא נקי, קל יותר לזהות אחר כך אילו שינויים היו של הניסוי.
+2. אם הניסיון שבר את הדוח, הקלידו:</p>
+<pre dir="ltr"><code>/rewind</code></pre>
+<p>3. בחרו את הבקשה שקדמה לניסוי ואת האפשרות `Restore code` כדי להשיב את עריכות הקבצים *מבלי למחוק את דיון האבחון*. עברו על `git diff`, ואז בקשו פתרון אחר. לשיחה שהתארכה אפשר לבחור `Summarize up to here` בנקודת מעבר, כך שהדיון האחרון נשאר מפורט. זה לא שחזור של כל פעולת shell: קבצים ששונו ב-Bash או ב-subagents בדרך כלל אינם מכוסים, ולכן לא לוותר על Git.</p>
+<p>לתיעוד המעשי:
+<a href="https://code.claude.com/docs/en/checkpointing" rel="noopener noreferrer" target="_blank">https://code.claude.com/docs/en/checkpointing</a></p></div></details><details class="entry"><summary>פינת DATA&amp;AI · 28.9</summary><div class="body"><p>🧠 פינת DATA&amp;AI</p>
+<p>🔹 לצבוע את ערכי כל שורת המטריצה לפי הזוכה בעמודה האחרונה</p>
+<p>נניח שמותגים בשורות, שנים בעמודות ו-`Sales Amount` בערכים. רוצים להדגיש את המותג עם המכירות הגבוהות בשנה האחרונה שמוצגת, גם בתאים של שנים קודמות. הצביעה היא על *תאי הערכים*, לא על כותרת השורה.</p>
+<p>1. הכינו Matrix עם `Product[Brand]` בשורות, `Date[Year]` בעמודות ומדד `Sales Amount` בערכים. במודל שתומך ב-DAX UDF צרו את הפונקציה הבאה:</p>
+<pre dir="ltr"><code>RowHeaderOfLastCol =
+    (
+        matrix : TABLE,
+        colHeader : COLUMNREF,
+        rowHeader : COLUMNREF,
+        valueExpr : EXPR
+    ) =&gt;
+    VAR LastColHeader = MAXX ( matrix, colHeader )
+    VAR RowsInLastCol =
+        FILTER ( matrix, colHeader = LastColHeader )
+    VAR MaxValueInLastCol = MAXX ( RowsInLastCol, valueExpr )
+    VAR WinningRows =
+        FILTER ( RowsInLastCol, valueExpr = MaxValueInLastCol )
+    RETURN
+        SELECTCOLUMNS ( WinningRows, "rowHeader", rowHeader )</code></pre>
+<p>2. הוסיפו למטריצה Visual Calculation. הוא מרחיב את הקשר התא לכל טבלת השורות והעמודות, מוצא את המותגים שזכו בעמודה האחרונה, ואז מחזיר צבע לתאי המותג הנוכחי:</p>
+<pre dir="ltr"><code>Row Color =
+VAR BestBrands =
+    CALCULATETABLE (
+        CALCULATETABLE (
+            RowHeaderOfLastCol (
+                ROWS COLUMNS, [Year], [Brand], [Sales Amount]
+            ),
+            EXPAND ( ROWS COLUMNS )
+        ),
+        COLLAPSEALL ( ROWS COLUMNS )
+    )
+VAR CurrentBrand = [Brand]
+RETURN
+    IF ( CurrentBrand IN BestBrands, "#FFF2B2" )</code></pre>
+<p>3. בעיצוב המותנה של `Sales Amount`, בחרו Background color → Field value → `Row Color`. בדקו שכשמסננים שנים, הזוכה נקבע לפי השנה האחרונה *המוצגת*. אם המהדורה שלכם לא מקבלת תוצאה טקסטואלית בחישוב חזותי, הגדירו את Data Format שלו ל-Text. התיעוד של Microsoft מגביל עיצוב מותנה לערכים, לא לכותרות השורות.</p>
+<p>למדריך המעשי:
+<a href="https://www.sqlbi.com/articles/using-visual-calculations-to-highlight-an-entire-row/" rel="noopener noreferrer" target="_blank">https://www.sqlbi.com/articles/using-visual-calculations-to-highlight-an-entire-row/</a></p>
+<p>⚡ פיצול ניסוי Claude Code אחרי שכבר בניתם הקשר משותף</p>
+<p>`/fork` אינו מפצל רק קבצים. הוא מעתיק את כל השיחה עד לנקודת הפיצול לסשן רקע עצמאי, כך שלא צריך להסביר שוב את מבנה ה-PBIP והבדיקות לשני כיווני פתרון.</p>
+<p>1. בשיחה קיימת ודאו שכבר תיארתם את שינוי הדוח ואת בדיקות הקבלה. צרו עותק לניסוי חלופי:</p>
+<pre dir="ltr"><code>/fork נסה חלופה למדד התקופה על עותק העבודה שלך; הרץ את בדיקות ה-PBIP, אל תפרוס, ודווח על ה-diff</code></pre>
+<p>2. בשיחה המקורית המשיכו בפיתוח השמרני. פתחו מסוף עם `claude agents` כדי לראות אם הסשן המפוצל עובד, מחכה לקלט או הסתיים.
+3. השוו את שני ה-diff ואת תוצאות הבדיקות ובחרו אילו שינויים להעביר ידנית. אל תניחו שהשיחות מסתנכרנות לאחר הפיצול. בגרסאות ישנות מ-v2.1.212 או כאשר Agent View כבוי, `/fork` מתנהג אחרת; בדקו `claude --version` לפני עבודה על סמך התהליך הזה.</p>
+<p>לתיעוד המעשי:
+<a href="https://code.claude.com/docs/en/agent-view" rel="noopener noreferrer" target="_blank">https://code.claude.com/docs/en/agent-view</a></p></div></details><details class="entry"><summary>פינת DATA&amp;AI · 27.9</summary><div class="body"><p>🧠 פינת DATA&amp;AI</p>
+<p>🔹 סלייסר חודשי שנהפך לעברית, אנגלית או צרפתית בלי לשבור סימניות</p>
+<p>הטריק: עמודת User Context מחזירה תווית בשפת הקורא בזמן שאילתא, אבל הזהות של הבחירה נשארת `Month Number`. זה שונה מעמודת תרגום רגילה, שנקבעת ברענון המודל.</p>
+<p>1. בטבלת `Date` ודאו שיש `Month Number` עם ערכים 1–12. צרו עמודה מחושבת, לא Measure:</p>
+<pre dir="ltr"><code>Month Label =
+FORMAT (
+    DATE ( 2020, 'Date'[Month Number], 1 ),
+    "mmmm",
+    USERCULTURE ()
+)</code></pre>
+<p>2. במאפייני העמודה ב-Desktop הגדירו `Expression Context` לערך `User Context`. הגדירו מיון לפי `Month Number`, וב-Group By Columns קבעו את `Month Number` כעמודת הזהות. לפי SQLBI, הגדרת Group By Columns נעשית ב-TMDL View או ב-Tabular Editor; מיון בלבד אינו שומר את זהות בחירת הסלייסר בין שפות.</p>
+<p>3. שימו את `Month Label` בסלייסר ובציר של ויזואל. בדקו בשני משתמשים בעלי תרבות שונה: שם החודש משתנה אבל הבחירה נשארת אותו מספר חודש. בדקו גם ביצועים; העמודה מחושבת בשאילתא ואינה חומרית, והיא אינה מחליפה תרגום שמות המדדים או העמודות במודל.</p>
+<p>למדריך המעשי:</p>
+<p><a href="https://www.sqlbi.com/articles/introducing-user-aware-calculated-columns-in-power-bi/" rel="noopener noreferrer" target="_blank">https://www.sqlbi.com/articles/introducing-user-aware-calculated-columns-in-power-bi/</a></p>
+<p>⚡ Skill של Claude Code שמצלם את רשימת הקבצים ששונו בדיוק בעת ההפעלה</p>
+<p>במקום לבקש "תבדוק את הדוח" ולקוות ש-Claude רואה את גרסת הקבצים הנכונה, ה-skill מכניס לפקודת הסקירה את רשימת השינויים הנוכחית. אין כאן סריקת נתוני אמת או שליחה לרשת.</p>
+<p>1. בתוך repo שמכיל את קובצי ה-PBIP צרו תיקייה בשם `.claude/skills/review-pbip` וקובץ `SKILL.md` בתוכה.</p>
+<p>2. הדביקו לקובץ את התוכן הבא:</p>
+<pre dir="ltr"><code>---
+name: review-pbip
+description: Review currently changed PBIP metadata files before committing.
+disable-model-invocation: true
+---
+
+## Changed files
+!`git diff --name-only HEAD -- '*.pbip' '*.Report/**' '*.SemanticModel/**'`
+
+## Review
+Read only the changed PBIP metadata files listed above. Check broken field references and unexpected model/report edits. Do not modify files. If the list is empty, say so. Report file names and concrete findings.</code></pre></div></details><details class="entry"><summary>פינת DATA&amp;AI · 26.9</summary><div class="body"><p>🧠 פינת DATA&amp;AI</p>
+<p>🔹 יתרת הזמנות פתוחות ב-Matrix בלי לחשב את כל ההיסטוריה מחדש בכל תא</p>
+<p>הטריק הוא לשלב חישוב חזותי מהיר על החודשים *המוצגים* עם מדד במודל שמביא את יתרת הפתיחה לפני החלון שנבחר. בלי יתרת הפתיחה, סלייסר שמתחיל בינואר מציג בינואר יתרה כאילו לא היו הזמנות בדצמבר.</p>
+<p>1. צרו טבלת Date רציפה. קשר פעיל בין `'Date'[Date]` לבין `Sales[Order Date]`, וקשר לא פעיל אל `Sales[Delivery Date]`. הניחו מזהה הזמנה `Sales[Order Number]` ותאריך אספקה לכל הזמנה שסופקה.</p>
+<p>2. צרו מדדי בסיס במודל:</p>
+<pre dir="ltr"><code>Orders Received = DISTINCTCOUNT ( Sales[Order Number] )
+
+Orders Delivered =
+CALCULATE (
+    [Orders Received],
+    USERELATIONSHIP ( Sales[Delivery Date], 'Date'[Date] )
+)
+
+Received RT =
+CALCULATE (
+    [Orders Received],
+    'Date'[Date] &lt;= MAX ( 'Date'[Date] )
+)
+
+Delivered RT =
+CALCULATE (
+    [Orders Delivered],
+    'Date'[Date] &lt;= MAX ( 'Date'[Date] )
+)
+
+Starting Open Orders =
+CALCULATE (
+    VAR FirstDateInVisual = MIN ( 'Date'[Date] )
+    RETURN
+        CALCULATE (
+            [Received RT] - [Delivered RT],
+            'Date'[Date] &lt; FirstDateInVisual
+        ),
+    ALLSELECTED ( 'Date' )
+)</code></pre>
+<p>3. הוסיפו למטריצה חודש מ-Date בשורות ואת שלושת המדדים `Orders Received`, `Orders Delivered` ו-`Starting Open Orders` לערכים. בתפריט New visual calculation צרו את שלושת החישובים הבאים, כל אחד בנפרד:</p>
+<pre dir="ltr"><code>Received RT Visual = RUNNINGSUM ( [Orders Received], ROWS )
+
+Delivered RT Visual = RUNNINGSUM ( [Orders Delivered], ROWS )
+
+Open Orders Visual =
+    [Starting Open Orders]
+    + [Received RT Visual]
+    - [Delivered RT Visual]</code></pre>
+<p>4. הוסיפו סלייסר שנה ובדקו את ינואר: הוא צריך לכלול הזמנות שנותרו פתוחות בסוף דצמבר. בדקו מול מדד DAX מלא וב-Performance Analyzer על הנתונים שלכם; במאמר עצמו הגרסה המותאמת של DAX טהור ניצחה בסוף בביצועים.</p>
+<p>למדריך המעשי:</p>
+<p><a href="https://www.sqlbi.com/articles/computing-open-orders-with-visual-calculations-in-dax/" rel="noopener noreferrer" target="_blank">https://www.sqlbi.com/articles/computing-open-orders-with-visual-calculations-in-dax/</a></p>
+<p>⚡ ב-Claude Code: לתת משימת PBIP תנאי סיום שנבדק אחרי כל סבב</p>
+<p>פקודת `/goal` ממשיכה את אותה שיחה עד שהתנאי מתקיים, נקבע שאינו אפשרי, או שנתקלה בשגיאה שדורשת אדם. היא לא עוקפת הרשאות ולא מריצה בעצמה את בדיקת המבנה: Claude חייב להריץ אותה ולהראות את הפלט.</p></div></details><details class="entry"><summary>פינת DATA&amp;AI · 25.9</summary><div class="body"><p>🧠 פינת DATA&amp;AI</p>
+<p>🔹 פרטי עסקה בעמודה אחת של מטריצה, בלי להרחיב עוד רמות</p>
+<p>כשמוסיפים Currency ו-Exchange Rate כעמודות במטריצה, היא נמתחת לרוחב. במקום זה אפשר להוסיף מדד טקסט לצד המדדים המספריים. הוא מופיע רק בשורת העסקה, לא בסיכום.</p>
+<p>1. שימו `Sales[Order Number]` בשורות של Matrix. הניחו שבטבלת Sales קיימות גם העמודות `Currency Code` ו-`Exchange Rate`, ושבכל עסקה יש ערך יחיד לכל אחת מהן.</p>
+<p>2. צרו את המדד הבא; התאימו שמות עמודות למודל:</p>
+<pre dir="ltr"><code>Transaction Details =
+IF (
+    ISINSCOPE ( Sales[Order Number] )
+        &amp;&amp; HASONEVALUE ( Sales[Order Number] ),
+    VAR Code = SELECTEDVALUE ( Sales[Currency Code] )
+    VAR Rate = SELECTEDVALUE ( Sales[Exchange Rate] )
+    RETURN
+        CONCATENATEX (
+            FILTER (
+                {
+                    IF ( NOT ISBLANK ( Code ), "מטבע: " &amp; Code ),
+                    IF ( NOT ISBLANK ( Rate ), "שער: " &amp; FORMAT ( Rate, "0.000" ) )
+                },
+                NOT ISBLANK ( [Value] )
+            ),
+            [Value],
+            " | "
+        )
+)</code></pre>
+<p>3. גררו את המדד ל-Values של המטריצה. בשורת עסקה עם מטבע ושער תקבלו למשל `מטבע: EUR | שער: 1.085`; בשורת סיכום הוא ריק. בדקו עסקה עם כמה שורות פריטים: אם יש יותר מערך מטבע/שער אחד, SELECTEDVALUE יחזיר ריק במקום להציג פרט שגוי. למידע שמגיע מטבלת Customer, צריך לטפל גם בכיוון הסינון; המאמר מדגים זאת עם CROSSFILTER מקומי.</p>
+<p>למדריך המלא:</p>
+<p><a href="https://www.sqlbi.com/articles/show-transaction-details-on-the-matrix-visual-in-power-bi/" rel="noopener noreferrer" target="_blank">https://www.sqlbi.com/articles/show-transaction-details-on-the-matrix-visual-in-power-bi/</a></p>
+<p>⚡ שתי משימות Claude Code במקביל בלי התנגשות בקובצי PBIP</p>
+<p>Subagents מחלקים עבודה בתוך שיחה; Worktrees מייצרים לכל שיחה עותק קבצים וענף Git נפרדים. זה שימושי רק אם הפרויקט מנוהל ב-Git, והגדרת האבטחה בארגון מאפשרת זאת.</p>
+<p>1. פתחו מסוף בשורש ה-repo והריצו שיחה אחת לעבודת דוח:</p>
+<pre dir="ltr"><code>claude --worktree report-layout</code></pre>
+<p>2. במסוף שני, מאותו שורש, הריצו שיחה לעבודת מדדים:</p>
+<pre dir="ltr"><code>claude --worktree measures</code></pre>
+<p>3. תנו לכל שיחה משימה מוגדרת; עברו על ה-diff והבדיקות של כל ענף לפני שילוב השינויים. לשיחה שמסתיימת עם קבצים ששונו Claude Code מציע לשמור את ה-worktree ולא מוחק את העבודה אוטומטית. אל תשתמשו בזה כתחליף לסקירת קוד או לסביבת הרצה מבודדת של נתוני אמת.</p>
+<p>למדריך המעשי:</p>
+<p><a href="https://code.claude.com/docs/en/worktrees" rel="noopener noreferrer" target="_blank">https://code.claude.com/docs/en/worktrees</a></p></div></details><details class="entry"><summary>פינת DATA&amp;AI · 24.9</summary><div class="body"><p>🧠 פינת DATA&amp;AI</p>
+<p>🔹 השוואה בין שתי תקופות שהמשתמש בוחר, עם נרמול אוטומטי</p>
+<p>הטריק: שני סלייסרים של תאריכים, אחד לתקופה הנוכחית ואחד לתקופת ההשוואה, בכל אורך. בלי קשר לא פעיל לכל טבלת עובדה.</p>
+<p>1. צרו טבלה מחושבת שהיא העתק של טבלת התאריכים:</p>
+<pre dir="ltr"><code>Previous Date = ALLNOBLANKROW ( 'Date' )</code></pre>
+<p>2. צרו קשר 1:1 בין Date[Date] לבין Previous Date[Date], וסמנו אותו כלא פעיל. אין צורך לחבר את Previous Date לטבלאות העובדה.</p>
+<p>3. צרו מקדם נרמול לפי מספר הימים בכל בחירה:</p>
+<pre dir="ltr"><code>Normalization Factor =
+DIVIDE (
+    COUNTROWS ( 'Date' ),
+    COUNTROWS ( 'Previous Date' )
+)</code></pre>
+<p>4. צרו את מדד ההשוואה:</p></div></details><details class="entry"><summary>פינת DATA&amp;AI · 23.9 (פינה נוספת)</summary><div class="body"><p>🧠 פינת DATA&amp;AI</p>
+<p>📊 Power BI: שליטה בהקפאת כותרות השורות ב-Matrix</p>
+<p>עד עכשיו כותרות השורות ב-Matrix תמיד נשארו מוקפאות בגלילה אופקית, ולא היה אפשר לקבוע אחרת. מעדכון אוגוסט 2026 יש מתג חדש ב-Format pane תחת Layout &gt; Freeze &gt; Row headers, שקובע אם הכותרות נשארות במקום או נגללות עם הנתונים. ההגדרה נשמרת בדוח וחלה על כל מי שצופה בו, והצופים עדיין יכולים לשנות אותה זמנית בקליק ימני. הטריק השימושי: אפשר להגדיר אותה אחרת ב-Mobile layout, למשל לבטל הקפאה בטלפון כדי לפנות מקום לנתונים, ולהשאיר מוקפא בדסקטופ.</p>
+<p>🎥 <a href="https://youtube.com/shorts/VX0hCOZ7Aiw" rel="noopener noreferrer" target="_blank">https://youtube.com/shorts/VX0hCOZ7Aiw</a></p>
+<p>🤖 Claude Opus 5.5 יצא</p>
+<p>Anthropic השיקו אתמול את Claude Opus 5.5, המודל המוביל החדש שלהם: חזק משמעותית מ-Opus 5, זול בכ-40% בשימוש רגיל ומהיר ביותר מ-30%. הוא גם ברירת המחדל החדשה ב-Claude Code (דורש גרסה 2.1.280), ומכסות השימוש במנויי Pro, Max ו-Team עלו.</p>
+<p>🔗 <a href="https://www.anthropic.com/claude-opus-5-5" rel="noopener noreferrer" target="_blank">https://www.anthropic.com/claude-opus-5-5</a></p></div></details></div></section>
+<section aria-labelledby="monthly-title" id="monthly"><div class="section-head"><div><div class="section-tag">03 / גרסה חודשית</div><h2 id="monthly-title">חדש ב-Power BI</h2><p>סיכום נפרד למה שמיקרוסופט מפרסמת בגרסה החודשית, עם הבדל ברור בין הכרזה לזמינות בפועל.</p></div></div><div class="grid"><article class="card empty"><span class="category">גרסת אוקטובר 2026 · סיכום פיצ’רים רשמי של Microsoft Fabric Community</span><h3>שיפורים לכתיבת דוחות, slicers ומודלים סמנטיים</h3>
+<p>Power BI Report Authoring skill לעבודה עם ויזואלים מותאמים הפך ל-General Availability. לפי Microsoft, אפשר לבקש מסוכן להוסיף visual מותאם שכבר קיים בדוח, לחבר אותו לנתונים ולעצב אותו; הסוכן יכול גם לסייע באיתור visual מ-AppSource כשנדרשת יכולת נוספת.</p>
+<p>בצד הדוחות: ציר היררכי בגרפי עמודות, קווים ואזורים תומך כעת ב-auto-expand עם field parameters (GA). ה-Gantt הוא visual מובנה ב-Preview, וסלייסר רשימה מקבל מצב dropdown ב-Preview, כולל הצגת הערכים שנבחרו בראש הרשימה.</p>
+<p>במודלים סמנטיים, דיווח ה-CU בזמן פעולות רקע ממושכות נעשה רציף, כדי לתת להגנת העומס תמונה עדכנית יותר ולכוונן את ספי הדחייה וההשהיה. Microsoft מציינת שהשינוי אוטומטי ואינו דורש הגדרה.</p>
+<p>עדכון זמינות חשוב: אף שסיכום הפיצ’רים מסמן את צבע הרקע של אזור הגרף ואת שמירת רוחב העמודות בסימניות אישיות כ-GA, עובדת Microsoft ציינה בתגובות ששתי היכולות מתעכבות. צבע אזור הגרף צפוי כנראה בעדכון הבא; שמירת רוחב העמודות צפויה בשבועות הקרובים. לכן אין להתייחס אליהן כזמינות עדיין.</p>
+<p><a href="https://community.fabric.microsoft.com/blog/fbc_pbiupdatesblog/power-bi-october-2026-feature-summary/5374650" rel="noopener noreferrer" target="_blank">סיכום Power BI אוקטובר 2026 ותגובות Microsoft</a></p></article><article class="card monthly-archive"><span class="category">בארכיון · גרסת ספטמבר 2026 · סיכום פיצ’רים רשמי של Microsoft Fabric Community</span><h3>חישובים חזותיים זמינים גם ב-Small multiples</h3><p>Visual calculations for small multiples הגיעו ל-General Availability בסיכום הרשמי של ספטמבר 2026. אפשר לחשב ממוצע נע או להשוות מגמות בין קטגוריות בלי להוסיף measures למודל הסמנטי. שדה Small multiples מיוצג במטריצת הוויזואל כציר ROWPAGES; אפשר לבחור אותו לבדו או לשלב עם ROWS ו-COLUMNS כדי לקבוע לאורך איזה כיוון החישוב נע.</p><p>פער בתיעוד: סיכום הפיצ’רים הרשמי של ספטמבר מציג את היכולת כ-GA, אבל דף Microsoft Learn הכללי של Visual Calculations עדיין מציין Small multiples כלא נתמך. לצורך סטטוס הגרסה הסתמכנו על סיכום ספטמבר; יש לבדוק את גרסת Desktop הארגונית לפני שימוש.</p><p><a href="https://community.fabric.microsoft.com/blog/fbc_pbiupdatesblog/power-bi-september-2026-feature-summary/5325831" rel="noopener noreferrer" target="_blank">סיכום Power BI ספטמבר 2026 ב-Microsoft Fabric Community</a></p><p><a href="https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-visual-calculations-overview" rel="noopener noreferrer" target="_blank">סקירת Visual Calculations ב-Microsoft Learn (עדיין מציינת Small multiples כלא נתמך)</a></p></article><article class="card monthly-archive"><span class="category">בארכיון · גרסת אוגוסט 2026 · אומת מול Microsoft Learn</span><h3>מה מיקרוסופט שילחה בגרסת אוגוסט 2026</h3><p>Modern Visual Defaults וחלונית ה-Theme יצאו ל-General Availability: דוחות חדשים נפתחים עם ערכת Fluent 2, וה-Theme pane מרכז ערכת בסיס, פלטות צבע וסגנונות טקסט ב-Desktop וב-web. כדאי לבדוק איך דוחות קיימים נראים אחרי המעבר לערכת הבסיס החדשה.</p><p>עוד בגרסה: Date picker בסלייסר (GA) עם בחירת תאריך יחיד, ערך מרכזי בתרשים Donut (GA), הרחבה וכיווץ של כותרות עמודות במטריצה (GA), קיבוע כותרות שורות כברירת מחדל בחלונית העיצוב, ושימוש בקובצי תמונה מ-OneLake כמקור תמונה בוויזואלים (GA) עם אימות בשם הצופה. ברמת השירות: צרכני Fabric App יצטרכו רק הרשאת Read על המודל הסמנטי במקום Build.</p><p><a href="https://learn.microsoft.com/en-us/power-bi/fundamentals/whats-new" rel="noopener noreferrer" target="_blank">https://learn.microsoft.com/en-us/power-bi/fundamentals/whats-new</a></p></article></div></section>
+</main><footer><div class="wrap"><span>DATA&amp;AI / BI · ידע שימושי, עם מקורות</span><span>ארכיון 23-22.10.2026 · מתעדכן מדי יום</span></div><div class="wrap fx-credits">מקורות השראה לעיצוב: <a href="https://github.com/MengTo/ThreeUI" rel="noopener">ThreeUI</a> · <a href="https://uiverse.io" rel="noopener">Uiverse</a> · <a href="https://www.hyperui.dev" rel="noopener">HyperUI</a> · רעיון הספוט-לייט מ-<a href="https://21st.dev" rel="noopener">21st.dev</a></div></footer>
+<script id="scroll-craft-interactions">
+/* Original, progressively-enhanced reading timeline; no content is hidden if scripts fail. */
+(()=>{const root=document.documentElement,main=document.querySelector('main'),hero=document.querySelector('.hero');if(!main)return;
+const track=document.createElement('div');track.className='sc-track';track.setAttribute('aria-hidden','true');track.innerHTML='<span></span>';document.body.append(track);
+const way=document.createElement('div');way.className='sc-waypoint';way.setAttribute('aria-hidden','true');way.innerHTML='<b>00%</b><span></span>';document.body.append(way);
+const headings=[...main.querySelectorAll('section, h2[id]')].filter(el=>el.tagName==='SECTION'||!el.closest('section'));
+const titleOf=el=>el.querySelector('h2,h3')?.textContent?.trim()||el.textContent.trim().slice(0,46);
+let raf=0;function paint(){raf=0;const d=document.documentElement,total=Math.max(1,d.scrollHeight-innerHeight),p=Math.min(1,Math.max(0,scrollY/total));root.style.setProperty('--sc-progress',p.toFixed(4));
+if(hero){let hp=Math.min(1,Math.max(0,-hero.getBoundingClientRect().top/Math.max(1,hero.offsetHeight)));root.style.setProperty('--sc-hero-p',hp.toFixed(3));}
+let current=headings[0];for(const item of headings){if(item.getBoundingClientRect().top<=innerHeight*.42)current=item;else break}headings.forEach(el=>el.classList.toggle('sc-current',el===current));
+way.firstElementChild.textContent=String(Math.round(p*100)).padStart(2,'0')+'%';way.lastElementChild.textContent=current?titleOf(current):"מהדורות ביומן";}
+function tick(){if(!raf)raf=requestAnimationFrame(paint)}addEventListener('scroll',tick,{passive:true});addEventListener('resize',tick,{passive:true});paint();})();
+</script>
+<style id="fx-layer">
+/* ===== FX layer 28.9 - visual richness =====
+   Adapted with credit: ThreeUI "Emerald Horizon" shader idea (MIT, (c) 2026 Meng To, github.com/MengTo/ThreeUI),
+   Uiverse button effects (MIT, uiverse.io), HyperUI component polish (MIT, hyperui.dev),
+   spotlight-card idea via 21st.dev */
+@property --fx-a{syntax:'<angle>';initial-value:0deg;inherits:false}
+.fx-aurora{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.55;mix-blend-mode:screen}
+.hero>.wrap,.hero .sc-visual,.hero .orb{position:relative;z-index:1}
+.fx-credits{margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.07);font-size:.74rem;color:#94A3B8;text-align:center;line-height:1.9}
+.fx-credits a{color:#94A3B8;text-decoration:underline dotted;text-underline-offset:3px}
+.fx-credits a:hover{color:#FFD600}
+/* spotlight cards (idea: 21st.dev) */
+html.fx .site:hover,html.fx .card:hover,html.fx .fcard:hover,html.fx .entry:hover{background-image:radial-gradient(240px circle at var(--fx-x,50%) var(--fx-y,50%),rgba(247,147,26,.13),transparent 70%);background-repeat:no-repeat}
+/* border beam on buttons (Uiverse style) */
+@keyframes fx-spin{to{--fx-a:360deg}}
+.go,.btn{position:relative;isolation:isolate}
+.go::after,.btn::after{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1.5px;background:conic-gradient(from var(--fx-a),transparent 0 62%,#FFD600 78%,#fff 85%,#F7931A 92%,transparent 100%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask-composite:exclude;opacity:0;transition:opacity .35s;pointer-events:none;z-index:2}
+.site:hover .go::after,.go:hover::after,.btn:hover::after{opacity:1;animation:fx-spin 2.4s linear infinite}
+/* pill + section kicker polish (HyperUI style) */
+.pill{transition:border-color .3s,box-shadow .3s}
+.pill:hover{border-color:rgba(247,147,26,.5);box-shadow:0 0 14px -4px rgba(247,147,26,.5)}
+.section-tag{background:linear-gradient(to left,#F7931A,#FFD600);-webkit-background-clip:text;background-clip:text;color:transparent}
+/* entrance rise */
+@keyframes fx-rise{from{opacity:0;transform:translateY(18px)}}
+@media (prefers-reduced-motion:no-preference){
+html.fx .sites .site,html.fx .fcard{animation:fx-rise .7s cubic-bezier(.22,.8,.3,1) both}
+html.fx .sites .site:nth-child(2),html.fx .fcard:nth-child(2){animation-delay:.07s}
+html.fx .sites .site:nth-child(3),html.fx .fcard:nth-child(3){animation-delay:.14s}
+html.fx .sites .site:nth-child(4),html.fx .fcard:nth-child(4){animation-delay:.21s}
+html.fx .sites .site:nth-child(5),html.fx .fcard:nth-child(5){animation-delay:.28s}
+html.fx .sites .site:nth-child(6),html.fx .fcard:nth-child(6){animation-delay:.35s}
+}
+@media (prefers-reduced-motion:reduce){
+.fx-aurora{opacity:.4}
+.site:hover .go::after,.go:hover::after,.btn:hover::after{animation:none}
+}
 
 
+/* September 2026: editorial atlas, handmade SVG plates; CSS and artwork original. */
+body{--plate-a:#ffbb45;--plate-b:#f96335;background:#080a0e;color:#f8f7f3}
+body::before{background:radial-gradient(ellipse at 90% 15%,color-mix(in srgb,var(--plate-a) 8%,transparent),transparent 55%),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);background-size:auto,84px 84px;opacity:.8}
+.top{background:rgba(8,10,14,.91);border-color:rgba(255,255,255,.12)}
+.top .wrap{min-height:70px}.brand{font-size:1.13rem;letter-spacing:-.06em}.brand span{color:var(--plate-a)}
+nav a{font-family:'Heebo','Inter',sans-serif;font-size:.84rem;letter-spacing:0;color:#c2c9ce}
+.hero{min-height:660px;display:flex;align-items:center;padding:110px 0 90px;background:radial-gradient(ellipse 72% 110% at 10% 42%,color-mix(in srgb,var(--plate-a) 13%,transparent),transparent 70%),linear-gradient(135deg,#111722,#080a0e 65%);border-bottom:1px solid color-mix(in srgb,var(--plate-a) 25%,transparent)}
+.hero::before,.hero::after{display:none!important}.hero .fx-aurora{opacity:.25;mix-blend-mode:screen}
+.hero>.wrap{position:relative;z-index:2;width:calc(100% - 48px);max-width:1120px;margin-inline:auto}
+.hero .eyebrow{color:var(--plate-a);font-size:.8rem;letter-spacing:.12em;display:inline-flex;align-items:center;gap:12px;padding:7px 14px;border:1px solid color-mix(in srgb,var(--plate-a) 40%,transparent);border-radius:40px;background:rgba(8,10,14,.65);backdrop-filter:blur(12px)}
+.hero h1{font-family:'Heebo','Space Grotesk',sans-serif;font-size:clamp(3.6rem,7vw,7.3rem);font-weight:800;line-height:1.04;letter-spacing:-.065em;max-width:790px;margin:26px 0 22px;text-wrap:balance;text-shadow:0 6px 40px rgba(0,0,0,.35)}
+.hero h1 .grad{background:linear-gradient(110deg,var(--plate-a),var(--plate-b));-webkit-background-clip:text;background-clip:text}
+.hero p,.hero p.lede{color:#d0d4da;font-size:clamp(1.1rem,1.7vw,1.32rem);line-height:1.72;max-width:610px}
+.hero .pill{background:rgba(13,18,24,.75);border-color:color-mix(in srgb,var(--plate-a) 33%,transparent);color:#eef0ee;backdrop-filter:blur(14px)}
+.sc-visual,.hero .sc-visual{position:absolute;inset:auto 0 0 auto;top:2%;width:min(57%,800px);height:96%;z-index:1;opacity:1;transform:none;filter:none;pointer-events:none;overflow:hidden}
+.sc-visual .plate{position:absolute;inset:6% 5% 8% 0;border:1px solid color-mix(in srgb,var(--plate-a) 28%,transparent);border-radius:28px;transform:rotate(-7deg);background:radial-gradient(circle at 50% 50%,color-mix(in srgb,var(--plate-a) 13%,transparent),transparent 68%),repeating-linear-gradient(0deg,transparent 0 34px,rgba(255,255,255,.04) 35px 36px),repeating-linear-gradient(90deg,transparent 0 34px,rgba(255,255,255,.04) 35px 36px),#0c1119;box-shadow:0 35px 90px rgba(0,0,0,.6),inset 0 1px rgba(255,255,255,.13)}
+.sc-visual .plate::before{content:'';position:absolute;inset:13px;border:1px solid rgba(255,255,255,.12);border-radius:20px}.sc-visual .plate::after{content:'';position:absolute;top:24px;left:25px;width:38px;height:7px;border-radius:15px;background:var(--plate-a);box-shadow:52px 0 0 rgba(255,255,255,.2),102px 0 0 rgba(255,255,255,.13)}
+.sc-visual svg{position:relative;z-index:1;width:100%;height:100%;transform:none!important;filter:drop-shadow(0 0 23px color-mix(in srgb,var(--plate-a) 40%,transparent))}
+.sc-visual .lines{fill:none;stroke:var(--plate-a);stroke-width:2;opacity:.8}.sc-visual .nodes{fill:var(--plate-a);stroke:var(--plate-b);stroke-width:3}.sc-visual .mass{font:700 140px 'Space Grotesk',sans-serif;fill:var(--plate-b);opacity:.7}
+.sc-visual .sc-visual-caption{position:absolute;bottom:10%;left:7%;right:auto;color:var(--plate-a);font-size:.76rem;letter-spacing:.12em;background:#0b1018;padding:6px 12px;border:1px solid color-mix(in srgb,var(--plate-a) 40%,transparent);border-radius:6px;transform:rotate(-7deg);opacity:1}
+.section-tag{color:var(--plate-a);letter-spacing:.08em}.section-head h2,.guide h2{letter-spacing:-.04em}.section-head h2{font-size:clamp(2.6rem,5vw,4.5rem)}
+.site,.card,.feature,.entry,.notice{background:linear-gradient(145deg,color-mix(in srgb,var(--plate-a) 6%,#14191f),#0e1319 74%);border-color:rgba(255,255,255,.14);box-shadow:0 16px 54px rgba(0,0,0,.22)}
+.site{min-height:270px;padding:36px;border-radius:24px}.site h3{font-size:clamp(1.65rem,2.5vw,2.3rem);letter-spacing:-.045em}.site .tag{color:var(--plate-a)}
+.site .go,.btn{background:var(--plate-a);color:#101419;box-shadow:0 8px 28px color-mix(in srgb,var(--plate-a) 28%,transparent)}.site .go:hover,.btn:hover{color:#101419}
+.site:first-child{border-color:color-mix(in srgb,var(--plate-a) 52%,transparent)}.site:nth-child(2n){--plate-a:#a5b9ff}.site:nth-child(3n){--plate-a:#76e4d4}
+.site:hover{border-color:var(--plate-a);box-shadow:0 25px 55px rgba(0,0,0,.38)}
+.guide{max-width:860px}.guide :where(h2){font-size:clamp(2rem,4vw,3.1rem)}
+@media(max-width:700px){
+.top .wrap{padding-top:6px;min-height:68px}.brand{margin-bottom:0}nav a{font-size:.75rem}
+.hero{display:block;min-height:0;padding:208px 0 54px;background:radial-gradient(ellipse at 30% 19%,color-mix(in srgb,var(--plate-a) 15%,transparent),transparent 65%),#0a0e15}
+.hero>.wrap{width:calc(100% - 36px)}
+.sc-visual,.hero .sc-visual{top:-26px;left:14%;right:auto;width:90%;height:245px;opacity:1;filter:none;transform:none!important}
+.sc-visual .plate{inset:4% 6% 10% 0;transform:rotate(-5deg);border-radius:24px}.sc-visual svg{width:100%;height:100%}.sc-visual .sc-visual-caption{font-size:.64rem;bottom:13%}
+.hero .eyebrow{font-size:.7rem;letter-spacing:.035em;padding:5px 10px}
+.hero h1{font-size:clamp(3.0rem,13vw,4.4rem);line-height:1.08;margin:16px 0;letter-spacing:-.07em;max-width:100%}
+.hero p,.hero p.lede{font-size:1rem;line-height:1.63;margin-bottom:19px;color:#d5d9df}
+.hero .pill{font-size:.67rem;padding:5px 9px}.pills{gap:6px}
+main section{padding:70px 0}.section-head h2{font-size:2.55rem}.site{padding:27px;min-height:235px}.site h3{font-size:1.65rem}
+}
+@media(prefers-reduced-motion:reduce){.sc-visual,.sc-visual svg,.sc-visual .plate{animation:none!important;transform:none!important}}
 
-
-
-
-
-
-
-
-
-
+</style>
+<script id="fx-layer-js">
+/* FX layer 28.9 - aurora shader adapted from ThreeUI "Emerald Horizon" (MIT, (c) 2026 Meng To),
+   recolored to the site palette and ported to raw WebGL (no library). Spotlight idea: 21st.dev.
+   Progressive enhancement only: content never depends on this script. */
+(()=>{
+document.documentElement.classList.add('fx');
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(!reduce&&matchMedia('(hover: hover)').matches){
+  document.querySelectorAll('.site,.card,.fcard,.entry').forEach(el=>{
+    el.addEventListener('pointermove',e=>{
+      const r=el.getBoundingClientRect();
+      el.style.setProperty('--fx-x',((e.clientX-r.left)/r.width*100)+'%');
+      el.style.setProperty('--fx-y',((e.clientY-r.top)/r.height*100)+'%');
+    },{passive:true});
+  });
+}
+const canvas=document.querySelector('.fx-aurora');
+if(!canvas)return;
+const hero=canvas.closest('.hero')||canvas.parentElement;
+const gl=canvas.getContext('webgl',{alpha:true,antialias:false,depth:false,stencil:false,powerPreference:'low-power'});
+if(!gl){canvas.remove();return;}
+const VS='attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}';
+const FS='precision mediump float;uniform float u_time;uniform vec2 u_resolution;'+
+'float hash(float n){return fract(sin(n)*1e4);}'+
+'float noise(float x){float i=floor(x);float f=fract(x);float u=f*f*(3.-2.*f);return mix(hash(i),hash(i+1.),u);}'+
+'void main(){vec2 st=gl_FragCoord.xy/u_resolution.xy;'+
+'float w=sin(st.x*3.0+u_time*0.5)*0.1+sin(st.x*5.0-u_time*0.3)*0.05;'+
+'float t=smoothstep(0.45,-0.05,st.y+w);'+
+'t*=(noise(st.x*2.0+u_time*0.1)*0.5+0.5)*1.5;'+
+'vec3 g=mix(vec3(0.969,0.576,0.102),vec3(1.0,0.839,0.0),st.x+sin(u_time*0.2)*0.5);'+
+'vec3 c=g*pow(t,1.5)*0.9;'+
+'c*=smoothstep(1.25,0.45,length(st-vec2(0.5,0.0)));'+
+'gl_FragColor=vec4(c,1.0);}';
+function sh(type,src){const s=gl.createShader(type);gl.shaderSource(s,src);gl.compileShader(s);if(!gl.getShaderParameter(s,gl.COMPILE_STATUS)){return null;}return s;}
+const vs=sh(gl.VERTEX_SHADER,VS),fs=sh(gl.FRAGMENT_SHADER,FS);
+if(!vs||!fs){canvas.remove();return;}
+const pr=gl.createProgram();gl.attachShader(pr,vs);gl.attachShader(pr,fs);gl.linkProgram(pr);
+if(!gl.getProgramParameter(pr,gl.LINK_STATUS)){canvas.remove();return;}
+gl.useProgram(pr);
+const buf=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buf);
+gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,3,-1,-1,3]),gl.STATIC_DRAW);
+const loc=gl.getAttribLocation(pr,'p');gl.enableVertexAttribArray(loc);gl.vertexAttribPointer(loc,2,gl.FLOAT,false,0,0);
+const uT=gl.getUniformLocation(pr,'u_time'),uR=gl.getUniformLocation(pr,'u_resolution');
+function resize(){
+  const r=hero.getBoundingClientRect();
+  const d=Math.min(devicePixelRatio||1,1.25);
+  const w=Math.max(2,Math.round(r.width*d*0.75)),h=Math.max(2,Math.round(r.height*d*0.75));
+  if(canvas.width!==w||canvas.height!==h){canvas.width=w;canvas.height=h;gl.viewport(0,0,w,h);gl.uniform2f(uR,w,h);}
+}
+resize();
+let raf=0,visible=true,last=0,start=performance.now();
+function draw(now){
+  raf=0;
+  if(now-last<33){raf=requestAnimationFrame(draw);return;}
+  last=now;
+  gl.uniform1f(uT,(now-start)*0.001);
+  gl.drawArrays(gl.TRIANGLES,0,3);
+  if(!reduce)raf=requestAnimationFrame(draw);
+}
+function kick(){if(!raf&&visible&&!document.hidden)raf=requestAnimationFrame(draw);}
+if(reduce){
+  gl.uniform1f(uT,8.0);gl.drawArrays(gl.TRIANGLES,0,3);
+}else{
+  new IntersectionObserver(en=>{visible=en[0].isIntersecting;if(visible)kick();else if(raf){cancelAnimationFrame(raf);raf=0;}}).observe(hero);
+  document.addEventListener('visibilitychange',()=>{if(document.hidden&&raf){cancelAnimationFrame(raf);raf=0;}else kick();});
+  kick();
+}
+new ResizeObserver(()=>{resize();if(reduce){gl.uniform1f(uT,8.0);gl.drawArrays(gl.TRIANGLES,0,3);}}).observe(hero);
+canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();if(raf){cancelAnimationFrame(raf);raf=0;}});
+})();
+</script>
+</body>
+</html>
